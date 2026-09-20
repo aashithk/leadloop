@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STAR-L Story Builder: Behavioral Interview Tool | LeadLoop</title>
+<meta name="description" content="Turn your experience into STAR-L stories: Situation, Task, Action, Result, Leadership lessons. Build, copy, download as Markdown.">
+<link rel="canonical" href="https://aashithk.github.io/leadloop/star-l-story-builder.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="STAR-L Story Builder: Behavioral Interview Tool | LeadLoop">
+<meta property="og:description" content="Build committee-ready behavioral stories: Situation, Task, Action, Result, Leadership lessons. Live preview, copy, Markdown download.">
+<meta property="og:url" content="https://aashithk.github.io/leadloop/star-l-story-builder.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="STAR-L Story Builder: Behavioral Interview Tool | LeadLoop">
+<meta name="twitter:description" content="Turn experience into STAR-L stories with live preview, copy, and Markdown download. Free with email.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "STAR-L Story Builder: Behavioral Interview Tool",
+  "url": "https://aashithk.github.io/leadloop/star-l-story-builder.html",
+  "description": "Interactive STAR-L story builder: Situation, Task, Action, Result, and Leadership lessons, with live preview, copy, and Markdown download.",
+  "isPartOf": { "@type": "WebSite", "name": "LeadLoop", "url": "https://aashithk.github.io/leadloop/" },
+  "publisher": { "@type": "Person", "name": "Aashith Kamath" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aashithk.github.io/leadloop/" },
+    { "@type": "ListItem", "position": 2, "name": "Interview prep toolkit", "item": "https://aashithk.github.io/leadloop/#toolkit" },
+    { "@type": "ListItem", "position": 3, "name": "STAR-L Story Builder" }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#0e1a2b; --ink-soft:#33415c; --muted:#64748b;
+  --bg:#f7f9fc; --card:#ffffff; --line:#e2e8f0;
+  --accent:#0f766e; --accent-dark:#0b5c56; --accent-soft:#e6f4f2;
+  --gold:#b45309; --gold-soft:#fef6e7;
+  --radius:14px; --shadow:0 10px 30px rgba(14,26,43,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.site{background:#0e1a2b;color:#fff;position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
+.brand span{color:#5eead4}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:#cbd5e1;text-decoration:none;font-size:.92rem}
+.nav-links a:hover{color:#fff}
+.crumbs{font-size:.85rem;color:var(--muted);margin:22px 0 6px}
+.crumbs a{color:var(--accent);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.hero-tool{padding:26px 0 8px}
+.hero-tool h1{font-size:2rem;line-height:1.2;margin:.2em 0;letter-spacing:-.02em}
+.lead{font-size:1.08rem;color:var(--ink-soft);max-width:660px}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;margin-bottom:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;margin:22px 0}
+.card h2{margin-top:0;font-size:1.3rem}
+.card h3{font-size:1.05rem;margin:1.4em 0 .4em;color:var(--accent-dark)}
+.card ul{margin:.4em 0;padding-left:1.2em}
+.card li{margin:.35em 0}
+.btn{display:inline-block;border:none;cursor:pointer;font:inherit;font-weight:700;border-radius:10px;padding:12px 22px;text-decoration:none;font-size:1rem}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-secondary{background:#fff;color:var(--accent-dark);border:2px solid var(--accent)}
+.btn-secondary:hover{background:var(--accent-soft)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.gate-form input{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;min-width:200px;flex:1}
+.err{color:#b91c1c;font-size:.88rem;min-height:1.4em;margin:6px 0 0}
+.fineprint{font-size:.82rem;color:var(--muted);margin-top:10px}
+.field{margin:16px 0}
+.field label{font-weight:700;display:flex;justify-content:space-between;align-items:baseline}
+.field label .hint{font-weight:400;font-size:.82rem;color:var(--muted)}
+.field textarea{font:inherit;width:100%;min-height:96px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;margin-top:6px;resize:vertical}
+.wcount{font-size:.8rem;color:var(--muted);text-align:right;margin-top:2px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0;align-items:center}
+.status{font-size:.9rem;color:var(--accent-dark);min-height:1.4em}
+.story{border:1px solid var(--line);border-radius:10px;padding:18px 22px;background:#fff}
+.story h3{color:var(--accent-dark);margin:1em 0 .3em}
+.story h3:first-child{margin-top:0}
+.story p{margin:.3em 0 1em;white-space:pre-wrap}
+.story .empty{color:var(--muted);font-style:italic}
+.lock-note{background:#0e1a2b;color:#fff;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:.95rem}
+.lock-note strong{color:#5eead4}
+.tip{background:var(--gold-soft);border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 10px 10px 0;margin:.8em 0;font-size:.95rem}
+footer.site{background:#0e1a2b;color:#94a3b8;padding:28px 0;margin-top:40px;font-size:.88rem}
+footer.site a{color:#cbd5e1}
+@media print{
+  .no-print{display:none!important}
+  body{background:#fff}
+  .wrap{max-width:100%}
+  .card{box-shadow:none;break-inside:avoid}
+  .story{border:none}
+}
+@media(max-width:560px){
+  .hero-tool h1{font-size:1.55rem}
+  .gate-form input{min-width:100%}
+}
+</style>
+</head>
+<body>
+<header class="site no-print">
+  <div class="wrap nav">
+    <a class="brand" href="https://aashithk.github.io/leadloop/">Lead<span>Loop</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a>
+      <a href="https://aashithk.github.io/leadloop/#builder">Resume builder</a>
+      <a href="https://aashithk.github.io/leadloop/#series">Email series</a>
+      <a href="https://aashithk.github.io/leadloop/#coaching">Coaching</a>
+      <a href="https://aashithk.github.io/leadloop/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumbs no-print" aria-label="Breadcrumb">
+    <a href="https://aashithk.github.io/leadloop/">Home</a> ›
+    <a href="https://aashithk.github.io/leadloop/#toolkit">Interview prep toolkit</a> ›
+    STAR-L Story Builder
+  </nav>
+
+  <div class="hero-tool no-print">
+    <span class="badge">Interactive builder · story output free with email</span>
+    <h1>STAR-L Story Builder</h1>
+    <p class="lead">STAR gets you the interview story; the <strong>L — Leadership lessons</strong> is what levels it. Draft your story below, then unlock the formatted version to copy, download, or print.</p>
+  </div>
+
+  <section class="card" aria-labelledby="build-h">
+    <h2 id="build-h">Draft your story</h2>
+    <div class="tip"><strong>How STAR-L works:</strong> Situation (30s of context) → Task (what was asked of <em>you</em>) → Action (what <em>you</em> did, 60% of the story) → Result (outcomes with numbers) → Leadership lessons (what it taught you about leading). Aim for ~2 minutes spoken.</div>
+    <div class="field">
+      <label for="f-situation">Situation <span class="hint">the context, briefly</span></label>
+      <textarea id="f-situation" placeholder="e.g. Our checkout service started timing out during peak traffic, and the on-call was drowning in pages."></textarea>
+      <div class="wcount" id="w-situation" aria-live="polite">0 words</div>
+    </div>
+    <div class="field">
+      <label for="f-task">Task <span class="hint">what was specifically yours to do</span></label>
+      <textarea id="f-task" placeholder="e.g. I owned the checkout service and was asked to stop the bleeding without pausing feature work."></textarea>
+      <div class="wcount" id="w-task" aria-live="polite">0 words</div>
+    </div>
+    <div class="field">
+      <label for="f-action">Action <span class="hint">what you did — the longest section</span></label>
+      <textarea id="f-action" placeholder="e.g. I traced the timeouts to a lock on the inventory table, wrote a one-page proposal with three options, pre-wired the two skeptical tech leads, and led the migration to row-level locking over two weeks."></textarea>
+      <div class="wcount" id="w-action" aria-live="polite">0 words</div>
+    </div>
+    <div class="field">
+      <label for="f-result">Result <span class="hint">outcomes, with numbers if you have them</span></label>
+      <textarea id="f-result" placeholder="e.g. Timeouts dropped to zero, p99 latency fell 40%, and the runbook I wrote is still used by the team."></textarea>
+      <div class="wcount" id="w-result" aria-live="polite">0 words</div>
+    </div>
+    <div class="field">
+      <label for="f-lessons">Leadership lessons <span class="hint">the L — what this taught you</span></label>
+      <textarea id="f-lessons" placeholder="e.g. I learned that the proposal doc did more work than the code — the two skeptical leads became supporters because they were consulted before the decision, not after."></textarea>
+      <div class="wcount" id="w-lessons" aria-live="polite">0 words</div>
+    </div>
+    <div class="toolbar no-print">
+      <button type="button" class="btn btn-secondary" id="btn-example">Load fictional example</button>
+      <button type="button" class="btn btn-secondary" id="btn-clear">Clear</button>
+      <span class="fineprint">The example is fictional and illustrative — replace it with your own story.</span>
+    </div>
+  </section>
+
+  <section class="card no-print" id="gate-wrap" aria-labelledby="gate-h">
+    <h2 id="gate-h">Unlock your formatted story</h2>
+    <p>Enter your email to unlock the formatted story — copy it, download it as Markdown, or print it. One email — no account, no spam.</p>
+    <form class="gate-form" id="gate-form" novalidate>
+      <input type="text" id="g-name" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name">
+      <input type="email" id="g-email" name="email" placeholder="you@example.com" autocomplete="email" aria-label="Email address" required>
+      <button type="submit" class="btn btn-primary">Unlock my story</button>
+    </form>
+    <p class="err" id="g-err" role="alert"></p>
+    <p class="fineprint">Free forever. Unsubscribe anytime.</p>
+  </section>
+
+  <section class="card" id="story-output" hidden aria-labelledby="out-h">
+    <h2 id="out-h">Your STAR-L story</h2>
+    <div class="story" id="story-preview" aria-live="polite"></div>
+    <div class="toolbar no-print">
+      <button type="button" class="btn btn-primary" id="btn-copy-story">Copy story</button>
+      <button type="button" class="btn btn-secondary" id="btn-download-story">Download as Markdown</button>
+      <button type="button" class="btn btn-secondary" id="btn-print-story">Print</button>
+    </div>
+    <p class="status no-print" id="story-status" aria-live="polite"></p>
+  </section>
+
+  <section class="card" aria-labelledby="next-h">
+    <h2 id="next-h">Keep going</h2>
+    <ul>
+      <li><a href="hiring-committee-calibration.html">Hiring Committee Calibration</a> — check your story against the L5/L6/L7 lens.</li>
+      <li><a href="xfn-conflict-resolver.html">XFN Conflict Resolver</a> — turn a conflict into your next story.</li>
+      <li><a href="https://aashithk.github.io/leadloop/#toolkit">Back to the interview prep toolkit</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site no-print">
+  <div class="wrap">
+    <span>© 2026 LeadLoop. Built by Aashith Kamath.</span>
+    <span><a href="https://aashithk.github.io/leadloop/">Home</a> · <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var LS_KEY="leadloop_signups_v1";
+  var FIELDS=[
+    {id:"situation",label:"Situation"},
+    {id:"task",label:"Task"},
+    {id:"action",label:"Action"},
+    {id:"result",label:"Result"},
+    {id:"lessons",label:"Leadership lessons"}
+  ];
+  var EXAMPLE={
+    situation:"[Fictional example] Our checkout service started timing out during peak traffic, and the on-call rotation was getting paged every hour.",
+    task:"[Fictional example] I owned the checkout service. I was asked to stop the timeouts without pausing the team's feature commitments.",
+    action:"[Fictional example] I traced the timeouts to a table-level lock on inventory, wrote a one-page proposal comparing three fixes, pre-wired the two skeptical tech leads in 1:1s, and led the team through a two-week migration to row-level locking.",
+    result:"[Fictional example] Timeouts dropped to zero, p99 latency fell roughly 40%, and the runbook I wrote is still the team's reference.",
+    lessons:"[Fictional example] The proposal doc did more work than the code. The two skeptical leads became supporters because they were consulted before the decision, not informed after it."
+  };
+  function $(id){ return document.getElementById(id); }
+  function load(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"[]"); }catch(e){ return []; } }
+  function save(rows){ try{ localStorage.setItem(LS_KEY,JSON.stringify(rows)); }catch(e){} }
+  function validEmail(email){ return /^(?!.*\.\.)[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(String(email||"").trim()); }
+  function vals(){ var o={}; FIELDS.forEach(function(f){ o[f.id]=$("f-"+f.id).value.trim(); }); return o; }
+  function wordCount(s){ s=String(s||"").trim(); return s? s.split(/\s+/).length : 0; }
+
+  function starLMarkdown(){
+    var v=vals(), L=[];
+    L.push("# My STAR-L story");
+    L.push("");
+    FIELDS.forEach(function(f){
+      L.push("## "+f.label);
+      L.push("");
+      L.push(v[f.id] || "_[Not filled in yet]_");
+      L.push("");
+    });
+    L.push("---");
+    L.push("Built with LeadLoop — https://aashithk.github.io/leadloop/star-l-story-builder.html");
+    return L.join("\n");
+  }
+  function renderPreview(){
+    var v=vals(), html="";
+    FIELDS.forEach(function(f){
+      var body=v[f.id];
+      html+="<h3>"+f.label+"</h3>"+(body? "<p></p>" : "<p class=\"empty\">Not filled in yet.</p>");
+    });
+    $("story-preview").innerHTML=html;
+    // fill paragraphs safely
+    var ps=$("story-preview").querySelectorAll("p");
+    FIELDS.forEach(function(f,i){
+      if(v[f.id]){ ps[i].textContent=v[f.id]; ps[i].className=""; }
+    });
+  }
+  function renderCounts(){
+    FIELDS.forEach(function(f){
+      var c=wordCount($("f-"+f.id).value);
+      $("w-"+f.id).textContent=c+" word"+(c===1?"":"s");
+    });
+  }
+  function refresh(){ renderPreview(); renderCounts(); }
+  window.LeadLoop={starLMarkdown:starLMarkdown, refresh:refresh};
+
+  function unlock(){
+    $("story-output").hidden=false;
+    $("gate-wrap").style.display="none";
+    refresh();
+  }
+  if(load().length>0){ unlock(); }
+
+  FIELDS.forEach(function(f){
+    $("f-"+f.id).addEventListener("input",refresh);
+  });
+  $("btn-example").addEventListener("click",function(){
+    FIELDS.forEach(function(f){ $("f-"+f.id).value=EXAMPLE[f.id]; });
+    refresh();
+  });
+  $("btn-clear").addEventListener("click",function(){
+    FIELDS.forEach(function(f){ $("f-"+f.id).value=""; });
+    refresh();
+  });
+  $("gate-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var name=$("g-name").value.trim();
+    var email=$("g-email").value.trim();
+    var err=$("g-err");
+    if(!validEmail(email)){ err.textContent="Please enter a valid email address — e.g. you@example.com."; return; }
+    err.textContent="";
+    var rows=load();
+    if(!rows.some(function(r){ return r.email.toLowerCase()===email.toLowerCase(); })){
+      rows.push({name:name,email:email,ts:new Date().toISOString(),source:"star-l-story-builder"});
+      save(rows);
+    }
+    unlock();
+  });
+  $("g-email").addEventListener("input",function(){ $("g-err").textContent=""; });
+
+  function status(msg){ $("story-status").textContent=msg; }
+  $("btn-copy-story").addEventListener("click",function(){
+    var text=$("story-preview").innerText || FIELDS.map(function(f){
+      return f.label+":\n"+(vals()[f.id]||"[not filled in]");
+    }).join("\n\n");
+    function done(){ status("Story copied — paste it anywhere."); }
+    function fallback(){
+      var ta=document.createElement("textarea"); ta.value=text;
+      ta.style.position="fixed"; ta.style.opacity="0";
+      document.body.appendChild(ta); ta.select();
+      var ok=false; try{ ok=document.execCommand("copy"); }catch(e){}
+      ta.remove();
+      if(ok){ done(); } else { status("Copy was blocked by this browser — use Download as Markdown instead."); }
+    }
+    if(window.navigator&&window.navigator.clipboard&&window.navigator.clipboard.writeText){
+      window.navigator.clipboard.writeText(text).then(done,function(){ fallback(); });
+    }else{ fallback(); }
+  });
+  $("btn-download-story").addEventListener("click",function(){
+    var md=starLMarkdown();
+    try{
+      var blob=new Blob([md],{type:"text/markdown;charset=utf-8"});
+      var url=URL.createObjectURL(blob);
+      var a=document.createElement("a");
+      a.href=url; a.download="my-star-l-story.md";
+      document.body.appendChild(a); a.click();
+      setTimeout(function(){ try{URL.revokeObjectURL(url);}catch(e){} a.remove(); },500);
+      status("Download started — check your downloads folder.");
+    }catch(e){ status("Download failed in this browser — use Copy story instead."); }
+  });
+  $("btn-print-story").addEventListener("click",function(){ window.print(); });
+})();
+</script>
+</body>
+</html>

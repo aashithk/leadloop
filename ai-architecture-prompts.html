@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Architecture Prompts: Practice Library | LeadLoop</title>
+<meta name="description" content="14 searchable AI-era architecture prompts — agents, RAG, evals, cost, system design interviews. Filter, copy, practice. Free download with email.">
+<link rel="canonical" href="https://aashithk.github.io/leadloop/ai-architecture-prompts.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Architecture Prompts: Practice Library | LeadLoop">
+<meta property="og:description" content="Searchable library of AI-era architecture prompts for interview prep. Filter by category, copy, practice.">
+<meta property="og:url" content="https://aashithk.github.io/leadloop/ai-architecture-prompts.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Architecture Prompts: Practice Library | LeadLoop">
+<meta name="twitter:description" content="14 AI-era architecture prompts — agentic systems, RAG, evals, cost, system design. Search, filter, copy.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "AI Architecture Prompts: Practice Library",
+  "url": "https://aashithk.github.io/leadloop/ai-architecture-prompts.html",
+  "description": "Searchable, filterable library of AI-era architecture practice prompts for interview preparation.",
+  "isPartOf": { "@type": "WebSite", "name": "LeadLoop", "url": "https://aashithk.github.io/leadloop/" },
+  "publisher": { "@type": "Person", "name": "Aashith Kamath" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aashithk.github.io/leadloop/" },
+    { "@type": "ListItem", "position": 2, "name": "Interview prep toolkit", "item": "https://aashithk.github.io/leadloop/#toolkit" },
+    { "@type": "ListItem", "position": 3, "name": "AI Architecture Prompts" }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#0e1a2b; --ink-soft:#33415c; --muted:#64748b;
+  --bg:#f7f9fc; --card:#ffffff; --line:#e2e8f0;
+  --accent:#0f766e; --accent-dark:#0b5c56; --accent-soft:#e6f4f2;
+  --gold:#b45309; --gold-soft:#fef6e7;
+  --radius:14px; --shadow:0 10px 30px rgba(14,26,43,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.site{background:#0e1a2b;color:#fff;position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
+.brand span{color:#5eead4}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:#cbd5e1;text-decoration:none;font-size:.92rem}
+.nav-links a:hover{color:#fff}
+.crumbs{font-size:.85rem;color:var(--muted);margin:22px 0 6px}
+.crumbs a{color:var(--accent);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.hero-tool{padding:26px 0 8px}
+.hero-tool h1{font-size:2rem;line-height:1.2;margin:.2em 0;letter-spacing:-.02em}
+.lead{font-size:1.08rem;color:var(--ink-soft);max-width:660px}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;margin-bottom:6px}
+.disclaimer{background:var(--gold-soft);border:1px solid #f3d9a4;border-radius:10px;padding:12px 16px;font-size:.9rem;color:#7c4a03;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;margin:22px 0}
+.card h2{margin-top:0;font-size:1.3rem}
+.card ul{margin:.4em 0;padding-left:1.2em}
+.card li{margin:.35em 0}
+.btn{display:inline-block;border:none;cursor:pointer;font:inherit;font-weight:700;border-radius:10px;padding:12px 22px;text-decoration:none;font-size:1rem}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-small{padding:8px 16px;font-size:.88rem}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.gate-form input{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;min-width:200px;flex:1}
+.err{color:#b91c1c;font-size:.88rem;min-height:1.4em;margin:6px 0 0}
+.fineprint{font-size:.82rem;color:var(--muted);margin-top:10px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0;align-items:center}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0;align-items:flex-end}
+.filters .f{flex:1;min-width:180px}
+.filters label{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px}
+.filters input,.filters select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;width:100%;background:#fff}
+.count{font-size:.92rem;color:var(--muted);margin:8px 0}
+.prompt{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:12px 0}
+.prompt h3{margin:0 0 6px;font-size:1.05rem}
+.prompt .cat{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-weight:700;font-size:.78rem;padding:2px 10px;border-radius:999px;margin-right:8px}
+.prompt .tags{font-size:.82rem;color:var(--muted)}
+.prompt .body{margin:10px 0;color:var(--ink-soft);font-size:.95rem}
+.prompt .row{display:flex;justify-content:flex-end;gap:10px;align-items:center;flex-wrap:wrap}
+.copied{font-size:.85rem;color:var(--accent-dark);font-weight:700;min-height:1.4em}
+.lock-note{background:#0e1a2b;color:#fff;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:.95rem}
+.lock-note strong{color:#5eead4}
+.empty{color:var(--muted);font-style:italic;padding:20px;text-align:center}
+footer.site{background:#0e1a2b;color:#94a3b8;padding:28px 0;margin-top:40px;font-size:.88rem}
+footer.site a{color:#cbd5e1}
+@media print{
+  .no-print{display:none!important}
+  body{background:#fff}
+  .wrap{max-width:100%}
+  .card{box-shadow:none;break-inside:avoid}
+  .prompt{break-inside:avoid}
+}
+@media(max-width:560px){
+  .hero-tool h1{font-size:1.55rem}
+  .gate-form input{min-width:100%}
+}
+</style>
+</head>
+<body>
+<header class="site no-print">
+  <div class="wrap nav">
+    <a class="brand" href="https://aashithk.github.io/leadloop/">Lead<span>Loop</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a>
+      <a href="https://aashithk.github.io/leadloop/#builder">Resume builder</a>
+      <a href="https://aashithk.github.io/leadloop/#series">Email series</a>
+      <a href="https://aashithk.github.io/leadloop/#coaching">Coaching</a>
+      <a href="https://aashithk.github.io/leadloop/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumbs no-print" aria-label="Breadcrumb">
+    <a href="https://aashithk.github.io/leadloop/">Home</a> ›
+    <a href="https://aashithk.github.io/leadloop/#toolkit">Interview prep toolkit</a> ›
+    AI Architecture Prompts
+  </nav>
+
+  <div class="hero-tool no-print">
+    <span class="badge">14 prompts · 5 categories</span>
+    <h1>AI Architecture Prompts</h1>
+    <p class="lead">System design interviews changed: now they ask about agents, RAG, evals, and inference cost. Search and filter this practice library, copy a prompt, and whiteboard it like it's the real loop.</p>
+  </div>
+
+  <div class="disclaimer" role="note">
+    <strong>Practice prompts, not predictions.</strong> These are study prompts written for interview preparation. They are not real interview questions from any company and imply nothing about what any specific loop will ask.
+  </div>
+
+  <section class="card" aria-labelledby="lib-h">
+    <h2 id="lib-h">The library</h2>
+    <div class="filters no-print">
+      <div class="f">
+        <label for="f-search">Search prompts</label>
+        <input type="search" id="f-search" placeholder="e.g. agent, RAG, eval…" autocomplete="off">
+      </div>
+      <div class="f">
+        <label for="f-cat">Category</label>
+        <select id="f-cat">
+          <option value="">All categories</option>
+          <option value="agents">Agentic systems</option>
+          <option value="rag">RAG &amp; retrieval</option>
+          <option value="eval">Eval &amp; safety</option>
+          <option value="cost">Scaling &amp; cost</option>
+          <option value="interviews">System design interviews</option>
+        </select>
+      </div>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div id="prompts"></div>
+  </section>
+
+  <section class="card" aria-labelledby="dl-h">
+    <h2 id="dl-h">Download the full library</h2>
+    <div id="dl-locked" class="no-print">
+      <div class="lock-note"><strong>🔒 The Markdown download is locked.</strong> Enter your email below to unlock it — all 14 prompts, formatted for your notes.</div>
+    </div>
+    <div id="dl-ready" hidden>
+      <p>Your download is unlocked. Take the whole library with you:</p>
+      <div class="toolbar no-print">
+        <button type="button" class="btn btn-primary" id="btn-download">Download as Markdown</button>
+        <button type="button" class="btn btn-secondary" id="btn-print">Print library</button>
+      </div>
+    </div>
+    <section class="no-print" id="gate-wrap" aria-labelledby="gate-h">
+      <h2 id="gate-h">Unlock the download</h2>
+      <p>Enter your email to unlock the Markdown download. One email — no account, no spam.</p>
+      <form class="gate-form" id="gate-form" novalidate>
+        <input type="text" id="g-name" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name">
+        <input type="email" id="g-email" name="email" placeholder="you@example.com" autocomplete="email" aria-label="Email address" required>
+        <button type="submit" class="btn btn-primary">Unlock download</button>
+      </form>
+      <p class="err" id="g-err" role="alert"></p>
+      <p class="fineprint">Free forever. Unsubscribe anytime.</p>
+    </section>
+  </section>
+
+  <section class="card" aria-labelledby="next-h">
+    <h2 id="next-h">Keep going</h2>
+    <ul>
+      <li><a href="system-design-pitch-sheet.html">System Design Pitch Sheet</a> — a reusable structure for any design round.</li>
+      <li><a href="staff-scope-calculator.html">Staff Scope Calculator</a> — check your scope before the loop.</li>
+      <li><a href="https://aashithk.github.io/leadloop/#toolkit">Back to the interview prep toolkit</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site no-print">
+  <div class="wrap">
+    <span>© 2026 LeadLoop. Built by Aashith Kamath.</span>
+    <span><a href="https://aashithk.github.io/leadloop/">Home</a> · <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var LS_KEY="leadloop_signups_v1";
+  var PROMPTS=[
+    {t:"Design a code-review agent",c:"agents",tags:"tools, planning, feedback loops",
+     b:"Design an agent that reviews pull requests end to end: it reads the diff, runs relevant checks, and posts comments. Cover the tool interface, how the agent decides what to check, how you bound its runtime, and what happens when it disagrees with the author."},
+    {t:"Agent tool-use failure modes",c:"agents",tags:"reliability, error handling",
+     b:"An agent with shell and API tools occasionally deletes the wrong resource. Walk through the failure modes of tool-calling agents and design the guardrails: confirmation policies, dry runs, blast-radius limits, and audit trails."},
+    {t:"Multi-agent orchestration",c:"agents",tags:"coordination, scaling",
+     b:"Design a system where a planner agent delegates to specialist agents (researcher, coder, critic). How do they communicate? How do you prevent infinite delegation loops, and how do you attribute cost and latency to each agent?"},
+    {t:"Design a RAG pipeline",c:"rag",tags:"embeddings, retrieval, grounding",
+     b:"Design retrieval-augmented generation over a 10M-document corpus with daily updates. Cover chunking, embedding choice, index structure, retrieval ranking, and how you keep answers grounded when the retrieved context is thin."},
+    {t:"Chunking strategy trade-offs",c:"rag",tags:"chunking, precision vs recall",
+     b:"Your RAG answers degrade on long legal documents. Compare fixed-size chunking, semantic chunking, and hierarchical retrieval. How would you evaluate which one actually helps, and what breaks when documents get updated?"},
+    {t:"Hybrid search ranking",c:"rag",tags:"bm25, reranking, evaluation",
+     b:"Design hybrid keyword + vector search with a reranking stage for a support-docs assistant. How do you combine the signals, where does the reranker run, and what latency budget does each stage get?"},
+    {t:"Design an eval harness for an LLM feature",c:"eval",tags:"golden sets, regression, metrics",
+     b:"You ship an LLM-powered summarizer to production. Design the evaluation harness: golden dataset construction, automated judges vs human review, regression gates in CI, and how you detect silent quality drift after launch."},
+    {t:"Guardrails for a customer-facing agent",c:"eval",tags:"safety, policy, red-teaming",
+     b:"Design the safety layer for an agent that talks to customers and can issue refunds. Cover prompt-injection defenses, policy enforcement points, human-in-the-loop thresholds, and how you red-team it before launch."},
+    {t:"Measuring hallucinations in production",c:"eval",tags:"monitoring, grounding, alerting",
+     b:"Design production monitoring for factual accuracy of an LLM assistant. What signals do you log, how do you sample for human review, and what alert fires when grounding quality drops?"},
+    {t:"Cost control for LLM inference at scale",c:"cost",tags:"caching, routing, budgets",
+     b:"Your LLM feature costs 10x projections at 1M requests/day. Design the cost-control architecture: prompt caching, model routing (small vs large), batching, request budgets per tenant, and the dashboards that make spend visible."},
+    {t:"Latency budget for a real-time assistant",c:"cost",tags:"streaming, TTFT, SLOs",
+     b:"Design a voice assistant with a 2-second end-to-end latency SLO. Break the budget across speech-to-text, LLM time-to-first-token, token streaming, and text-to-speech. What do you degrade first when the budget blows?"},
+    {t:"Model upgrade rollout",c:"cost",tags:"versioning, rollback, A/B",
+     b:"Design a safe rollout for swapping the model behind a production feature. Cover versioning, shadow traffic, quality A/B gates, per-tenant pinning, and the rollback story when the new model regresses on one use case."},
+    {t:"Design recommendations with LLM reranking",c:"interviews",tags:"ranking, personalization, scale",
+     b:"Design a video recommendation system for 100M users where an LLM reranks the top candidates. Cover the candidate-generation stage, where the LLM sits in the serving path, caching of rerank results, and how you train the ranker without the LLM in the loop."},
+    {t:"Feature-flagged rollout for a model upgrade",c:"interviews",tags:"experimentation, safety, rollout",
+     b:"You are rolling out a new ranking model to 10% of traffic. Design the flagging infrastructure, the guardrail metrics that auto-halt the rollout, and how you distinguish a real regression from normal traffic variance."}
+  ];
+  var CAT_LABEL={agents:"Agentic systems",rag:"RAG & retrieval",eval:"Eval & safety",cost:"Scaling & cost",interviews:"System design interviews"};
+
+  function $(id){ return document.getElementById(id); }
+  function load(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"[]"); }catch(e){ return []; } }
+  function save(rows){ try{ localStorage.setItem(LS_KEY,JSON.stringify(rows)); }catch(e){} }
+  function validEmail(email){ return /^(?!.*\.\.)[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(String(email||"").trim()); }
+  function isUnlocked(){ return load().length>0; }
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+  function filtered(){
+    var q=$("f-search").value.trim().toLowerCase();
+    var c=$("f-cat").value;
+    return PROMPTS.filter(function(p){
+      var hay=(p.t+" "+p.b+" "+p.tags+" "+CAT_LABEL[p.c]).toLowerCase();
+      return (!c || p.c===c) && (!q || hay.indexOf(q)!==-1);
+    });
+  }
+  function render(){
+    var list=filtered();
+    var box=$("prompts");
+    $("count").textContent=list.length+" of "+PROMPTS.length+" prompts";
+    if(!list.length){ box.innerHTML='<p class="empty">No prompts match. Try a different search or category.</p>'; return; }
+    box.innerHTML=list.map(function(p,i){
+      return '<article class="prompt"><h3><span class="cat">'+esc(CAT_LABEL[p.c])+'</span>'+esc(p.t)+'</h3>'+
+        '<div class="tags">'+esc(p.tags)+'</div>'+
+        '<p class="body">'+esc(p.b)+'</p>'+
+        '<div class="row no-print"><span class="copied" id="copied-'+i+'" aria-live="polite"></span>'+
+        '<button type="button" class="btn btn-secondary btn-small" data-copy="'+i+'">Copy prompt</button></div></article>';
+    }).join("");
+  }
+  window.LeadLoop={PROMPTS:PROMPTS, filtered:filtered, markdown:markdown};
+
+  function copyText(text, okCb, failCb){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(okCb, function(){ fallbackCopy(text, okCb, failCb); });
+    } else { fallbackCopy(text, okCb, failCb); }
+  }
+  function fallbackCopy(text, okCb, failCb){
+    try{
+      var ta=document.createElement("textarea");
+      ta.value=text; ta.style.position="fixed"; ta.style.opacity="0";
+      document.body.appendChild(ta); ta.select();
+      var ok=document.execCommand("copy");
+      document.body.removeChild(ta);
+      if(ok) okCb(); else failCb();
+    }catch(e){ failCb(); }
+  }
+
+  $("prompts").addEventListener("click",function(ev){
+    var b=ev.target.closest("[data-copy]");
+    if(!b) return;
+    var idx=parseInt(b.getAttribute("data-copy"),10);
+    var p=filtered()[idx];
+    if(!p) return;
+    var msg=$("copied-"+idx);
+    copyText(p.t+"\n\n"+p.b,
+      function(){ msg.textContent="Copied ✓"; },
+      function(){ msg.textContent="Copy blocked — select the text manually."; });
+  });
+
+  function markdown(){
+    var lines=["# LeadLoop — AI Architecture Prompts",""];
+    PROMPTS.forEach(function(p){
+      lines.push("## "+p.t,"","*Category: "+CAT_LABEL[p.c]+" · Tags: "+p.tags+"*","",p.b,"");
+    });
+    return lines.join("\n");
+  }
+  $("btn-download").addEventListener("click",function(){
+    var blob=new Blob([markdown()],{type:"text/markdown"});
+    var a=document.createElement("a");
+    a.href=URL.createObjectURL(blob);
+    a.download="leadloop-ai-architecture-prompts.md";
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); },100);
+  });
+  $("btn-print").addEventListener("click",function(){ window.print(); });
+
+  $("f-search").addEventListener("input",render);
+  $("f-cat").addEventListener("change",render);
+
+  function applyUnlock(){
+    $("dl-ready").hidden=false;
+    $("dl-locked").style.display="none";
+    $("gate-wrap").hidden=true;
+  }
+  $("gate-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var name=$("g-name").value.trim();
+    var email=$("g-email").value.trim();
+    var err=$("g-err");
+    if(!validEmail(email)){ err.textContent="Please enter a valid email address — e.g. you@example.com."; return; }
+    err.textContent="";
+    var rows=load();
+    if(!rows.some(function(rr){ return rr.email.toLowerCase()===email.toLowerCase(); })){
+      rows.push({name:name,email:email,ts:new Date().toISOString(),source:"ai-architecture-prompts"});
+      save(rows);
+    }
+    applyUnlock();
+  });
+  $("g-email").addEventListener("input",function(){ $("g-err").textContent=""; });
+
+  if(isUnlocked()){ applyUnlock(); }
+  render();
+})();
+</script>
+</body>
+</html>

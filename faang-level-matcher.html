@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAANG Level Matcher: Map Your Title to Levels | LeadLoop</title>
+<meta name="description" content="Senior at a startup, staff at Big Tech? Map your title, company type, and scope to approximate Google, Meta, Netflix levels. Levels only — no salary figures.">
+<link rel="canonical" href="https://aashithk.github.io/leadloop/faang-level-matcher.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FAANG Level Matcher: Map Your Title to Levels | LeadLoop">
+<meta property="og:description" content="Map your title, company type, and scope to approximate Google, Meta, and Netflix levels. Free with email for the full breakdown.">
+<meta property="og:url" content="https://aashithk.github.io/leadloop/faang-level-matcher.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FAANG Level Matcher: Map Your Title to Levels | LeadLoop">
+<meta name="twitter:description" content="What does your title mean at Google, Meta, and Netflix? Get an approximate level mapping in 60 seconds.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "FAANG Level Matcher: Map Your Title to Levels",
+  "url": "https://aashithk.github.io/leadloop/faang-level-matcher.html",
+  "description": "Interactive tool mapping a job title, company type, and scope to approximate Google, Meta, and Netflix engineering levels.",
+  "isPartOf": { "@type": "WebSite", "name": "LeadLoop", "url": "https://aashithk.github.io/leadloop/" },
+  "publisher": { "@type": "Person", "name": "Aashith Kamath" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aashithk.github.io/leadloop/" },
+    { "@type": "ListItem", "position": 2, "name": "Interview prep toolkit", "item": "https://aashithk.github.io/leadloop/#toolkit" },
+    { "@type": "ListItem", "position": 3, "name": "FAANG Level Matcher" }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#0e1a2b; --ink-soft:#33415c; --muted:#64748b;
+  --bg:#f7f9fc; --card:#ffffff; --line:#e2e8f0;
+  --accent:#0f766e; --accent-dark:#0b5c56; --accent-soft:#e6f4f2;
+  --gold:#b45309; --gold-soft:#fef6e7;
+  --radius:14px; --shadow:0 10px 30px rgba(14,26,43,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.site{background:#0e1a2b;color:#fff;position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
+.brand span{color:#5eead4}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:#cbd5e1;text-decoration:none;font-size:.92rem}
+.nav-links a:hover{color:#fff}
+.crumbs{font-size:.85rem;color:var(--muted);margin:22px 0 6px}
+.crumbs a{color:var(--accent);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.hero-tool{padding:26px 0 8px}
+.hero-tool h1{font-size:2rem;line-height:1.2;margin:.2em 0;letter-spacing:-.02em}
+.lead{font-size:1.08rem;color:var(--ink-soft);max-width:660px}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;margin-bottom:6px}
+.disclaimer{background:var(--gold-soft);border:1px solid #f3d9a4;border-radius:10px;padding:12px 16px;font-size:.9rem;color:#7c4a03;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;margin:22px 0}
+.card h2{margin-top:0;font-size:1.3rem}
+.card h3{font-size:1.05rem;margin:1.4em 0 .4em;color:var(--accent-dark)}
+.card ul{margin:.4em 0;padding-left:1.2em}
+.card li{margin:.35em 0}
+.btn{display:inline-block;border:none;cursor:pointer;font:inherit;font-weight:700;border-radius:10px;padding:12px 22px;text-decoration:none;font-size:1rem}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-secondary{background:#fff;color:var(--accent-dark);border:2px solid var(--accent)}
+.btn-secondary:hover{background:var(--accent-soft)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.field{margin:14px 0}
+.field label{display:block;font-weight:700;margin-bottom:6px}
+.field input,.field select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;width:100%;max-width:420px;background:#fff}
+.field .hint{font-size:.85rem;color:var(--muted);margin-top:4px}
+.gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.gate-form input{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;min-width:200px;flex:1}
+.err{color:#b91c1c;font-size:.88rem;min-height:1.4em;margin:6px 0 0}
+.fineprint{font-size:.82rem;color:var(--muted);margin-top:10px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0;align-items:center}
+.lvl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+.lvl{background:var(--accent-soft);border-radius:10px;padding:14px 16px;text-align:center}
+.lvl .co{font-size:.85rem;color:var(--muted);font-weight:600}
+.lvl .v{font-size:1.6rem;font-weight:800;color:var(--accent-dark)}
+.why{background:#f1f5f9;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:.95rem}
+.why strong{color:var(--accent-dark)}
+.lock-note{background:#0e1a2b;color:#fff;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:.95rem}
+.lock-note strong{color:#5eead4}
+.next-lvl{background:var(--accent-soft);border-left:4px solid var(--accent);padding:12px 16px;border-radius:0 10px 10px 0;margin:12px 0}
+footer.site{background:#0e1a2b;color:#94a3b8;padding:28px 0;margin-top:40px;font-size:.88rem}
+footer.site a{color:#cbd5e1}
+@media print{
+  .no-print{display:none!important}
+  body{background:#fff}
+  .wrap{max-width:100%}
+  .card{box-shadow:none;break-inside:avoid}
+}
+@media(max-width:560px){
+  .hero-tool h1{font-size:1.55rem}
+  .gate-form input{min-width:100%}
+}
+</style>
+</head>
+<body>
+<header class="site no-print">
+  <div class="wrap nav">
+    <a class="brand" href="https://aashithk.github.io/leadloop/">Lead<span>Loop</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a>
+      <a href="https://aashithk.github.io/leadloop/#builder">Resume builder</a>
+      <a href="https://aashithk.github.io/leadloop/#series">Email series</a>
+      <a href="https://aashithk.github.io/leadloop/#coaching">Coaching</a>
+      <a href="https://aashithk.github.io/leadloop/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumbs no-print" aria-label="Breadcrumb">
+    <a href="https://aashithk.github.io/leadloop/">Home</a> ›
+    <a href="https://aashithk.github.io/leadloop/#toolkit">Interview prep toolkit</a> ›
+    FAANG Level Matcher
+  </nav>
+
+  <div class="hero-tool no-print">
+    <span class="badge">Levels only · 60 seconds</span>
+    <h1>FAANG Level Matcher</h1>
+    <p class="lead">"Senior" at a 20-person startup isn't "Senior" at Google. Enter your title, company type, and scope — get your approximate Google, Meta, and Netflix level mapping.</p>
+  </div>
+
+  <div class="disclaimer" role="note">
+    <strong>Approximate, not official.</strong> Level structures below are widely reported public conventions, not official statements from any company — companies do not endorse this tool. No salary figures anywhere: this is about leveling, not comp.
+  </div>
+
+  <section class="card" aria-labelledby="form-h">
+    <h2 id="form-h">Your current role</h2>
+    <form id="match-form" novalidate>
+      <div class="field">
+        <label for="m-title">Your current title</label>
+        <input type="text" id="m-title" name="title" placeholder="e.g. Senior Software Engineer" autocomplete="organization-title">
+        <div class="hint">The title on your offer letter or LinkedIn.</div>
+      </div>
+      <div class="field">
+        <label for="m-company">Company type</label>
+        <select id="m-company" name="company">
+          <option value="">Choose one…</option>
+          <option value="bigtech">Big Tech (Google, Meta, Amazon, Microsoft-scale)</option>
+          <option value="late">Late-stage startup (500+ employees)</option>
+          <option value="mid">Mid-size company (50–500 employees)</option>
+          <option value="early">Early startup (under 50 employees)</option>
+          <option value="nontech">Non-tech company (bank, retailer, agency…)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="m-scope">Your scope</label>
+        <select id="m-scope" name="scope">
+          <option value="">Choose one…</option>
+          <option value="team">One team — I own features/components</option>
+          <option value="multi">Multiple teams — my work crosses team lines</option>
+          <option value="org">Org-wide — I set direction others follow</option>
+        </select>
+      </div>
+      <p class="err" id="m-err" role="alert"></p>
+      <div class="toolbar no-print">
+        <button type="submit" class="btn btn-primary">Match my levels</button>
+        <button type="button" class="btn btn-secondary" id="btn-retake" hidden>Start over</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="card" id="results" hidden aria-labelledby="res-h" aria-live="polite">
+    <h2 id="res-h">Your approximate mapping</h2>
+    <p class="fineprint" id="res-input-line"></p>
+    <div class="lvl-grid">
+      <div class="lvl"><div class="co">Google</div><div class="v" id="lvl-google">–</div></div>
+      <div class="lvl"><div class="co">Meta</div><div class="v" id="lvl-meta">–</div></div>
+      <div class="lvl"><div class="co">Netflix</div><div class="v" id="lvl-netflix">–</div></div>
+    </div>
+
+    <div id="detail-locked" class="no-print">
+      <div class="lock-note"><strong>🔒 The detailed breakdown is locked.</strong> Enter your email below to unlock <em>why</em> you map here — and what changes the mapping at the next level.</div>
+    </div>
+    <div id="detail" hidden>
+      <h3>Why this mapping</h3>
+      <div class="why" id="why-box"></div>
+      <h3>What changes it</h3>
+      <div class="next-lvl" id="next-box"></div>
+    </div>
+
+    <section class="no-print" id="gate-wrap" aria-labelledby="gate-h">
+      <h2 id="gate-h">Unlock the breakdown</h2>
+      <p>Enter your email to unlock the full mapping rationale and next-level plan. One email — no account, no spam.</p>
+      <form class="gate-form" id="gate-form" novalidate>
+        <input type="text" id="g-name" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name">
+        <input type="email" id="g-email" name="email" placeholder="you@example.com" autocomplete="email" aria-label="Email address" required>
+        <button type="submit" class="btn btn-primary">Unlock breakdown</button>
+      </form>
+      <p class="err" id="g-err" role="alert"></p>
+      <p class="fineprint">Free forever. Unsubscribe anytime.</p>
+    </section>
+  </section>
+
+  <section class="card" aria-labelledby="next-h">
+    <h2 id="next-h">Keep going</h2>
+    <ul>
+      <li><a href="staff-scope-calculator.html">Staff Scope Calculator</a> — check whether your scope matches the level you're targeting.</li>
+      <li><a href="hiring-committee-calibration.html">Hiring Committee Calibration</a> — see how each level reads in the hiring room.</li>
+      <li><a href="https://aashithk.github.io/leadloop/#toolkit">Back to the interview prep toolkit</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site no-print">
+  <div class="wrap">
+    <span>© 2026 LeadLoop. Built by Aashith Kamath.</span>
+    <span><a href="https://aashithk.github.io/leadloop/">Home</a> · <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var LS_KEY="leadloop_signups_v1";
+  function $(id){ return document.getElementById(id); }
+  function load(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"[]"); }catch(e){ return []; } }
+  function save(rows){ try{ localStorage.setItem(LS_KEY,JSON.stringify(rows)); }catch(e){} }
+  function validEmail(email){ return /^(?!.*\.\.)[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(String(email||"").trim()); }
+  function isUnlocked(){ return load().length>0; }
+
+  // Heuristic seniority extraction. Returns a base rank 1..5:
+  // 1 junior, 2 mid, 3 senior, 4 staff, 5 senior staff+.
+  function baseRank(title){
+    var t=String(title||"").toLowerCase();
+    if(/(principal|distinguished|fellow|vp|director|architect)/.test(t)) return 5;
+    if(/(staff|senior staff|lead|tech lead|engineering manager)/.test(t)) return 4;
+    if(/senior|sr\.?\b|iii|3\b/.test(t)) return 3;
+    if(/(junior|jr\.?\b|associate|intern| i\b|1\b)/.test(t)) return 1;
+    if(/(software engineer|swe|developer|engineer)/.test(t)) return 2;
+    return 2; // unknown -> mid baseline, stated as heuristic
+  }
+  // Company-type deflation: titles inflate outside Big Tech.
+  function companyAdj(company){
+    switch(company){
+      case "bigtech": return 0;
+      case "late": return -0.5;
+      case "mid": return -1;
+      case "early": return -1.5;
+      case "nontech": return -1;
+      default: return 0;
+    }
+  }
+  function scopeAdj(scope){
+    switch(scope){
+      case "team": return 0;
+      case "multi": return 0.5;
+      case "org": return 1;
+      default: return 0;
+    }
+  }
+  // rank scale 1..5 maps to Google L3..L7, Meta IC4..IC7(+), Netflix bands.
+  var GOOGLE=["","L3","L4","L5","L6","L7"];
+  var META=["","IC4","IC5","IC6","IC7","IC7+"];
+  var NETFLIX=["","Engineer","Senior Engineer","Senior Engineer","Staff Engineer","Senior Staff Engineer"];
+  function compute(title, company, scope){
+    title=String(title||"").trim();
+    if(!title) return {error:"Please enter your current title."};
+    if(!company) return {error:"Please choose your company type."};
+    if(!scope) return {error:"Please choose your scope."};
+    var raw=baseRank(title)+companyAdj(company)+scopeAdj(scope);
+    var rank=Math.max(1,Math.min(5,Math.round(raw)));
+    return {
+      title:title, company:company, scope:scope,
+      rank:rank,
+      google:GOOGLE[rank], meta:META[rank], netflix:NETFLIX[rank],
+      rankRaw:raw
+    };
+  }
+  window.LeadLoop={compute:compute, baseRank:baseRank};
+
+  var COMPANY_LABEL={bigtech:"Big Tech",late:"late-stage startup",mid:"mid-size company",early:"early startup",nontech:"non-tech company"};
+  var SCOPE_LABEL={team:"one team",multi:"multiple teams",org:"org-wide"};
+
+  function renderDetail(r){
+    var why="<p><strong>"+esc(r.title)+"</strong> at a <strong>"+COMPANY_LABEL[r.company]+"</strong> with <strong>"+SCOPE_LABEL[r.scope]+"</strong> scope maps to rank "+r.rank+" of 5 on our heuristic scale.</p>";
+    why+="<p>Title keywords set the baseline; company type adjusts for title inflation (titles mean more at smaller companies); scope adjusts for the denominator of your impact. This is a pattern-matching heuristic, not an official mapping.</p>";
+    $("why-box").innerHTML=why;
+    var next="";
+    if(r.rank>=5){ next="<p>You're at the top of this scale ("+r.google+" / "+r.meta+"). Beyond this, leveling is about org-level impact and is highly company-specific — calibration conversations, not tools, are how it gets decided.</p>"; }
+    else{
+      next="<p>To credibly read one level up ("+GOOGLE[r.rank+1]+" / "+META[r.rank+1]+"), the pattern that changes the mapping is scope: move your denominator from "+SCOPE_LABEL[r.scope]+" to the next rung, and make it legible — design docs, decisions, and adoption by teams beyond your own.</p>";
+    }
+    $("next-box").innerHTML=next;
+  }
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+  function applyUnlock(){
+    $("detail").hidden=false;
+    $("detail-locked").style.display="none";
+    $("gate-wrap").hidden=true;
+  }
+  function showResults(r){
+    $("results").hidden=false;
+    $("res-input-line").textContent="Based on: “"+r.title+"” · "+COMPANY_LABEL[r.company]+" · "+SCOPE_LABEL[r.scope]+" scope";
+    $("lvl-google").textContent=r.google;
+    $("lvl-meta").textContent=r.meta;
+    $("lvl-netflix").textContent=r.netflix;
+    renderDetail(r);
+    if(isUnlocked()){ applyUnlock(); }
+    else { $("detail").hidden=true; $("detail-locked").style.display=""; $("gate-wrap").hidden=false; }
+    $("btn-retake").hidden=false;
+    var res=$("results");
+    if(res.scrollIntoView){ try{ res.scrollIntoView(); }catch(e){} }
+  }
+
+  $("match-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var r=compute($("m-title").value,$("m-company").value,$("m-scope").value);
+    if(r.error){ $("m-err").textContent=r.error; return; }
+    $("m-err").textContent="";
+    showResults(r);
+  });
+  $("btn-retake").addEventListener("click",function(){
+    $("m-title").value=""; $("m-company").value=""; $("m-scope").value="";
+    $("results").hidden=true; $("m-err").textContent="";
+    var top=$("form-h");
+    if(top.scrollIntoView){ try{ top.scrollIntoView(); }catch(e){} }
+  });
+  $("gate-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var name=$("g-name").value.trim();
+    var email=$("g-email").value.trim();
+    var err=$("g-err");
+    if(!validEmail(email)){ err.textContent="Please enter a valid email address — e.g. you@example.com."; return; }
+    err.textContent="";
+    var rows=load();
+    if(!rows.some(function(rr){ return rr.email.toLowerCase()===email.toLowerCase(); })){
+      rows.push({name:name,email:email,ts:new Date().toISOString(),source:"faang-level-matcher"});
+      save(rows);
+    }
+    applyUnlock();
+  });
+  $("g-email").addEventListener("input",function(){ $("g-err").textContent=""; });
+})();
+</script>
+</body>
+</html>

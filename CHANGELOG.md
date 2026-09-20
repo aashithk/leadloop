@@ -2,6 +2,23 @@
 
 Newest first. The feature pipeline (F2–F12) prepends its own entries as each feature ships.
 
+## 2026-09-20 — F5: STAR-L Story Builder (live)
+
+- Live page: https://aashithk.github.io/leadloop/star-l-story-builder.html
+- What it is: interactive STAR-L builder — Situation, Task, Action, Result,
+  Leadership lessons — with live word counts, a fictional-example loader,
+  and clear. The formatted story output (live preview + copy + Markdown
+  download + print) unlocks via email gate (localStorage list
+  `leadloop_signups_v1`, `source:"star-l-story-builder"`; existing
+  subscribers bypass; duplicates not stored twice).
+- Tests: `tests/e2e/f5.test.js` — **77/77 pass** (five-field builder, live
+  word counts, example loader/clear, gated output, markdown section
+  coverage, copy/download/print flows, fictional-example + banned-claim
+  scan, SEO hygiene, link resolution, accessibility basics).
+- Persona validation: **5/5 reach buy mode** (Priya, Rahul, Mei, Arjun, Sara).
+- SEO: dedicated title/meta/canonical/OG/Twitter, WebPage + BreadcrumbList
+  JSON-LD, homepage toolkit card #5, sitemap entry.
+
 ## 2026-09-20 — F4: XFN Conflict Resolver (live)
 
 - Live page: https://aashithk.github.io/leadloop/xfn-conflict-resolver.html
@@ -73,5 +90,6 @@ Newest first. The feature pipeline (F2–F12) prepends its own entries as each f
   JSON-LD, homepage toolkit card + `#toolkit` nav link, sitemap entry.
 - Homepage regression green (no JS errors, toolkit hub present, exactly one H1,
   valid sitemap).
+
 
 

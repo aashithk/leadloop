@@ -2,6 +2,24 @@
 
 Newest first. The feature pipeline (F2–F12) prepends its own entries as each feature ships.
 
+## 2026-09-20 — F4: XFN Conflict Resolver (live)
+
+- Live page: https://aashithk.github.io/leadloop/xfn-conflict-resolver.html
+- What it is: interactive tool — pick 1 of 5 cross-functional conflict
+  scenarios (blocked launch, deadline pressure, ownership fight, rejected
+  design, slipping dependency); each yields an incentives read, the
+  staff-level move (steps), a "say it like this" message, and a junior-vs-staff
+  contrast. Scenario 1 free; scenarios 2–5 unlock via email gate
+  (localStorage list `leadloop_signups_v1`, `source:"xfn-conflict-resolver"`;
+  existing subscribers bypass; duplicates not stored twice).
+- Tests: `tests/e2e/f4.test.js` — **71/71 pass** (scenario switching,
+  per-scenario lock gating, unlock persistence across switches, duplicate
+  guard, returning visitor, aria-live region, keyboard-operable native
+  select, SEO hygiene, link resolution, accessibility basics).
+- Persona validation: **5/5 reach buy mode** (Priya, Rahul, Mei, Arjun, Sara).
+- SEO: dedicated title/meta/canonical/OG/Twitter, WebPage + BreadcrumbList
+  JSON-LD, homepage toolkit card #4, sitemap entry.
+
 ## 2026-09-20 — F3: Hiring Committee Calibration (live)
 
 - Live page: https://aashithk.github.io/leadloop/hiring-committee-calibration.html
@@ -55,4 +73,5 @@ Newest first. The feature pipeline (F2–F12) prepends its own entries as each f
   JSON-LD, homepage toolkit card + `#toolkit` nav link, sitemap entry.
 - Homepage regression green (no JS errors, toolkit hub present, exactly one H1,
   valid sitemap).
+
 

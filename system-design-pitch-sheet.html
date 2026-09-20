@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free System Design Interview Pitch Sheet | LeadLoop</title>
+<meta name="description" content="Free printable system design interview pitch sheet — the 5-part structure senior candidates use to run the 45-minute round. Unlock it with your email.">
+<link rel="canonical" href="https://aashithk.github.io/leadloop/system-design-pitch-sheet.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free System Design Interview Pitch Sheet | LeadLoop">
+<meta property="og:description" content="The 5-part structure senior candidates use to run the 45-minute system design round. Free, printable, unlocked with your email.">
+<meta property="og:url" content="https://aashithk.github.io/leadloop/system-design-pitch-sheet.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free System Design Interview Pitch Sheet | LeadLoop">
+<meta name="twitter:description" content="The 5-part structure senior candidates use to run the 45-minute system design round. Free and printable.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Free System Design Interview Pitch Sheet",
+  "url": "https://aashithk.github.io/leadloop/system-design-pitch-sheet.html",
+  "description": "A free, printable system design interview pitch sheet: the 5-part structure senior candidates use to run the 45-minute round.",
+  "isPartOf": { "@type": "WebSite", "name": "LeadLoop", "url": "https://aashithk.github.io/leadloop/" },
+  "publisher": { "@type": "Person", "name": "Aashith Kamath" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aashithk.github.io/leadloop/" },
+    { "@type": "ListItem", "position": 2, "name": "Interview prep toolkit", "item": "https://aashithk.github.io/leadloop/#toolkit" },
+    { "@type": "ListItem", "position": 3, "name": "System Design Pitch Sheet" }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#0e1a2b; --ink-soft:#33415c; --muted:#64748b;
+  --bg:#f7f9fc; --card:#ffffff; --line:#e2e8f0;
+  --accent:#0f766e; --accent-dark:#0b5c56; --accent-soft:#e6f4f2;
+  --gold:#b45309; --gold-soft:#fef6e7;
+  --radius:14px; --shadow:0 10px 30px rgba(14,26,43,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.site{background:#0e1a2b;color:#fff;position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
+.brand span{color:#5eead4}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:#cbd5e1;text-decoration:none;font-size:.92rem}
+.nav-links a:hover{color:#fff}
+.crumbs{font-size:.85rem;color:var(--muted);margin:22px 0 6px}
+.crumbs a{color:var(--accent);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.hero-tool{padding:26px 0 8px}
+.hero-tool h1{font-size:2rem;line-height:1.2;margin:.2em 0;letter-spacing:-.02em}
+.lead{font-size:1.08rem;color:var(--ink-soft);max-width:640px}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;margin-bottom:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;margin:22px 0}
+.card h2{margin-top:0;font-size:1.3rem}
+.card h3{font-size:1.05rem;margin:1.4em 0 .4em;color:var(--accent-dark)}
+.card ul{margin:.4em 0;padding-left:1.2em}
+.card li{margin:.35em 0}
+.sayit{background:var(--gold-soft);border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 10px 10px 0;margin:.8em 0;font-size:.95rem}
+.sayit strong{color:var(--gold)}
+.btn{display:inline-block;border:none;cursor:pointer;font:inherit;font-weight:700;border-radius:10px;padding:12px 22px;text-decoration:none;font-size:1rem}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.gate-form input{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;min-width:200px;flex:1}
+.err{color:#b91c1c;font-size:.88rem;min-height:1.4em;margin:6px 0 0}
+.fineprint{font-size:.82rem;color:var(--muted);margin-top:10px}
+ol.steps{counter-reset:step;margin:0;padding:0;list-style:none}
+ol.steps>li{counter-increment:step;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px 20px 70px;margin:14px 0;position:relative;box-shadow:var(--shadow)}
+ol.steps>li::before{content:counter(step);position:absolute;left:22px;top:20px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+ol.steps h3{margin:.1em 0 .4em}
+.time{font-size:.8rem;font-weight:700;color:var(--accent-dark);background:var(--accent-soft);border-radius:999px;padding:2px 10px;margin-left:8px;white-space:nowrap}
+footer.site{background:#0e1a2b;color:#94a3b8;padding:28px 0;margin-top:40px;font-size:.88rem}
+footer.site a{color:#cbd5e1}
+.checklist{list-style:none;padding-left:0}
+.checklist li{padding-left:1.7em;position:relative}
+.checklist li::before{content:"☐";position:absolute;left:0;color:var(--accent);font-weight:700}
+@media print{
+  .no-print{display:none!important}
+  body{background:#fff}
+  .wrap{max-width:100%}
+  #sheet-print{box-shadow:none;border:none}
+  ol.steps>li{box-shadow:none;break-inside:avoid}
+  .card{box-shadow:none;break-inside:avoid}
+}
+@media(max-width:560px){
+  .hero-tool h1{font-size:1.55rem}
+  ol.steps>li{padding-left:22px;padding-top:64px}
+  ol.steps>li::before{left:22px;top:16px}
+}
+</style>
+</head>
+<body>
+<header class="site no-print">
+  <div class="wrap nav">
+    <a class="brand" href="https://aashithk.github.io/leadloop/">Lead<span>Loop</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a>
+      <a href="https://aashithk.github.io/leadloop/#builder">Resume builder</a>
+      <a href="https://aashithk.github.io/leadloop/#series">Email series</a>
+      <a href="https://aashithk.github.io/leadloop/#coaching">Coaching</a>
+      <a href="https://aashithk.github.io/leadloop/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumbs no-print" aria-label="Breadcrumb">
+    <a href="https://aashithk.github.io/leadloop/">Home</a> ›
+    <a href="https://aashithk.github.io/leadloop/#toolkit">Interview prep toolkit</a> ›
+    System Design Pitch Sheet
+  </nav>
+
+  <div class="hero-tool no-print">
+    <span class="badge">Free tool · No account needed</span>
+    <h1>The System Design Interview Pitch Sheet</h1>
+    <p class="lead">Senior candidates don't improvise the 45-minute system design round — they run it. This is the 5-part structure that keeps you in the driver's seat: what to clarify, what to draw, where to go deep, and how to close. Print it, rehearse with it, take it into your prep.</p>
+  </div>
+
+  <section class="card no-print" aria-labelledby="preview-h">
+    <h2 id="preview-h">How the 45 minutes break down</h2>
+    <ol class="steps">
+      <li><h3>Clarify &amp; scope <span class="time">~5 min</span></h3><p>Nail the requirements before you draw a single box. Interviewers fail candidates who start building the wrong system.</p></li>
+      <li><h3>High-level design <span class="time">~10 min</span></h3><p>Three to five boxes, one write path, one read path. Keep it boring on purpose.</p></li>
+      <li><h3>Deep dive <span class="time">~15 min</span></h3><p>Go deep on two bottlenecks the interviewer steers you toward — data model, caching, consistency.</p></li>
+      <li><h3>Scale the numbers <span class="time">~5 min</span></h3><p>Back-of-envelope math, out loud: QPS, storage, bandwidth.</p></li>
+      <li><h3>Trade-offs &amp; close <span class="time">~5 min</span></h3><p>Name what breaks at 10x, what you'd do with another month, and invite the follow-ups.</p></li>
+    </ol>
+  </section>
+
+  <section class="card no-print" id="gate-wrap" aria-labelledby="gate-h">
+    <h2 id="gate-h">Get the full printable pitch sheet</h2>
+    <p>The full sheet adds, for each part: the exact questions to ask, a <em>say it like this</em> example line, the checklists interviewers mentally tick, and the two traps that fail strong candidates. Free — unlock it with your email and you're also on the <a href="https://aashithk.github.io/leadloop/#series">3-part <em>Interview to Leader</em> series</a>.</p>
+    <form class="gate-form" id="gate-form" novalidate>
+      <input type="text" id="g-name" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name">
+      <input type="email" id="g-email" name="email" placeholder="you@example.com" autocomplete="email" aria-label="Email address" required>
+      <button type="submit" class="btn btn-primary">Unlock the pitch sheet</button>
+    </form>
+    <p class="err" id="g-err" role="alert"></p>
+    <p class="fineprint">Your email stays in this browser until the list moves to a real provider — nothing is uploaded anywhere. One email = every free tool unlocked.</p>
+  </section>
+
+  <div id="sheet-full" hidden>
+    <div class="no-print" style="display:flex;gap:10px;flex-wrap:wrap;margin:22px 0">
+      <button type="button" class="btn btn-primary" id="btn-print-sheet">Download / Print the pitch sheet</button>
+      <span class="fineprint" style="align-self:center">Prints cleanly to PDF — one page per part.</span>
+    </div>
+    <div id="sheet-print">
+      <section class="card" aria-labelledby="p1">
+        <h2 id="p1">Part 1 — Clarify &amp; scope</h2>
+        <h3>Ask before you draw</h3>
+        <ul class="checklist">
+          <li>Who are the users, and how many? (DAU, peak vs. average)</li>
+          <li>Read-heavy or write-heavy? What's the ratio?</li>
+          <li>Latency target? (e.g. p99 under 200ms)</li>
+          <li>Consistency: can reads be stale, or must they be exact?</li>
+          <li>What is explicitly <strong>out</strong> of scope for these 45 minutes?</li>
+        </ul>
+        <div class="sayit"><strong>Say it like this:</strong> "Before I sketch anything — are we designing for roughly a million daily users with a 100:1 read-write ratio, and is eventual consistency acceptable for the feed?"</div>
+        <h3>Trap to avoid</h3>
+        <p>Jumping to Kafka vs. Kinesis in minute two. Interviewers read that as "builds before thinking" — a senior-level fail signal.</p>
+      </section>
+
+      <section class="card" aria-labelledby="p2">
+        <h2 id="p2">Part 2 — High-level design</h2>
+        <h3>Draw boring boxes</h3>
+        <ul class="checklist">
+          <li>Client → load balancer / API gateway → stateless services → storage. That's enough.</li>
+          <li>Trace one write end-to-end, then one read. Narrate the data flow out loud.</li>
+          <li>Name your storage per workload (relational for transactions, object store for blobs, cache for hot reads) — one line of justification each.</li>
+        </ul>
+        <div class="sayit"><strong>Say it like this:</strong> "Writes go through the API service into Postgres; reads for the hot feed come from a cache layer in front of it. Let me trace a post creation…"</div>
+        <h3>Trap to avoid</h3>
+        <p>Twelve microservices on the whiteboard. Every box is a liability you now have to defend — keep it to what the requirements earn.</p>
+      </section>
+
+      <section class="card" aria-labelledby="p3">
+        <h2 id="p3">Part 3 — Deep dive</h2>
+        <h3>Go deep where steered</h3>
+        <ul class="checklist">
+          <li>Data model: tables/keys, partition key, and why that key avoids hotspots.</li>
+          <li>Caching: what gets cached, invalidation strategy, thundering-herd guard.</li>
+          <li>Consistency trade-off: name the CAP choice explicitly and what you give up.</li>
+          <li>Follow the interviewer's nudges — the deep dive is theirs to direct, yours to execute.</li>
+        </ul>
+        <div class="sayit"><strong>Say it like this:</strong> "I'll partition by user ID with consistent hashing so no single node goes hot, and accept eventual consistency on the feed count — exact counts aren't worth the coordination cost here."</div>
+        <h3>Trap to avoid</h3>
+        <p>Staying shallow everywhere. Senior+ signal is depth on hard trade-offs, not breadth of buzzwords.</p>
+      </section>
+
+      <section class="card" aria-labelledby="p4">
+        <h2 id="p4">Part 4 — Scale the numbers</h2>
+        <h3>Do the math out loud</h3>
+        <ul class="checklist">
+          <li>QPS: DAU × actions per user ÷ 86,400, then ×3–5 for peak.</li>
+          <li>Storage: writes/day × bytes per record × retention days.</li>
+          <li>Bandwidth: QPS × average response size.</li>
+          <li>Sanity-check every number against your design ("so 3 replicas of 500GB each").</li>
+        </ul>
+        <div class="sayit"><strong>Say it like this:</strong> "A million DAU posting twice a day is ~25 writes/sec average, ~120 at peak — trivially handled by one Postgres primary, so the real scaling question is the read fan-out."</div>
+        <h3>Trap to avoid</h3>
+        <p>Silent arithmetic. The math matters less than showing you think in orders of magnitude — narrate it.</p>
+      </section>
+
+      <section class="card" aria-labelledby="p5">
+        <h2 id="p5">Part 5 — Trade-offs &amp; close</h2>
+        <h3>End like a senior</h3>
+        <ul class="checklist">
+          <li>What breaks first at 10x scale? Name it before they ask.</li>
+          <li>One alternative you considered and rejected — with the reason.</li>
+          <li>"With another month I'd…" — shows judgment about where effort goes.</li>
+          <li>Invite follow-ups: "Happy to go deeper on the consistency model or the cache layer."</li>
+        </ul>
+        <div class="sayit"><strong>Say it like this:</strong> "At 10x, the fan-out service becomes the bottleneck — I'd shard it by celebrity-user tier. I considered a pure push model but rejected it for the storage cost on inactive users."</div>
+        <h3>Trap to avoid</h3>
+        <p>Ending with "…and that's it." The close is where staff-level judgment shows — don't trail off, land it.</p>
+      </section>
+
+      <section class="card" aria-labelledby="rehearse">
+        <h2 id="rehearse">Rehearsal drill (20 minutes)</h2>
+        <ol>
+          <li>Pick a prompt: <em>design a URL shortener</em>, <em>design Instagram feed</em>, or <em>design a rate limiter</em>.</li>
+          <li>Run the 5 parts with a timer — no pausing.</li>
+          <li>After: mark every place you said a technology name without a justification. That's your fix list.</li>
+        </ol>
+        <p>Want the reasoning behind what committees score in this round? It's covered in <a href="https://aashithk.github.io/leadloop/#faq">the FAQ</a> and in part 2 of the free email series.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="site no-print">
+  <div class="wrap">
+    <p><a href="https://aashithk.github.io/leadloop/">LeadLoop</a> — interview prep for the AI era. Free resume builder, free tools, free email series.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var LS_KEY="leadloop_signups_v1";
+  function $(id){ return document.getElementById(id); }
+  function load(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"[]"); }catch(e){ return []; } }
+  function save(rows){ try{ localStorage.setItem(LS_KEY,JSON.stringify(rows)); }catch(e){} }
+  function validEmail(email){ return /^(?!.*\.\.)[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(String(email||"").trim()); }
+  function unlock(){
+    $("sheet-full").hidden=false;
+    $("gate-wrap").style.display="none";
+    var anchor=$("sheet-full");
+    if(anchor.scrollIntoView){ try{ anchor.scrollIntoView(); }catch(e){} }
+  }
+  // Returning visitor: already on the list -> unlocked immediately.
+  if(load().length>0){ unlock(); }
+  $("gate-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var name=$("g-name").value.trim();
+    var email=$("g-email").value.trim();
+    var err=$("g-err");
+    if(!validEmail(email)){ err.textContent="Please enter a valid email address — e.g. you@example.com."; return; }
+    err.textContent="";
+    var rows=load();
+    if(!rows.some(function(r){ return r.email.toLowerCase()===email.toLowerCase(); })){
+      rows.push({name:name,email:email,ts:new Date().toISOString(),source:"pitch-sheet"});
+      save(rows);
+    }
+    unlock();
+  });
+  $("g-email").addEventListener("input",function(){ $("g-err").textContent=""; });
+  $("btn-print-sheet").addEventListener("click",function(){ window.print(); });
+})();
+</script>
+</body>
+</html>

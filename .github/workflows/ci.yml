@@ -1,0 +1,80 @@
+# LeadLoop quality gates: e2e tests, security scan, SEO/page quality,
+# benchmark recording, and a post-deploy live smoke test.
+# Runs on every push to main and on every pull request.
+name: LeadLoop quality gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  e2e:
+    name: E2E tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm init -y >/dev/null 2>&1; npm i jsdom --no-audit --no-fund
+      - run: bash scripts/run-e2e.sh
+
+  security:
+    name: Security scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: bash scripts/security-scan.sh
+
+  seo-quality:
+    name: SEO + page quality audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/seo-audit.js
+
+  benchmark:
+    name: Benchmark record
+    needs: [e2e, security, seo-quality]
+    # Always run so the record (and any regression failure) is captured even
+    # when an upstream gate failed.
+    if: always()
+    runs-on: ubuntu-latest
+    env:
+      E2E_RESULT: ${{ needs.e2e.result }}
+      SEO_RESULT: ${{ needs.seo-quality.result }}
+      SECURITY_RESULT: ${{ needs.security.result }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/benchmark.js
+      - name: Commit benchmark history back to main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "pika-ci"
+          git config user.email "pika-ci@users.noreply.github.com"
+          git add benchmarks/history.jsonl
+          git diff --cached --quiet || git commit -m "ci: benchmark record for ${GITHUB_SHA::7}"
+          git push || echo "push skipped (no changes or race)"
+
+  smoke:
+    name: Post-deploy live smoke test
+    needs: [e2e, security, seo-quality, benchmark]
+    # Main-branch pushes only: this verifies the GitHub Pages deploy.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/smoke-live.sh

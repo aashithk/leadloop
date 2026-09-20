@@ -2,6 +2,30 @@
 
 Newest first. The feature pipeline (F2–F12) prepends its own entries as each feature ships.
 
+## 2026-09-20 — F8: Committee Debrief Log (live, DRAFT)
+
+- Live page: https://aashithk.github.io/leadloop/committee-debrief-log.html
+- **DRAFT — awaiting Aashith's exact-content approval.** Page carries the
+  exact locked DRAFT banner at the top of main, unsoftened.
+- What it is: four generic educational debrief patterns (scope, ambiguity,
+  influence, leveling vs bar) — free teasers with the detailed breakdowns
+  unlocked via email gate (localStorage list `leadloop_signups_v1`,
+  `source:"committee-debrief-log"`; existing subscribers bypass; duplicates
+  not stored twice). Plus a private debrief log: add/delete entries
+  persisted in the visitor's browser only (`leadloop_debrief_log_v1`,
+  nothing sent anywhere), newest-first, empty-note guard, XSS-safe
+  rendering, print.
+- Honesty: generic educational patterns only — no anecdotes, quotes, stats,
+  testimonials, or real committee observations (banned-content scan passes).
+- Tests: `tests/e2e/f8.test.js` — **64/64 pass** (DRAFT banner exact wording
+  + prominence, pattern structure, gated deep-dives, gate
+  invalid/valid/dedupe/returning flows, log add/delete/persist/empty guard,
+  XSS-safe rendering, print flow, banned-content scan, SEO hygiene incl.
+  50–160 char description, link resolution, accessibility basics).
+- Persona validation: **5/5 reach buy mode** (Priya, Rahul, Mei, Arjun, Sara).
+- SEO: dedicated title/meta/canonical/OG/Twitter, WebPage + BreadcrumbList
+  JSON-LD, homepage toolkit card #8 (marked *Draft*), sitemap entry.
+
 ## 2026-09-20 — F7: FAANG Level Matcher (live)
 
 - Live page: https://aashithk.github.io/leadloop/faang-level-matcher.html
@@ -132,6 +156,7 @@ Newest first. The feature pipeline (F2–F12) prepends its own entries as each f
   JSON-LD, homepage toolkit card + `#toolkit` nav link, sitemap entry.
 - Homepage regression green (no JS errors, toolkit hub present, exactly one H1,
   valid sitemap).
+
 
 
 

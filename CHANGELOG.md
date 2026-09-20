@@ -20,6 +20,25 @@ Newest first. The feature pipeline (F2–F12) prepends its own entries as each f
 - SEO: dedicated title/meta/canonical/OG/Twitter, WebPage + BreadcrumbList
   JSON-LD, homepage toolkit card #3, sitemap entry.
 
+## 2026-09-20 — F2: Staff Promo Doc Skeleton (live)
+
+- Live page: https://aashithk.github.io/leadloop/staff-promo-doc-skeleton.html
+- What it is: free 9-section staff promotion packet template (executive
+  summary, business impact, scope of influence with headcount denominator,
+  technical depth, leadership & mentorship, multi-team evidence, peer feedback
+  themes, growth areas), unlocked via email gate (localStorage list
+  `leadloop_signups_v1`, `source:"promo-doc-skeleton"`; existing subscribers
+  bypass; duplicates not stored twice). Download as Markdown (Blob), copy to
+  clipboard with fallback guidance, print/PDF. Includes a dedicated
+  "Returning after a career break?" section.
+- Tests: `tests/e2e/f2.test.js` — **51/51 pass** (gate flow, duplicate guard,
+  returning visitor, MD generator section coverage, blob download
+  filename+content match, copy fallback success + blocked-clipboard guidance,
+  print, link hygiene, accessibility basics).
+- Persona validation: **5/5 reach buy mode** (Priya, Rahul, Mei, Arjun, Sara).
+- SEO: dedicated title/meta/canonical/OG/Twitter, WebPage + BreadcrumbList
+  JSON-LD, homepage toolkit card #2, sitemap entry.
+
 ## 2026-09-20 — F1: System Design Interview Pitch Sheet (live)
 
 - Live page: https://aashithk.github.io/leadloop/system-design-pitch-sheet.html

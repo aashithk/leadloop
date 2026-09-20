@@ -2,6 +2,27 @@
 
 Newest first. The feature pipeline (F2–F12) prepends its own entries as each feature ships.
 
+## 2026-09-20 — F7: FAANG Level Matcher (live)
+
+- Live page: https://aashithk.github.io/leadloop/faang-level-matcher.html
+- What it is: interactive level mapping — enter title, company type, and
+  scope; get approximate Google (L3–L7), Meta (IC4–IC7+), and Netflix level
+  mappings. Heuristic: title keywords set the baseline, company type adjusts
+  for title inflation, scope adjusts for impact denominator; ranks clamp
+  1–5. Detailed "why" rationale + next-level plan unlock via email gate
+  (localStorage list `leadloop_signups_v1`, `source:"faang-level-matcher"`;
+  existing subscribers bypass; duplicates not stored twice). Retake resets.
+  Explicit approximate-not-official disclaimer; **no salary figures
+  anywhere**; companies do not endorse the tool.
+- Tests: `tests/e2e/f7.test.js` — **71/71 pass** (mapping math incl. title
+  inflation and scope lift, rank clamping, gated breakdown, gate
+  invalid/valid/dedupe/returning flows, retake, XSS-safe echo, disclaimer +
+  banned-claim + salary-figure scan, SEO hygiene incl. 50–160 char
+  description, link resolution, accessibility basics).
+- Persona validation: **5/5 reach buy mode** (Priya, Rahul, Mei, Arjun, Sara).
+- SEO: dedicated title/meta/canonical/OG/Twitter, WebPage + BreadcrumbList
+  JSON-LD, homepage toolkit card #7, sitemap entry.
+
 ## 2026-09-20 — F6: Staff Scope Calculator (live)
 
 - Live page: https://aashithk.github.io/leadloop/staff-scope-calculator.html
@@ -111,6 +132,7 @@ Newest first. The feature pipeline (F2–F12) prepends its own entries as each f
   JSON-LD, homepage toolkit card + `#toolkit` nav link, sitemap entry.
 - Homepage regression green (no JS errors, toolkit hub present, exactly one H1,
   valid sitemap).
+
 
 
 

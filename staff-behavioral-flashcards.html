@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff Behavioral Flashcards: Practice Deck | LeadLoop</title>
+<meta name="description" content="12 staff-level behavioral flashcards: flip the prompt, see what it probes and how to frame your answer. Previous, next, shuffle, keyboard shortcuts. Free.">
+<link rel="canonical" href="https://aashithk.github.io/leadloop/staff-behavioral-flashcards.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Staff Behavioral Flashcards: Practice Deck | LeadLoop">
+<meta property="og:description" content="Flip through 12 staff-level behavioral prompts with probing notes and framing tips. Keyboard-friendly practice deck.">
+<meta property="og:url" content="https://aashithk.github.io/leadloop/staff-behavioral-flashcards.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Staff Behavioral Flashcards: Practice Deck | LeadLoop">
+<meta name="twitter:description" content="12 staff-level behavioral flashcards — flip, shuffle, practice with keyboard shortcuts. Free.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Staff Behavioral Flashcards: Practice Deck",
+  "url": "https://aashithk.github.io/leadloop/staff-behavioral-flashcards.html",
+  "description": "Interactive flashcard deck of staff-level behavioral interview practice prompts with flip, previous, next, shuffle, and keyboard controls.",
+  "isPartOf": { "@type": "WebSite", "name": "LeadLoop", "url": "https://aashithk.github.io/leadloop/" },
+  "publisher": { "@type": "Person", "name": "Aashith Kamath" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aashithk.github.io/leadloop/" },
+    { "@type": "ListItem", "position": 2, "name": "Interview prep toolkit", "item": "https://aashithk.github.io/leadloop/#toolkit" },
+    { "@type": "ListItem", "position": 3, "name": "Staff Behavioral Flashcards" }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#0e1a2b; --ink-soft:#33415c; --muted:#64748b;
+  --bg:#f7f9fc; --card:#ffffff; --line:#e2e8f0;
+  --accent:#0f766e; --accent-dark:#0b5c56; --accent-soft:#e6f4f2;
+  --gold:#b45309; --gold-soft:#fef6e7;
+  --radius:14px; --shadow:0 10px 30px rgba(14,26,43,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.site{background:#0e1a2b;color:#fff;position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
+.brand span{color:#5eead4}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:#cbd5e1;text-decoration:none;font-size:.92rem}
+.nav-links a:hover{color:#fff}
+.crumbs{font-size:.85rem;color:var(--muted);margin:22px 0 6px}
+.crumbs a{color:var(--accent);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.hero-tool{padding:26px 0 8px}
+.hero-tool h1{font-size:2rem;line-height:1.2;margin:.2em 0;letter-spacing:-.02em}
+.lead{font-size:1.08rem;color:var(--ink-soft);max-width:660px}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;margin-bottom:6px}
+.disclaimer{background:var(--gold-soft);border:1px solid #f3d9a4;border-radius:10px;padding:12px 16px;font-size:.9rem;color:#7c4a03;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;margin:22px 0}
+.card h2{margin-top:0;font-size:1.3rem}
+.card ul{margin:.4em 0;padding-left:1.2em}
+.card li{margin:.35em 0}
+.btn{display:inline-block;border:none;cursor:pointer;font:inherit;font-weight:700;border-radius:10px;padding:12px 22px;text-decoration:none;font-size:1rem}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-secondary{background:#fff;color:var(--accent-dark);border:2px solid var(--accent)}
+.btn-secondary:hover{background:var(--accent-soft)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.deck-face{display:flex;justify-content:center;padding:8px 0}
+.fcard{width:100%;max-width:560px;min-height:300px;perspective:1200px;cursor:pointer}
+.fcard-inner{position:relative;width:100%;min-height:300px;transform-style:preserve-3d;transition:transform .45s ease}
+.fcard.flipped .fcard-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow);background:#fff}
+.face.back{transform:rotateY(180deg);background:var(--accent-soft);border-color:var(--accent)}
+.face .k{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
+.face.back .k{color:var(--accent-dark)}
+.face .q{font-size:1.25rem;font-weight:700;line-height:1.4}
+.face .probe{margin:.6em 0;font-size:.98rem}
+.face .probe strong{color:var(--accent-dark)}
+.face .tip{font-size:.92rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+.hint{text-align:center;color:var(--muted);font-size:.88rem;margin:8px 0}
+.deck-controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.progress{text-align:center;font-weight:700;color:var(--ink-soft)}
+.keys{font-size:.88rem;color:var(--muted);text-align:center;margin-top:8px}
+.keys kbd{background:#eef2f7;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 7px;font-family:inherit;font-size:.82rem}
+.gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.gate-form input{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;min-width:200px;flex:1}
+.err{color:#b91c1c;font-size:.88rem;min-height:1.4em;margin:6px 0 0}
+.fineprint{font-size:.82rem;color:var(--muted);margin-top:10px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0;align-items:center}
+.lock-note{background:#0e1a2b;color:#fff;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:.95rem}
+.lock-note strong{color:#5eead4}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+footer.site{background:#0e1a2b;color:#94a3b8;padding:28px 0;margin-top:40px;font-size:.88rem}
+footer.site a{color:#cbd5e1}
+@media print{
+  .no-print{display:none!important}
+  body{background:#fff}
+  .wrap{max-width:100%}
+  .card{box-shadow:none;break-inside:avoid}
+}
+@media(max-width:560px){
+  .hero-tool h1{font-size:1.55rem}
+  .face .q{font-size:1.1rem}
+  .gate-form input{min-width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  .fcard-inner{transition:none}
+}
+</style>
+</head>
+<body>
+<header class="site no-print">
+  <div class="wrap nav">
+    <a class="brand" href="https://aashithk.github.io/leadloop/">Lead<span>Loop</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a>
+      <a href="https://aashithk.github.io/leadloop/#builder">Resume builder</a>
+      <a href="https://aashithk.github.io/leadloop/#series">Email series</a>
+      <a href="https://aashithk.github.io/leadloop/#coaching">Coaching</a>
+      <a href="https://aashithk.github.io/leadloop/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumbs no-print" aria-label="Breadcrumb">
+    <a href="https://aashithk.github.io/leadloop/">Home</a> ›
+    <a href="https://aashithk.github.io/leadloop/#toolkit">Interview prep toolkit</a> ›
+    Staff Behavioral Flashcards
+  </nav>
+
+  <div class="hero-tool no-print">
+    <span class="badge">12 cards · Keyboard friendly</span>
+    <h1>Staff Behavioral Flashcards</h1>
+    <p class="lead">Staff loops probe judgment, not syntax. Flip each card: the prompt on the front, what it really probes and how to frame your answer on the back.</p>
+  </div>
+
+  <div class="disclaimer" role="note">
+    <strong>Practice prompts, not predictions.</strong> These prompts are written for interview preparation. They are not real questions from any company and imply nothing about what any specific loop will ask.
+  </div>
+
+  <section class="card" aria-labelledby="deck-h">
+    <h2 id="deck-h">The deck</h2>
+    <p class="sr-only" aria-live="polite" id="card-sr"></p>
+    <div class="deck-face">
+      <div class="fcard" id="fcard" tabindex="0" role="button" aria-label="Flashcard. Press Enter or Space to flip.">
+        <div class="fcard-inner">
+          <div class="face front">
+            <div class="k">Prompt</div>
+            <div class="q" id="card-front"></div>
+          </div>
+          <div class="face back">
+            <div class="k">What it probes · How to frame it</div>
+            <div class="probe" id="card-probe"></div>
+            <div class="tip" id="card-tip"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="hint no-print">Click the card or press <kbd>Space</kbd> to flip.</p>
+    <div class="deck-controls no-print">
+      <button type="button" class="btn btn-secondary" id="btn-prev">← Previous</button>
+      <button type="button" class="btn btn-primary" id="btn-flip">Flip</button>
+      <button type="button" class="btn btn-secondary" id="btn-next">Next →</button>
+      <button type="button" class="btn btn-secondary" id="btn-shuffle">Shuffle</button>
+    </div>
+    <p class="progress" id="progress">Card 1 of 12</p>
+    <p class="keys no-print"><kbd>←</kbd> <kbd>→</kbd> move · <kbd>Space</kbd>/<kbd>Enter</kbd> flip · <kbd>S</kbd> shuffle</p>
+  </section>
+
+  <section class="card" aria-labelledby="dl-h">
+    <h2 id="dl-h">Download the deck</h2>
+    <div id="dl-locked" class="no-print">
+      <div class="lock-note"><strong>🔒 The Markdown download is locked.</strong> Enter your email below to unlock all 12 cards as Markdown for your notes.</div>
+    </div>
+    <div id="dl-ready" hidden>
+      <p>Your download is unlocked. Take the deck with you:</p>
+      <div class="toolbar no-print">
+        <button type="button" class="btn btn-primary" id="btn-download">Download as Markdown</button>
+        <button type="button" class="btn btn-secondary" id="btn-print">Print deck</button>
+      </div>
+    </div>
+    <section class="no-print" id="gate-wrap" aria-labelledby="gate-h">
+      <h2 id="gate-h">Unlock the download</h2>
+      <p>Enter your email to unlock the Markdown download. One email — no account, no spam.</p>
+      <form class="gate-form" id="gate-form" novalidate>
+        <input type="text" id="g-name" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name">
+        <input type="email" id="g-email" name="email" placeholder="you@example.com" autocomplete="email" aria-label="Email address" required>
+        <button type="submit" class="btn btn-primary">Unlock download</button>
+      </form>
+      <p class="err" id="g-err" role="alert"></p>
+      <p class="fineprint">Free forever. Unsubscribe anytime.</p>
+    </section>
+  </section>
+
+  <section class="card" aria-labelledby="next-h">
+    <h2 id="next-h">Keep going</h2>
+    <ul>
+      <li><a href="star-l-story-builder.html">STAR-L Story Builder</a> — turn your flipped answers into written stories.</li>
+      <li><a href="xfn-conflict-resolver.html">XFN Conflict Resolver</a> — practice the conflict cards with full frameworks.</li>
+      <li><a href="https://aashithk.github.io/leadloop/#toolkit">Back to the interview prep toolkit</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site no-print">
+  <div class="wrap">
+    <span>© 2026 LeadLoop. Built by Aashith Kamath.</span>
+    <span><a href="https://aashithk.github.io/leadloop/">Home</a> · <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var LS_KEY="leadloop_signups_v1";
+  var CARDS=[
+    {q:"Tell me about a time you disagreed with your manager.",
+     probe:"Whether you can dissent productively upward — do you surface disagreement early with reasoning, or comply and complain later?",
+     tip:"Frame it with: the disagreement, the data you brought, how you raised it, and what you both decided. End with what you'd do the same."},
+    {q:"Describe a project that failed. What was your role?",
+     probe:"Ownership without defensiveness — can you narrate a failure as your responsibility and extract the mechanism that broke?",
+     tip:"Frame it with: your decisions, the earliest signal you missed, what you changed in how you operate since. No blame, no heroics."},
+    {q:"Tell me about a time you influenced a team you didn't manage.",
+     probe:"Influence without authority — the core staff signal. Did you change a decision you had no power to compel?",
+     tip:"Frame it with: who owned the decision, what you did to shape it (not just what you suggested), and what changed because of it."},
+    {q:"Walk me through the most ambiguous project you've led.",
+     probe:"Comfort defining problems, not just executing specs — who wrote the requirements, and what did 'done' mean when you started?",
+     tip:"Frame it with: the blank page, how you narrowed the problem, the stakeholders you aligned, and the definition of done you created."},
+    {q:"Tell me about a time you had to say no to a stakeholder.",
+     probe:"Prioritization under pressure — can you protect the team's focus while keeping the relationship intact?",
+     tip:"Frame it with: what they asked, the trade-off you named, the alternative you offered, and how the relationship fared after."},
+    {q:"Describe a technical decision you got wrong.",
+     probe:"Technical judgment and learning velocity — do you update your mental models, or defend old calls?",
+     tip:"Frame it with: the context that made the call reasonable then, the evidence that changed your mind, and the principle you carry now."},
+    {q:"Tell me about a time you mentored someone to a concrete outcome.",
+     probe:"Multiplier effect — staff engineers grow other engineers. Vague mentoring claims collapse here; specifics survive.",
+     tip:"Frame it with: who, where they started, what you specifically did (not just 'I mentored'), and the measurable outcome for them."},
+    {q:"How do you handle a partner team that keeps missing commitments?",
+     probe:"Cross-team accountability without escalation theater — do you diagnose incentives or just apply pressure?",
+     tip:"Frame it with: what was really blocking them, the joint plan you built, and the mechanism (not the meeting) that fixed it."},
+    {q:"Tell me about the largest scope you've owned end to end.",
+     probe:"The denominator question — how many people, teams, systems, or users did your work actually move?",
+     tip:"Frame it with: the denominator stated plainly, what end-to-end meant (on-call, rollout, adoption), and the outcome in those units."},
+    {q:"Describe a time you changed a team's technical direction.",
+     probe:"Technical leadership — did you move a group from one approach to another, and how did you bring skeptics along?",
+     tip:"Frame it with: the old direction, the evidence for change, how you socialized it before deciding, and what the skeptics say now."},
+    {q:"Tell me about a conflict between two engineers on your team.",
+     probe:"Conflict resolution at the peer level — do you mediate toward the work, or avoid it until it escalates?",
+     tip:"Frame it with: the real disagreement underneath the personalities, the conversation you facilitated, and the working agreement that resulted."},
+    {q:"What would your skip-level say is your biggest growth area?",
+     probe:"Self-awareness with receipts — can you name a real gap and show the work you're doing on it?",
+     tip:"Frame it with: the specific feedback, a recent example of you catching yourself, and the practice you've put in place. Never a humblebrag."}
+  ];
+
+  function $(id){ return document.getElementById(id); }
+  function load(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"[]"); }catch(e){ return []; } }
+  function save(rows){ try{ localStorage.setItem(LS_KEY,JSON.stringify(rows)); }catch(e){} }
+  function validEmail(email){ return /^(?!.*\.\.)[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(String(email||"").trim()); }
+  function isUnlocked(){ return load().length>0; }
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+  // Deck state machine — pure logic, exposed for tests.
+  function makeDeck(cards){
+    var order=cards.map(function(_,i){ return i; });
+    var idx=0, flipped=false;
+    function current(){ return cards[order[idx]]; }
+    function flip(){ flipped=!flipped; return state(); }
+    function next(){ idx=(idx+1)%order.length; flipped=false; return state(); }
+    function prev(){ idx=(idx-1+order.length)%order.length; flipped=false; return state(); }
+    function shuffle(){
+      for(var i=order.length-1;i>0;i--){
+        var j=Math.floor(Math.random()*(i+1));
+        var t=order[i]; order[i]=order[j]; order[j]=t;
+      }
+      idx=0; flipped=false; return state();
+    }
+    function state(){ return {index:idx, total:order.length, flipped:flipped, card:current(), order:order.slice()}; }
+    return {flip:flip,next:next,prev:prev,shuffle:shuffle,state:state};
+  }
+  var deck=makeDeck(CARDS);
+  window.LeadLoop={makeDeck:makeDeck, CARDS:CARDS, deck:deck, markdown:markdown};
+
+  var fcard=$("fcard");
+  function paint(){
+    var s=deck.state();
+    $("card-front").textContent=s.card.q;
+    $("card-probe").innerHTML="<strong>Probes:</strong> "+esc(s.card.probe);
+    $("card-tip").innerHTML="<strong>Tip:</strong> "+esc(s.card.tip);
+    fcard.classList.toggle("flipped",s.flipped);
+    $("progress").textContent="Card "+(s.index+1)+" of "+s.total;
+    var side=s.flipped?"Back":"Front";
+    fcard.setAttribute("aria-label","Flashcard "+(s.index+1)+" of "+s.total+", "+side+". Press Enter or Space to flip.");
+    $("card-sr").textContent="Card "+(s.index+1)+" of "+s.total+". "+(s.flipped?("Probes: "+s.card.probe+" Tip: "+s.card.tip):s.card.q);
+  }
+  function doFlip(){ deck.flip(); paint(); }
+  $("btn-flip").addEventListener("click",doFlip);
+  fcard.addEventListener("click",doFlip);
+  $("btn-next").addEventListener("click",function(){ deck.next(); paint(); });
+  $("btn-prev").addEventListener("click",function(){ deck.prev(); paint(); });
+  $("btn-shuffle").addEventListener("click",function(){ deck.shuffle(); paint(); });
+  document.addEventListener("keydown",function(ev){
+    var tag=(ev.target.tagName||"").toLowerCase();
+    if(tag==="input"||tag==="textarea"||tag==="select") return;
+    if(ev.key==="ArrowRight"){ deck.next(); paint(); }
+    else if(ev.key==="ArrowLeft"){ deck.prev(); paint(); }
+    else if(ev.key===" "||ev.key==="Enter"){
+      if(ev.target===fcard||ev.target===document.body){ ev.preventDefault(); doFlip(); }
+    }
+    else if(ev.key==="s"||ev.key==="S"){ deck.shuffle(); paint(); }
+  });
+
+  function markdown(){
+    var lines=["# LeadLoop — Staff Behavioral Flashcards",""];
+    CARDS.forEach(function(c,i){
+      lines.push("## Card "+(i+1)+": "+c.q,"","**Probes:** "+c.probe,"","**Tip:** "+c.tip,"");
+    });
+    return lines.join("\n");
+  }
+  $("btn-download").addEventListener("click",function(){
+    var blob=new Blob([markdown()],{type:"text/markdown"});
+    var a=document.createElement("a");
+    a.href=URL.createObjectURL(blob);
+    a.download="leadloop-behavioral-flashcards.md";
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); },100);
+  });
+  $("btn-print").addEventListener("click",function(){ window.print(); });
+
+  function applyUnlock(){
+    $("dl-ready").hidden=false;
+    $("dl-locked").style.display="none";
+    $("gate-wrap").hidden=true;
+  }
+  $("gate-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var name=$("g-name").value.trim();
+    var email=$("g-email").value.trim();
+    var err=$("g-err");
+    if(!validEmail(email)){ err.textContent="Please enter a valid email address — e.g. you@example.com."; return; }
+    err.textContent="";
+    var rows=load();
+    if(!rows.some(function(rr){ return rr.email.toLowerCase()===email.toLowerCase(); })){
+      rows.push({name:name,email:email,ts:new Date().toISOString(),source:"staff-behavioral-flashcards"});
+      save(rows);
+    }
+    applyUnlock();
+  });
+  $("g-email").addEventListener("input",function(){ $("g-err").textContent=""; });
+
+  if(isUnlocked()){ applyUnlock(); }
+  paint();
+})();
+</script>
+</body>
+</html>

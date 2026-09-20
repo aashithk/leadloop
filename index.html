@@ -131,6 +131,9 @@ section{padding:64px 0}
 .cards{display:grid;grid-template-columns:1fr;gap:16px}
 @media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+a.card-link{color:inherit;text-decoration:none;display:block;transition:transform .12s ease,box-shadow .12s ease}
+a.card-link:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(14,26,43,.12)}
+a.card-link h3{color:var(--accent-dark)}
 .card .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:800;margin-bottom:12px}
 .card h3{margin:0 0 8px;font-size:1.08rem}
 .card p{margin:0;color:var(--ink-soft);font-size:.95rem}
@@ -263,6 +266,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
       <a href="#series">Email series</a>
       <a href="#builder">Resume builder</a>
       <a href="#coaching">Coaching</a>
+      <a href="#toolkit">Toolkit</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -518,6 +522,20 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
         <summary>Is my resume data private?</summary>
         <div class="faq-a"><p>Completely. The builder runs in your browser and nothing is ever uploaded or stored on a server. The site counts visits anonymously and sets no cookies.</p></div>
       </details>
+    </div>
+  </div>
+</section>
+
+<section id="toolkit">
+  <div class="wrap">
+    <h2 class="sec-title">Free interview prep toolkit</h2>
+    <p class="sec-sub">Hands-on tools for the AI-era interview loop — built from real hiring-committee experience. Each one is free; a few unlock with your email.</p>
+    <div class="cards">
+      <a class="card card-link" href="system-design-pitch-sheet.html">
+        <div class="num">1</div>
+        <h3>System Design Pitch Sheet</h3>
+        <p>The 5-part structure senior candidates use to run the 45-minute system design round. Printable, unlocked with your email.</p>
+      </a>
     </div>
   </div>
 </section>

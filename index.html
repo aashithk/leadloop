@@ -28,6 +28,64 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the LeadLoop resume builder really free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — it's free forever, with no account and no signup required. The builder runs entirely in your browser, so your resume data is never uploaded or stored on any server. When you're done, print it or save it as a PDF." }
+    },
+    {
+      "@type": "Question",
+      "name": "How should I write my resume for AI-era hiring?",
+      "acceptedAnswer": { "@type": "Answer", "text": "AI screening tools and six-second human skims reward the same thing: outcomes, not responsibilities. Every bullet should say what you built, what changed because of it, and by how much. As AI coding tools make raw output table stakes, hiring bars are shifting toward judgment, scope, and ownership — so show the decisions you made, the systems you owned, and the people you influenced." }
+    },
+    {
+      "@type": "Question",
+      "name": "What do hiring committees actually score in interviews?",
+      "acceptedAnswer": { "@type": "Answer", "text": "From experience on 50+ hiring committees: each interview round is scored independently, and no single interviewer decides — the committee reviews the whole packet. Coding rounds score problem-solving, code quality, and communication; system design rounds score structured reasoning about scale and trade-offs; behavioral rounds look for concrete evidence of leadership and scope. The strongest candidates bring clear, specific examples to every round." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the Google interview process work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Typically: a recruiter screen, one or two technical phone screens, then a full loop — coding rounds, system design for experienced roles, and behavioral (\"Googleyness\"/leadership) rounds. After the loop, a hiring committee reviews the complete packet and sets the level and offer. Leveling is based on demonstrated scope, which is why your resume has to prove the band you're targeting." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Google's levels (L3–L7), and why does my resume need to target one?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Google levels engineers internally from L3 (entry) to L7+ (senior staff and above), but job posts generally use titles, not level labels. Your resume gets leveled by the scope it demonstrates — if it doesn't prove the band you're targeting, the committee places you lower. The free resume builder above includes per-level guidance written from real experience inside Google's hiring process." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it take to get promoted from senior to staff engineer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's a scope change, not a tenure change — and it's the hardest jump on the ladder. Staff-level work carries a multi-team denominator: platforms other teams adopted, technical direction you set, engineers you grew into larger scope. Staff is still an individual-contributor role: growing people through influence and sponsorship is the signal, not formal people management." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is leadership coaching for engineers, and who is it for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "LeadLoop's leadership coaching is 1:1 and human — no courses, no video libraries. It's for engineers and managers growing toward senior, staff, and engineering-manager roles: progression plans, promotion packet reviews, influence and organizational-design mentorship, and honest help with the IC-to-EM decision." }
+    },
+    {
+      "@type": "Question",
+      "name": "I'm changing careers or returning after a break. Will this still work for me?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Say it in one plain line in your summary — for example, \"Career break 2021–2024; previously a backend engineer…\" — then lead with what you can do now. Reviewers respect a one-liner far more than a gap they have to guess about, and career changers should frame the old career as domain expertise, not a liability." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does 1:1 coaching cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Format and pricing are still being finalized. Join the waitlist above — there's no payment and no commitment — and you'll get first access plus a say in what gets built." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my resume data private?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Completely. The builder runs in your browser and nothing is ever uploaded or stored on a server. The site counts visits anonymously and sets no cookies." }
+    }
+  ]
+}
+</script>
 <script data-goatcounter="https://leadloop.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
 :root{
@@ -132,6 +190,16 @@ details.owner summary{cursor:pointer;color:#cbd5e1;font-weight:600}
 .tick{list-style:none;padding:0;margin:16px 0 0}
 .tick li{padding:8px 0 8px 30px;position:relative;color:var(--ink-soft)}
 .tick li::before{content:"✓";position:absolute;left:2px;color:var(--accent);font-weight:800}
+/* FAQ */
+.faq-list{max-width:760px}
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.faq-item summary{cursor:pointer;padding:18px 20px;font-weight:700;font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";color:var(--accent);font-weight:800;font-size:1.3rem;flex-shrink:0;line-height:1}
+.faq-item[open] summary::after{content:"–"}
+.faq-item .faq-a{padding:0 20px 20px;color:var(--ink-soft);font-size:.95rem}
+.faq-item .faq-a p{margin:0 0 10px}
+.faq-item .faq-a p:last-child{margin-bottom:0}
 footer.site{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}
 footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 #print-root{display:none}
@@ -196,6 +264,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
       <a href="#builder">Resume builder</a>
       <a href="#coaching">Coaching</a>
       <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
     </nav>
   </div>
 </header>
@@ -400,6 +469,55 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
         <li>Set up teams, organizations, and businesses from scratch</li>
         <li>Led on technical architecture and organizational design</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2 class="sec-title">Frequently asked questions</h2>
+    <p class="sec-sub">Straight answers about the free tools, interview prep, and coaching.</p>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Is the LeadLoop resume builder really free?</summary>
+        <div class="faq-a"><p>Yes — it's free forever, with no account and no signup required. The builder runs entirely in your browser, so your resume data is never uploaded or stored on any server. When you're done, print it or save it as a PDF.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>How should I write my resume for AI-era hiring?</summary>
+        <div class="faq-a"><p>AI screening tools and six-second human skims reward the same thing: outcomes, not responsibilities. Every bullet should say what you built, what changed because of it, and by how much. As AI coding tools make raw output table stakes, hiring bars are shifting toward judgment, scope, and ownership — so show the decisions you made, the systems you owned, and the people you influenced.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What do hiring committees actually score in interviews?</summary>
+        <div class="faq-a"><p>From experience on 50+ hiring committees: each interview round is scored independently, and no single interviewer decides — the committee reviews the whole packet. Coding rounds score problem-solving, code quality, and communication; system design rounds score structured reasoning about scale and trade-offs; behavioral rounds look for concrete evidence of leadership and scope. The strongest candidates bring clear, specific examples to every round.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>How does the Google interview process work?</summary>
+        <div class="faq-a"><p>Typically: a recruiter screen, one or two technical phone screens, then a full loop — coding rounds, system design for experienced roles, and behavioral ("Googleyness"/leadership) rounds. After the loop, a hiring committee reviews the complete packet and sets the level and offer. Leveling is based on demonstrated scope, which is why your resume has to prove the band you're targeting.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What are Google's levels (L3–L7), and why does my resume need to target one?</summary>
+        <div class="faq-a"><p>Google levels engineers internally from L3 (entry) to L7+ (senior staff and above), but job posts generally use titles, not level labels. Your resume gets leveled by the scope it demonstrates — if it doesn't prove the band you're targeting, the committee places you lower. The free resume builder above includes per-level guidance written from real experience inside Google's hiring process.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What does it take to get promoted from senior to staff engineer?</summary>
+        <div class="faq-a"><p>It's a scope change, not a tenure change — and it's the hardest jump on the ladder. Staff-level work carries a multi-team denominator: platforms other teams adopted, technical direction you set, engineers you grew into larger scope. Staff is still an individual-contributor role: growing people through influence and sponsorship is the signal, not formal people management.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What is leadership coaching for engineers, and who is it for?</summary>
+        <div class="faq-a"><p>LeadLoop's leadership coaching is 1:1 and human — no courses, no video libraries. It's for engineers and managers growing toward senior, staff, and engineering-manager roles: progression plans, promotion packet reviews, influence and organizational-design mentorship, and honest help with the IC-to-EM decision.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>I'm changing careers or returning after a break. Will this still work for me?</summary>
+        <div class="faq-a"><p>Yes. Say it in one plain line in your summary — for example, "Career break 2021–2024; previously a backend engineer…" — then lead with what you can do now. Reviewers respect a one-liner far more than a gap they have to guess about, and career changers should frame the old career as domain expertise, not a liability.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What does 1:1 coaching cost?</summary>
+        <div class="faq-a"><p>Format and pricing are still being finalized. Join the waitlist above — there's no payment and no commitment — and you'll get first access plus a say in what gets built.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Is my resume data private?</summary>
+        <div class="faq-a"><p>Completely. The builder runs in your browser and nothing is ever uploaded or stored on a server. The site counts visits anonymously and sets no cookies.</p></div>
+      </details>
     </div>
   </div>
 </section>

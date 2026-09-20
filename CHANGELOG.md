@@ -2,6 +2,30 @@
 
 Newest first. The feature pipeline (F2–F12) prepends its own entries as each feature ships.
 
+## 2026-09-20 — F9: AI Architecture Prompts (live)
+
+- Live page: https://aashithk.github.io/leadloop/ai-architecture-prompts.html
+- What it is: searchable/filterable library of 14 AI-era architecture
+  practice prompts across 5 categories (agentic systems, RAG & retrieval,
+  eval & safety, scaling & cost, system design interviews). Live search
+  (case-insensitive, matches title/body/tags), category select, combined
+  filters, no-results state, aria-live count, per-prompt copy (clipboard
+  with manual fallback). Markdown download of the full library gated via
+  email (localStorage list `leadloop_signups_v1`,
+  `source:"ai-architecture-prompts"`; existing subscribers bypass;
+  duplicates not stored twice). Print supported.
+- Honesty: explicit practice-only disclaimer — not real interview questions
+  from any company; no invented claims.
+- Tests: `tests/e2e/f9.test.js` — **60/60 pass** (library structure,
+  search/category/combined filters, no-results, copy success + blocked
+  paths, gated download incl. markdown coverage and filename, gate
+  invalid/valid/dedupe/returning flows, print, disclaimer + banned-claim
+  scan, SEO hygiene incl. 50–160 char description, link resolution,
+  accessibility basics).
+- Persona validation: **5/5 reach buy mode** (Priya, Rahul, Mei, Arjun, Sara).
+- SEO: dedicated title/meta/canonical/OG/Twitter, WebPage + BreadcrumbList
+  JSON-LD, homepage toolkit card #9, sitemap entry.
+
 ## 2026-09-20 — F8: Committee Debrief Log (live, DRAFT)
 
 - Live page: https://aashithk.github.io/leadloop/committee-debrief-log.html
@@ -156,6 +180,7 @@ Newest first. The feature pipeline (F2–F12) prepends its own entries as each f
   JSON-LD, homepage toolkit card + `#toolkit` nav link, sitemap entry.
 - Homepage regression green (no JS errors, toolkit hub present, exactly one H1,
   valid sitemap).
+
 
 
 

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Committee Debrief Log: Interview Patterns Guide | LeadLoop</title>
+<meta name="description" content="Four generic interview debrief patterns (scope, ambiguity, influence, leveling vs bar) plus a private log to capture your own post-loop learnings.">
+<link rel="canonical" href="https://aashithk.github.io/leadloop/committee-debrief-log.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Committee Debrief Log: Interview Patterns Guide | LeadLoop">
+<meta property="og:description" content="Four generic interview debrief patterns plus a private log for your own post-interview learnings. Free with email for the full pattern deep-dives.">
+<meta property="og:url" content="https://aashithk.github.io/leadloop/committee-debrief-log.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Committee Debrief Log: Interview Patterns Guide | LeadLoop">
+<meta name="twitter:description" content="Learn the four generic patterns debriefs revolve around — and log your own interview learnings privately.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Committee Debrief Log: Interview Patterns Guide",
+  "url": "https://aashithk.github.io/leadloop/committee-debrief-log.html",
+  "description": "Educational guide to generic interview debrief patterns plus a private localStorage-backed debrief log.",
+  "isPartOf": { "@type": "WebSite", "name": "LeadLoop", "url": "https://aashithk.github.io/leadloop/" },
+  "publisher": { "@type": "Person", "name": "Aashith Kamath" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aashithk.github.io/leadloop/" },
+    { "@type": "ListItem", "position": 2, "name": "Interview prep toolkit", "item": "https://aashithk.github.io/leadloop/#toolkit" },
+    { "@type": "ListItem", "position": 3, "name": "Committee Debrief Log" }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#0e1a2b; --ink-soft:#33415c; --muted:#64748b;
+  --bg:#f7f9fc; --card:#ffffff; --line:#e2e8f0;
+  --accent:#0f766e; --accent-dark:#0b5c56; --accent-soft:#e6f4f2;
+  --gold:#b45309; --gold-soft:#fef6e7;
+  --radius:14px; --shadow:0 10px 30px rgba(14,26,43,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.site{background:#0e1a2b;color:#fff;position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
+.brand span{color:#5eead4}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:#cbd5e1;text-decoration:none;font-size:.92rem}
+.nav-links a:hover{color:#fff}
+.crumbs{font-size:.85rem;color:var(--muted);margin:22px 0 6px}
+.crumbs a{color:var(--accent);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.hero-tool{padding:26px 0 8px}
+.hero-tool h1{font-size:2rem;line-height:1.2;margin:.2em 0;letter-spacing:-.02em}
+.lead{font-size:1.08rem;color:var(--ink-soft);max-width:660px}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;margin-bottom:6px}
+.draft-banner{background:#7c2d12;color:#fff;border-radius:10px;padding:14px 18px;margin:18px 0;font-weight:700;font-size:1rem}
+.draft-banner small{display:block;font-weight:400;font-size:.85rem;opacity:.9;margin-top:4px}
+.disclaimer{background:var(--gold-soft);border:1px solid #f3d9a4;border-radius:10px;padding:12px 16px;font-size:.9rem;color:#7c4a03;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;margin:22px 0}
+.card h2{margin-top:0;font-size:1.3rem}
+.card h3{font-size:1.05rem;margin:1.4em 0 .4em;color:var(--accent-dark)}
+.card ul{margin:.4em 0;padding-left:1.2em}
+.card li{margin:.35em 0}
+.btn{display:inline-block;border:none;cursor:pointer;font:inherit;font-weight:700;border-radius:10px;padding:12px 22px;text-decoration:none;font-size:1rem}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-danger{background:#fff;color:#b91c1c;border:2px solid #b91c1c;padding:6px 14px;font-size:.85rem}
+.btn-danger:hover{background:#fef2f2}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.gate-form input{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;min-width:200px;flex:1}
+.err{color:#b91c1c;font-size:.88rem;min-height:1.4em;margin:6px 0 0}
+.fineprint{font-size:.82rem;color:var(--muted);margin-top:10px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0;align-items:center}
+.pattern{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:12px 0}
+.pattern h3{margin:0 0 .4em}
+.pattern .teaser{color:var(--ink-soft)}
+.pattern .deep{margin-top:10px}
+.lock-note{background:#0e1a2b;color:#fff;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:.95rem}
+.lock-note strong{color:#5eead4}
+.field{margin:14px 0}
+.field label{display:block;font-weight:700;margin-bottom:6px}
+.field select,.field textarea{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;width:100%;background:#fff}
+.field textarea{min-height:110px;resize:vertical}
+.entry{border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:10px 0}
+.entry .meta{font-size:.82rem;color:var(--muted);margin-bottom:6px}
+.entry .cat{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-weight:700;font-size:.78rem;padding:2px 10px;border-radius:999px;margin-right:8px}
+.entry p{margin:.4em 0;white-space:pre-wrap}
+.entry .row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.empty{color:var(--muted);font-style:italic}
+footer.site{background:#0e1a2b;color:#94a3b8;padding:28px 0;margin-top:40px;font-size:.88rem}
+footer.site a{color:#cbd5e1}
+@media print{
+  .no-print{display:none!important}
+  body{background:#fff}
+  .wrap{max-width:100%}
+  .card{box-shadow:none;break-inside:avoid}
+}
+@media(max-width:560px){
+  .hero-tool h1{font-size:1.55rem}
+  .gate-form input{min-width:100%}
+}
+</style>
+</head>
+<body>
+<header class="site no-print">
+  <div class="wrap nav">
+    <a class="brand" href="https://aashithk.github.io/leadloop/">Lead<span>Loop</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a>
+      <a href="https://aashithk.github.io/leadloop/#builder">Resume builder</a>
+      <a href="https://aashithk.github.io/leadloop/#series">Email series</a>
+      <a href="https://aashithk.github.io/leadloop/#coaching">Coaching</a>
+      <a href="https://aashithk.github.io/leadloop/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumbs no-print" aria-label="Breadcrumb">
+    <a href="https://aashithk.github.io/leadloop/">Home</a> ›
+    <a href="https://aashithk.github.io/leadloop/#toolkit">Interview prep toolkit</a> ›
+    Committee Debrief Log
+  </nav>
+
+  <div class="draft-banner" id="draft-banner" role="note">
+    DRAFT — awaiting Aashith's exact-content approval.
+    <small>Educational patterns only. Nothing here describes a real interview, a real committee, or any real candidate.</small>
+  </div>
+
+  <div class="hero-tool no-print">
+    <span class="badge">Framework · 4 patterns · Private log</span>
+    <h1>Committee Debrief Log</h1>
+    <p class="lead">After an interview loop, interviewers compare notes in a debrief. This page teaches the four generic patterns those conversations revolve around — and gives you a private log to capture your own learnings after every loop.</p>
+  </div>
+
+  <div class="disclaimer" role="note">
+    <strong>Educational only.</strong> These are generic, widely discussed interview-preparation concepts. They are not observations from any real committee, not quotes from any interviewer, and not statistics about any hiring process.
+  </div>
+
+  <section class="card" aria-labelledby="patterns-h">
+    <h2 id="patterns-h">The four debrief patterns</h2>
+    <p class="fineprint">Each pattern has a free overview. The detailed breakdown unlocks with email.</p>
+
+    <div class="pattern">
+      <h3>1. Scope</h3>
+      <p class="teaser">Debriefs ask: what was the denominator of this person's impact — one feature, one team, or many teams?</p>
+      <div class="deep" data-deep hidden>
+        <p>Scope is the most common leveling signal in behavioral debriefs. The underlying question is simple: did the candidate's work change what happened for a team, for several teams, or for an organization? Candidates who describe work in feature-sized units get read as feature-sized contributors, whatever their title says. The fix is mechanical: for every story you plan to tell, write down the denominator explicitly — how many engineers, teams, users, or systems were affected — before you walk in. If the denominator is small, pair the story with a larger one.</p>
+      </div>
+    </div>
+
+    <div class="pattern">
+      <h3>2. Ambiguity</h3>
+      <p class="teaser">Debriefs ask: did this person define the problem, or just execute someone else's spec?</p>
+      <div class="deep" data-deep hidden>
+        <p>Ambiguity separates levels more cleanly than almost any other signal. Junior and mid-level bars can be cleared with excellent execution of well-defined work; senior and staff bars require evidence of finding the problem worth solving. In debriefs this shows up as a question about who wrote the spec. Prepare at least one story where the requirements did not exist when you started — where you talked to stakeholders, narrowed the problem, and defined what "done" meant. Name the moment you chose the problem, not just the moment you solved it.</p>
+      </div>
+    </div>
+
+    <div class="pattern">
+      <h3>3. Influence</h3>
+      <p class="teaser">Debriefs ask: did this person move people who didn't report to them?</p>
+      <div class="deep" data-deep hidden>
+        <p>Influence without authority is the staff-level currency, and debriefs test for it directly. The pattern interviewers look for is a decision that changed direction where the candidate had no formal power to compel it — a design review that redirected another team, a standard that got adopted voluntarily, a disagreement resolved without escalation. When you tell these stories, make the "without authority" part explicit rather than hoping it lands. Say who owned the decision, what you did to shape it, and what changed because of it.</p>
+      </div>
+    </div>
+
+    <div class="pattern">
+      <h3>4. Leveling vs bar</h3>
+      <p class="teaser">Debriefs separate two questions: "could they do the job?" (the bar) and "at what level have they done it?" (leveling).</p>
+      <div class="deep" data-deep hidden>
+        <p>This distinction confuses more candidates than any other part of hiring. Clearing the bar means you can do the work; leveling decides which title and compensation band the offer carries. They are decided with different evidence: the bar from any strong signal, leveling from sustained scope, ambiguity, and influence patterns. Practical consequence: a candidate can pass every interview and still be leveled below the target role if the evidence clusters at a smaller scope. If you are targeting a specific level, every story you tell should be pitched at that level's denominator, not just at "good enough to pass."</p>
+      </div>
+    </div>
+
+    <div id="detail-locked" class="no-print">
+      <div class="lock-note"><strong>🔒 The detailed breakdowns are locked.</strong> Enter your email below to unlock all four deep-dives.</div>
+    </div>
+
+    <section class="no-print" id="gate-wrap" aria-labelledby="gate-h">
+      <h2 id="gate-h">Unlock the deep-dives</h2>
+      <p>Enter your email to unlock all four pattern breakdowns. One email — no account, no spam.</p>
+      <form class="gate-form" id="gate-form" novalidate>
+        <input type="text" id="g-name" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name">
+        <input type="email" id="g-email" name="email" placeholder="you@example.com" autocomplete="email" aria-label="Email address" required>
+        <button type="submit" class="btn btn-primary">Unlock deep-dives</button>
+      </form>
+      <p class="err" id="g-err" role="alert"></p>
+      <p class="fineprint">Free forever. Unsubscribe anytime.</p>
+    </section>
+  </section>
+
+  <section class="card" aria-labelledby="log-h">
+    <h2 id="log-h">Your private debrief log</h2>
+    <p>After each interview loop, write down what you learned while it's fresh. Entries stay in <strong>your browser only</strong> — nothing is sent anywhere.</p>
+    <form id="log-form" novalidate>
+      <div class="field">
+        <label for="l-cat">Pattern</label>
+        <select id="l-cat">
+          <option value="scope">Scope</option>
+          <option value="ambiguity">Ambiguity</option>
+          <option value="influence">Influence</option>
+          <option value="leveling-vs-bar">Leveling vs bar</option>
+          <option value="general">General learning</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="l-notes">What did you learn?</label>
+        <textarea id="l-notes" placeholder="e.g. My system design story stayed at one-team scope — next time bring the multi-team migration story."></textarea>
+      </div>
+      <p class="err" id="l-err" role="alert"></p>
+      <div class="toolbar no-print">
+        <button type="submit" class="btn btn-primary">Add to log</button>
+        <button type="button" class="btn btn-secondary" id="btn-print">Print log</button>
+      </div>
+    </form>
+    <div id="entries" aria-live="polite"></div>
+  </section>
+
+  <section class="card" aria-labelledby="next-h">
+    <h2 id="next-h">Keep going</h2>
+    <ul>
+      <li><a href="hiring-committee-calibration.html">Hiring Committee Calibration</a> — the leveling lens behind the scope pattern.</li>
+      <li><a href="star-l-story-builder.html">STAR-L Story Builder</a> — rewrite your stories at the right denominator.</li>
+      <li><a href="https://aashithk.github.io/leadloop/#toolkit">Back to the interview prep toolkit</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site no-print">
+  <div class="wrap">
+    <span>© 2026 LeadLoop. Built by Aashith Kamath.</span>
+    <span><a href="https://aashithk.github.io/leadloop/">Home</a> · <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var LS_KEY="leadloop_signups_v1";
+  var LOG_KEY="leadloop_debrief_log_v1";
+  function $(id){ return document.getElementById(id); }
+  function load(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"[]"); }catch(e){ return []; } }
+  function save(rows){ try{ localStorage.setItem(LS_KEY,JSON.stringify(rows)); }catch(e){} }
+  function validEmail(email){ return /^(?!.*\.\.)[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(String(email||"").trim()); }
+  function isUnlocked(){ return load().length>0; }
+  function loadLog(){ try{ return JSON.parse(localStorage.getItem(LOG_KEY)||"[]"); }catch(e){ return []; } }
+  function saveLog(rows){ try{ localStorage.setItem(LOG_KEY,JSON.stringify(rows)); }catch(e){} }
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+  var CAT_LABEL={scope:"Scope",ambiguity:"Ambiguity",influence:"Influence","leveling-vs-bar":"Leveling vs bar",general:"General learning"};
+
+  function applyUnlock(){
+    document.querySelectorAll("[data-deep]").forEach(function(d){ d.hidden=false; });
+    $("detail-locked").style.display="none";
+    $("gate-wrap").hidden=true;
+  }
+
+  function renderEntries(){
+    var rows=loadLog();
+    var box=$("entries");
+    if(!rows.length){ box.innerHTML='<p class="empty">No entries yet. Your first debrief note goes here.</p>'; return; }
+    box.innerHTML=rows.map(function(r,i){
+      var d=""; try{ d=new Date(r.ts).toLocaleDateString(); }catch(e){}
+      return '<div class="entry"><div class="row"><div class="meta"><span class="cat">'+esc(CAT_LABEL[r.cat]||r.cat)+'</span>'+esc(d)+'</div>'+
+        '<button type="button" class="btn btn-danger no-print" data-del="'+i+'">Delete</button></div>'+
+        '<p>'+esc(r.notes)+'</p></div>';
+    }).join("");
+  }
+
+  $("log-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var notes=$("l-notes").value.trim();
+    var err=$("l-err");
+    if(!notes){ err.textContent="Write a line or two first — even a rough note beats a forgotten loop."; return; }
+    err.textContent="";
+    var rows=loadLog();
+    rows.unshift({cat:$("l-cat").value,notes:notes,ts:new Date().toISOString()});
+    saveLog(rows);
+    $("l-notes").value="";
+    renderEntries();
+  });
+  $("l-notes").addEventListener("input",function(){ $("l-err").textContent=""; });
+  $("entries").addEventListener("click",function(ev){
+    var b=ev.target.closest("[data-del]");
+    if(!b) return;
+    var rows=loadLog();
+    rows.splice(parseInt(b.getAttribute("data-del"),10),1);
+    saveLog(rows);
+    renderEntries();
+  });
+  $("btn-print").addEventListener("click",function(){ window.print(); });
+
+  $("gate-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var name=$("g-name").value.trim();
+    var email=$("g-email").value.trim();
+    var err=$("g-err");
+    if(!validEmail(email)){ err.textContent="Please enter a valid email address — e.g. you@example.com."; return; }
+    err.textContent="";
+    var rows=load();
+    if(!rows.some(function(rr){ return rr.email.toLowerCase()===email.toLowerCase(); })){
+      rows.push({name:name,email:email,ts:new Date().toISOString(),source:"committee-debrief-log"});
+      save(rows);
+    }
+    applyUnlock();
+  });
+  $("g-email").addEventListener("input",function(){ $("g-err").textContent=""; });
+
+  if(isUnlocked()){ applyUnlock(); }
+  renderEntries();
+})();
+</script>
+</body>
+</html>

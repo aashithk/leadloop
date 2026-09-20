@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeadLoop — Crack the interview. Grow into the leader.</title>
+<meta name="description" content="LeadLoop helps engineers crack technical interviews and grow into leaders. Start with a free resume builder, then get the free 3-part 'Interview to Leader' email series.">
+<link rel="canonical" href="https://aashithk.github.io/leadloop/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LeadLoop — Crack the interview. Grow into the leader.">
+<meta property="og:description" content="Free resume builder + free 3-part 'Interview to Leader' email series. Interview prep and leadership coaching for engineers.">
+<meta property="og:url" content="https://aashithk.github.io/leadloop/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeadLoop — Crack the interview. Grow into the leader.">
+<meta name="twitter:description" content="Free resume builder + free 3-part 'Interview to Leader' email series for engineers.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "LeadLoop",
+  "url": "https://aashithk.github.io/leadloop/",
+  "description": "Interview prep and leadership coaching for engineers: free resume builder and free 3-part email series.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Aashith Kamath",
+    "jobTitle": "Software Engineer",
+    "description": "Software engineer at Google. Has grown engineers into tech leaders and set up teams and organizations."
+  }
+}
+</script>
+<script data-goatcounter="https://leadloop.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+:root{
+  --ink:#0e1a2b; --ink-soft:#33415c; --muted:#64748b;
+  --bg:#f7f9fc; --card:#ffffff; --line:#e2e8f0;
+  --accent:#0f766e; --accent-dark:#0b5c56; --accent-soft:#e6f4f2;
+  --gold:#b45309; --gold-soft:#fef6e7;
+  --radius:14px; --shadow:0 10px 30px rgba(14,26,43,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:800;font-size:1.25rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:18px;font-size:.92rem}
+.nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:600}
+.nav-links a:hover{color:var(--accent)}
+@media(max-width:640px){.nav-links{display:none}}
+.hero{background:linear-gradient(180deg,#0e1a2b 0%,#14324a 100%);color:#fff;padding:72px 0 64px}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.12;letter-spacing:-.03em;margin:0 0 14px}
+.hero h1 .hl{color:#5eead4}
+.hero p.lead{font-size:clamp(1.02rem,2.6vw,1.25rem);color:#cbd5e1;max-width:620px;margin:0 0 28px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .08s ease}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.btn-ghost:hover{border-color:#fff}
+.hero-note{margin-top:18px;font-size:.88rem;color:#94a3b8}
+section{padding:64px 0}
+.sec-title{font-size:clamp(1.5rem,4vw,2.1rem);letter-spacing:-.02em;margin:0 0 8px}
+.sec-sub{color:var(--muted);max-width:640px;margin:0 0 32px}
+.cards{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.card .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:800;margin-bottom:12px}
+.card h3{margin:0 0 8px;font-size:1.08rem}
+.card p{margin:0;color:var(--ink-soft);font-size:.95rem}
+/* Builder */
+.builder-grid{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:960px){.builder-grid{grid-template-columns:5fr 6fr;align-items:start}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.panel h3{margin:0 0 16px;font-size:1.05rem}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.82rem;font-weight:700;color:var(--ink-soft);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+.field input,.field textarea{width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;font-size:.98rem;font-family:inherit;color:var(--ink);background:#fff}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.field textarea{min-height:88px;resize:vertical}
+.exp-entry{border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px;background:#fbfdff}
+.exp-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.exp-head strong{font-size:.92rem}
+.link-btn{background:none;border:none;color:#b91c1c;font-size:.85rem;font-weight:700;cursor:pointer;padding:4px 0}
+.add-btn{display:inline-block;background:var(--accent-soft);color:var(--accent);border:1.5px dashed var(--accent);border-radius:10px;padding:10px 18px;font-weight:700;cursor:pointer;font-size:.92rem;width:100%}
+.add-btn:hover{background:#d9efec}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+/* Resume sheet */
+.sheet-wrap{position:sticky;top:84px}
+.resume-sheet{background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);padding:40px 36px;font-size:.92rem;color:#1e293b;min-height:560px}
+.resume-sheet h2.rname{margin:0;font-size:1.7rem;letter-spacing:-.01em}
+.resume-sheet .rtitle{color:var(--accent-dark);font-weight:700;margin:2px 0 4px}
+.resume-sheet .rcontact{color:var(--muted);font-size:.82rem;margin-bottom:16px}
+.resume-sheet .rsec{margin-top:18px}
+.resume-sheet .rsec>h4{margin:0 0 8px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);border-bottom:2px solid var(--ink);padding-bottom:4px}
+.resume-sheet .rjob{margin-bottom:12px}
+.resume-sheet .rjob-head{display:flex;justify-content:space-between;gap:10px;font-weight:700}
+.resume-sheet .rjob-head .rdates{font-weight:400;color:var(--muted);font-size:.82rem;white-space:nowrap}
+.resume-sheet .rcompany{color:var(--accent-dark);font-size:.88rem;margin-bottom:4px}
+.resume-sheet ul{margin:6px 0 0;padding-left:18px}
+.resume-sheet li{margin-bottom:4px}
+.resume-sheet .rskills{font-size:.9rem}
+.resume-sheet .redu{margin-bottom:6px}
+.sheet-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.empty-note{color:var(--muted);font-style:italic}
+/* Signup */
+.signup{background:linear-gradient(180deg,#0e1a2b,#14324a);color:#fff;border-radius:20px;padding:44px 28px;text-align:center}
+.signup h2{margin:0 0 10px;font-size:clamp(1.5rem,4vw,2rem);letter-spacing:-.02em}
+.signup p{color:#cbd5e1;max-width:560px;margin:0 auto 24px}
+.signup-form{display:flex;flex-direction:column;gap:10px;max-width:440px;margin:0 auto}
+.signup-form input{padding:13px 16px;border-radius:12px;border:1.5px solid rgba(255,255,255,.25);font-size:1rem;background:rgba(255,255,255,.08);color:#fff;font-family:inherit}
+.signup-form input::placeholder{color:#94a3b8}
+.signup-form input:focus{outline:none;border-color:#5eead4}
+.signup-ok{display:none;background:rgba(94,234,212,.12);border:1px solid #5eead4;border-radius:12px;padding:16px;max-width:440px;margin:0 auto;color:#d1fae5}
+details.owner{max-width:440px;margin:18px auto 0;text-align:left;font-size:.85rem;color:#94a3b8}
+details.owner summary{cursor:pointer;color:#cbd5e1;font-weight:600}
+.owner-box{margin-top:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px}
+/* About */
+.about{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+@media(min-width:760px){.about{grid-template-columns:2fr 3fr}}
+.avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#14324a);color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.4rem;font-weight:800}
+.about h3{margin:0 0 10px;font-size:1.3rem}
+.about p{color:var(--ink-soft)}
+.tick{list-style:none;padding:0;margin:16px 0 0}
+.tick li{padding:8px 0 8px 30px;position:relative;color:var(--ink-soft)}
+.tick li::before{content:"✓";position:absolute;left:2px;color:var(--accent);font-weight:800}
+footer.site{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}
+footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#print-root{display:none}
+@media print{
+  .no-print{display:none!important}
+  #print-root{display:block!important}
+  body{margin:0;background:#fff}
+}
+@media print{
+  .resume-sheet{box-shadow:none;border:none;border-radius:0;padding:0;min-height:0}
+}
+</style>
+</head>
+<body>
+<div id="app" class="no-print">
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top">Lead<span>Loop</span></a>
+    <nav class="nav-links">
+      <a href="#series">Email series</a>
+      <a href="#builder">Resume builder</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <h1>Crack the interview.<br><span class="hl">Grow into the leader.</span></h1>
+    <p class="lead">LeadLoop is where engineers learn to win technical interviews — and then grow into the leaders teams want to follow. Start free: build a resume that gets callbacks, then get the 3-part <em>Interview to Leader</em> email series.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#builder">Build my free resume</a>
+      <a class="btn btn-ghost" href="#signup">Get the free 3-part email series</a>
+    </div>
+    <p class="hero-note">Free forever. No account needed. Your data stays in your browser.</p>
+  </div>
+</section>
+
+<section id="series">
+  <div class="wrap">
+    <h2 class="sec-title">What you'll get: the <em>Interview to Leader</em> series</h2>
+    <p class="sec-sub">Three short, plain-spoken emails. One clear idea each, one thing to do after reading. No hype, no fluff.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="num">1</div>
+        <h3>The resume that gets callbacks</h3>
+        <p>Why most engineering resumes get skimmed for six seconds and skipped — and the exact structure that makes a hiring manager stop and read. Includes how to use the free builder above.</p>
+      </div>
+      <div class="card">
+        <div class="num">2</div>
+        <h3>The interview loop decoded</h3>
+        <p>What bar-raisers actually score in coding, system design, and behavioral rounds — and the three mistakes that fail otherwise-strong candidates.</p>
+      </div>
+      <div class="card">
+        <div class="num">3</div>
+        <h3>From engineer to leader</h3>
+        <p>How leadership growth really works: the shift from output to outcomes, and the habits that turn strong engineers into people others want to follow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="builder" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <h2 class="sec-title">Free resume builder</h2>
+    <p class="sec-sub">Fill in your details and watch a clean, professional resume take shape. Print it or save it as a PDF when you're done. Nothing is uploaded anywhere — it all happens in your browser.</p>
+    <div class="builder-grid">
+      <div class="panel">
+        <h3>Your details</h3>
+        <div class="field"><label for="f-name">Full name</label><input id="f-name" type="text" placeholder="Aarav Sharma" autocomplete="name"></div>
+        <div class="field"><label for="f-title">Professional title</label><input id="f-title" type="text" placeholder="Senior Software Engineer"></div>
+        <div class="row2">
+          <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" placeholder="you@example.com" autocomplete="email"></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" placeholder="+1 555 010 2030" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="f-location">Location</label><input id="f-location" type="text" placeholder="Bengaluru, India"></div>
+        <div class="field"><label for="f-summary">Summary</label><textarea id="f-summary" placeholder="2–3 lines: who you are, what you've built, what you're great at."></textarea></div>
+
+        <h3 style="margin-top:24px">Experience</h3>
+        <div id="exp-list"></div>
+        <button class="add-btn" id="exp-add" type="button">+ Add experience</button>
+
+        <h3 style="margin-top:24px">Skills</h3>
+        <div class="field"><label for="f-skills">Skills (comma separated)</label><input id="f-skills" type="text" placeholder="Go, distributed systems, system design, mentoring"></div>
+
+        <h3 style="margin-top:24px">Education</h3>
+        <div id="edu-list"></div>
+        <button class="add-btn" id="edu-add" type="button">+ Add education</button>
+      </div>
+
+      <div class="sheet-wrap">
+        <div class="resume-sheet" id="resume-preview" aria-live="polite"></div>
+        <div class="sheet-actions">
+          <button class="btn btn-primary" id="btn-print" type="button">Print / Save as PDF</button>
+          <button class="btn" id="btn-sample" type="button" style="background:#fff;border:2px solid var(--line);color:var(--ink)">Load sample data</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="signup">
+  <div class="wrap">
+    <div class="signup">
+      <h2>Get the free 3-part <em>Interview to Leader</em> series</h2>
+      <p>Three concise emails: the resume that gets callbacks, the interview loop decoded, and how engineers actually grow into leaders. Free, plain-spoken, and written from real experience building teams.</p>
+      <form class="signup-form" id="signup-form" novalidate>
+        <input type="text" id="s-name" placeholder="Your name" autocomplete="name" aria-label="Your name">
+        <input type="email" id="s-email" placeholder="Your email" autocomplete="email" aria-label="Your email" required>
+        <button class="btn btn-primary" type="submit">Send me the series</button>
+      </form>
+      <div class="signup-ok" id="signup-ok">You're in. Watch your inbox — part 1 arrives soon.</div>
+      <details class="owner">
+        <summary>Site owner tools</summary>
+        <div class="owner-box">
+          <div id="owner-count">0 signups captured on this device.</div>
+          <button class="btn btn-ghost" id="btn-export" type="button" style="margin-top:10px;padding:10px 18px;font-size:.9rem">Export signups as CSV</button>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div><div class="avatar">AK</div></div>
+    <div>
+      <h3>About Aashith</h3>
+      <p>Aashith Kamath is a software engineer at Google. Over his career he has grown engineers into tech leaders, set up teams and organizations, and led on both the technical and organizational fronts — from architecture decisions to the people systems that make teams work.</p>
+      <p>He started LeadLoop because the same engineers who ace hard technical problems often stall on two things nobody teaches: getting past the interview loop, and growing into leadership once they're in. LeadLoop exists to teach both, plainly and from experience.</p>
+      <ul class="tick">
+        <li>Software engineer at Google</li>
+        <li>Grown engineers into tech leaders across teams</li>
+        <li>Set up teams, organizations, and businesses from scratch</li>
+        <li>Led on technical architecture and organizational design</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 LeadLoop. Built by Aashith Kamath.</span>
+    <span>Free resume builder · Free email series · Interview &amp; leadership coaching</span>
+  </div>
+</footer>
+</div><!-- /#app -->
+<div id="print-root"></div>
+
+<script>
+"use strict";
+/* ---------- pure helpers (testable) ---------- */
+function escapeHtml(s){
+  return String(s==null?"":s).replace(/[&<>"']/g,function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+  });
+}
+function validateEmail(email){
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(email||"").trim());
+}
+function splitLines(t){
+  return String(t||"").split("\n").map(function(x){return x.trim();}).filter(Boolean);
+}
+function splitCsvSafe(v){ return String(v==null?"":v).replace(/"/g,'""'); }
+function buildCSV(rows){
+  var head="name,email,signed_up_at";
+  var body=rows.map(function(r){
+    return '"'+splitCsvSafe(r.name)+'","'+splitCsvSafe(r.email)+'","'+splitCsvSafe(r.ts)+'"';
+  });
+  return head+"\n"+body.join("\n");
+}
+function trackEvent(name){
+  var slug="event/"+String(name).toLowerCase().replace(/\s+/g,"-");
+  try{
+    if(window.goatcounter&&goatcounter.count)goatcounter.count({event:true,path:slug,title:name});
+  }catch(e){}
+}
+
+/* ---------- resume data + rendering ---------- */
+function collectResume(){
+  var exps=[];
+  document.querySelectorAll("#exp-list .exp-entry").forEach(function(el){
+    exps.push({
+      role: el.querySelector(".e-role").value,
+      company: el.querySelector(".e-company").value,
+      start: el.querySelector(".e-start").value,
+      end: el.querySelector(".e-end").value,
+      bullets: el.querySelector(".e-bullets").value
+    });
+  });
+  var edus=[];
+  document.querySelectorAll("#edu-list .edu-entry").forEach(function(el){
+    edus.push({
+      degree: el.querySelector(".d-degree").value,
+      school: el.querySelector(".d-school").value,
+      year: el.querySelector(".d-year").value
+    });
+  });
+  return {
+    name: document.getElementById("f-name").value,
+    title: document.getElementById("f-title").value,
+    email: document.getElementById("f-email").value,
+    phone: document.getElementById("f-phone").value,
+    location: document.getElementById("f-location").value,
+    summary: document.getElementById("f-summary").value,
+    skills: document.getElementById("f-skills").value,
+    exps: exps, edus: edus
+  };
+}
+function renderResume(d){
+  var hasAny = d.name||d.title||d.summary||d.skills||d.exps.some(function(e){return e.role||e.company;})||d.edus.some(function(e){return e.degree||e.school;});
+  if(!hasAny){
+    return '<p class="empty-note">Your resume preview will appear here as you type.</p>';
+  }
+  var h="";
+  h+='<h2 class="rname">'+escapeHtml(d.name||"Your Name")+"</h2>";
+  if(d.title) h+='<div class="rtitle">'+escapeHtml(d.title)+"</div>";
+  var contact=[d.email,d.phone,d.location].filter(Boolean).map(escapeHtml).join(" &nbsp;·&nbsp; ");
+  if(contact) h+='<div class="rcontact">'+contact+"</div>";
+  if(d.summary) h+='<div class="rsec"><h4>Summary</h4><p style="margin:0">'+escapeHtml(d.summary)+"</p></div>";
+  var expHtml=d.exps.filter(function(e){return e.role||e.company;}).map(function(e){
+    var dates=[e.start,e.end].filter(Boolean).join(" – ");
+    var out='<div class="rjob"><div class="rjob-head"><span>'+escapeHtml(e.role||"")+'</span>'+(dates?'<span class="rdates">'+escapeHtml(dates)+"</span>":"")+"</div>";
+    if(e.company) out+='<div class="rcompany">'+escapeHtml(e.company)+"</div>";
+    var bl=splitLines(e.bullets);
+    if(bl.length) out+="<ul>"+bl.map(function(b){return "<li>"+escapeHtml(b)+"</li>";}).join("")+"</ul>";
+    return out+"</div>";
+  }).join("");
+  if(expHtml) h+='<div class="rsec"><h4>Experience</h4>'+expHtml+"</div>";
+  var skills=String(d.skills||"").split(",").map(function(s){return s.trim();}).filter(Boolean);
+  if(skills.length) h+='<div class="rsec"><h4>Skills</h4><div class="rskills">'+skills.map(escapeHtml).join(" &nbsp;·&nbsp; ")+"</div></div>";
+  var eduHtml=d.edus.filter(function(e){return e.degree||e.school;}).map(function(e){
+    return '<div class="redu"><strong>'+escapeHtml(e.degree||"")+"</strong>"+(e.school?", "+escapeHtml(e.school):"")+(e.year?" — "+escapeHtml(e.year):"")+"</div>";
+  }).join("");
+  if(eduHtml) h+='<div class="rsec"><h4>Education</h4>'+eduHtml+"</div>";
+  return h;
+}
+function refreshPreview(){
+  document.getElementById("resume-preview").innerHTML=renderResume(collectResume());
+}
+
+/* ---------- dynamic entries ---------- */
+function expEntryHTML(){
+  return '<div class="exp-entry">'+
+    '<div class="exp-head"><strong>Position</strong><button type="button" class="link-btn exp-remove">Remove</button></div>'+
+    '<div class="row2"><div class="field"><label>Role</label><input class="e-role" type="text" placeholder="Senior Software Engineer"></div>'+
+    '<div class="field"><label>Company</label><input class="e-company" type="text" placeholder="Acme Corp"></div></div>'+
+    '<div class="row2"><div class="field"><label>Start</label><input class="e-start" type="text" placeholder="Jan 2021"></div>'+
+    '<div class="field"><label>End</label><input class="e-end" type="text" placeholder="Present"></div></div>'+
+    '<div class="field"><label>Achievements (one per line)</label><textarea class="e-bullets" placeholder="Shipped X, improving Y by 30%\nLed a team of 4 engineers\n…"></textarea></div>'+
+  "</div>";
+}
+function eduEntryHTML(){
+  return '<div class="exp-entry edu-entry">'+
+    '<div class="exp-head"><strong>Education</strong><button type="button" class="link-btn edu-remove">Remove</button></div>'+
+    '<div class="field"><label>Degree</label><input class="d-degree" type="text" placeholder="B.Tech, Computer Science"></div>'+
+    '<div class="row2"><div class="field"><label>School</label><input class="d-school" type="text" placeholder="IIT Bombay"></div>'+
+    '<div class="field"><label>Year</label><input class="d-year" type="text" placeholder="2016"></div></div>'+
+  "</div>";
+}
+function addExp(){ document.getElementById("exp-list").insertAdjacentHTML("beforeend",expEntryHTML()); bindDynamic(); refreshPreview(); }
+function addEdu(){ document.getElementById("edu-list").insertAdjacentHTML("beforeend",eduEntryHTML()); bindDynamic(); refreshPreview(); }
+function bindDynamic(){
+  document.querySelectorAll("#exp-list .exp-entry").forEach(function(el){
+    if(el.dataset.bound) return; el.dataset.bound="1";
+    el.querySelector(".exp-remove").addEventListener("click",function(){el.remove();refreshPreview();});
+    el.querySelectorAll("input,textarea").forEach(function(i){i.addEventListener("input",refreshPreview);});
+  });
+  document.querySelectorAll("#edu-list .edu-entry").forEach(function(el){
+    if(el.dataset.bound) return; el.dataset.bound="1";
+    el.querySelector(".edu-remove").addEventListener("click",function(){el.remove();refreshPreview();});
+    el.querySelectorAll("input,textarea").forEach(function(i){i.addEventListener("input",refreshPreview);});
+  });
+}
+
+/* ---------- signups (localStorage only, never sent anywhere) ---------- */
+var LS_KEY="leadloop_signups_v1";
+function loadSignups(){
+  try{ var v=JSON.parse(localStorage.getItem(LS_KEY)||"[]"); return Array.isArray(v)?v:[]; }
+  catch(e){ return []; }
+}
+function saveSignups(rows){ try{ localStorage.setItem(LS_KEY,JSON.stringify(rows)); }catch(e){} }
+function updateOwnerCount(){
+  var n=loadSignups().length;
+  var el=document.getElementById("owner-count");
+  if(el) el.textContent=n+" signup"+(n===1?"":"s")+" captured on this device.";
+}
+function downloadCSV(filename,text){
+  var blob=new Blob([text],{type:"text/csv;charset=utf-8"});
+  var a=document.createElement("a");
+  a.href=URL.createObjectURL(blob); a.download=filename;
+  document.body.appendChild(a); a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500);
+}
+
+/* ---------- sample data ---------- */
+function loadSample(){
+  document.getElementById("f-name").value="Aarav Sharma";
+  document.getElementById("f-title").value="Senior Software Engineer";
+  document.getElementById("f-email").value="aarav.sharma@example.com";
+  document.getElementById("f-phone").value="+91 98200 12345";
+  document.getElementById("f-location").value="Bengaluru, India";
+  document.getElementById("f-summary").value="Backend engineer with 6 years building distributed systems at scale. Known for turning ambiguous problems into shipped systems and mentoring junior engineers into independent owners.";
+  document.getElementById("f-skills").value="Go, Kubernetes, system design, PostgreSQL, mentoring";
+  document.getElementById("exp-list").innerHTML="";
+  addExp();
+  var e=document.querySelector("#exp-list .exp-entry");
+  e.querySelector(".e-role").value="Senior Software Engineer";
+  e.querySelector(".e-company").value="Example Fintech";
+  e.querySelector(".e-start").value="Mar 2022"; e.querySelector(".e-end").value="Present";
+  e.querySelector(".e-bullets").value="Led migration of payments pipeline to event-driven architecture, cutting p99 latency 40%\nMentored 3 junior engineers; two earned promotions within a year\nDrove design reviews adopted as team standard";
+  addExp();
+  var e2=document.querySelectorAll("#exp-list .exp-entry")[1];
+  e2.querySelector(".e-role").value="Software Engineer";
+  e2.querySelector(".e-company").value="Example SaaS";
+  e2.querySelector(".e-start").value="Jun 2019"; e2.querySelector(".e-end").value="Feb 2022";
+  e2.querySelector(".e-bullets").value="Built multi-tenant billing service serving 2,000+ customers\nReduced on-call pages 60% by adding SLOs and runbooks";
+  document.getElementById("edu-list").innerHTML="";
+  addEdu();
+  var d=document.querySelector("#edu-list .edu-entry");
+  d.querySelector(".d-degree").value="B.Tech, Computer Science";
+  d.querySelector(".d-school").value="IIT Bombay";
+  d.querySelector(".d-year").value="2019";
+  refreshPreview();
+  trackEvent("Resume sample loaded");
+}
+
+/* ---------- wire up ---------- */
+document.addEventListener("DOMContentLoaded",function(){
+  addExp(); addEdu(); refreshPreview();
+  ["f-name","f-title","f-email","f-phone","f-location","f-summary","f-skills"].forEach(function(id){
+    document.getElementById(id).addEventListener("input",refreshPreview);
+  });
+  document.getElementById("exp-add").addEventListener("click",addExp);
+  document.getElementById("edu-add").addEventListener("click",addEdu);
+  document.getElementById("btn-sample").addEventListener("click",loadSample);
+  document.getElementById("btn-print").addEventListener("click",function(){
+    document.getElementById("print-root").innerHTML='<div class="resume-sheet">'+renderResume(collectResume())+"</div>";
+    trackEvent("Resume PDF");
+    window.print();
+  });
+  updateOwnerCount();
+
+  document.getElementById("signup-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var name=document.getElementById("s-name").value.trim();
+    var email=document.getElementById("s-email").value.trim();
+    if(!validateEmail(email)){
+      document.getElementById("s-email").focus();
+      document.getElementById("s-email").style.borderColor="#f87171";
+      return;
+    }
+    var rows=loadSignups();
+    if(!rows.some(function(r){return r.email.toLowerCase()===email.toLowerCase();})){
+      rows.push({name:name,email:email,ts:new Date().toISOString()});
+      saveSignups(rows);
+    }
+    trackEvent("Email signup");
+    document.getElementById("signup-form").style.display="none";
+    document.getElementById("signup-ok").style.display="block";
+    updateOwnerCount();
+  });
+  document.getElementById("s-email").addEventListener("input",function(){
+    document.getElementById("s-email").style.borderColor="";
+  });
+  document.getElementById("btn-export").addEventListener("click",function(){
+    var rows=loadSignups();
+    if(!rows.length){ alert("No signups captured on this device yet."); return; }
+    downloadCSV("leadloop-signups.csv",buildCSV(rows));
+    trackEvent("Signup export");
+  });
+});
+</script>
+</body>
+</html>

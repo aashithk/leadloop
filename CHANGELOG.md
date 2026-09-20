@@ -2,6 +2,32 @@
 
 Newest first. The feature pipeline (F2–F12) prepends its own entries as each feature ships.
 
+## 2026-09-20 — F10: System Design Timer (live)
+
+- Live page: https://aashithk.github.io/leadloop/system-design-timer.html
+- What it is: a 45-minute countdown pacer for system design interview
+  practice (the timer, not a timeline generator). Five phases with live
+  highlighting — Clarify (0–5), High-level design (5–15), Deep dive
+  (15–30), Scale & trade-offs (30–40), Wrap-up (40–45) — plus Start / Pause
+  / Resume / Reset, progress bar with aria bounds, tab-title countdown,
+  and throttled screen-reader announcements (role=status). Deterministic
+  timer core (`window.LeadLoop.makeTimer`) with `advance()` as the single
+  source of truth. Private practice session log (browser-only
+  `leadloop_timer_sessions_v1`, nothing sent; newest-first, delete,
+  empty-note guard, XSS-safe rendering). Optional newsletter signup
+  (`source:"system-design-timer"`) that gates nothing — the timer and log
+  are fully free.
+- Honesty: explicit pacer-not-prescription disclaimer; no invented claims.
+- Tests: `tests/e2e/f10.test.js` — **78/78 pass** (timer-core unit tests:
+  phase boundaries incl. exclusive edges, clamp, done, pause, reset,
+  no-restart-after-done; DOM start/pause/reset, phase list, progressbar
+  aria, reset announcement; session log add/empty-guard/delete/persist/
+  newest-first/XSS; optional signup invalid/valid/dedupe; disclaimer +
+  banned-claim scan; SEO hygiene; link resolution; accessibility basics).
+- Persona validation: **5/5 reach buy mode** (Priya, Rahul, Mei, Arjun, Sara).
+- SEO: dedicated title/meta/canonical/OG/Twitter, WebPage + BreadcrumbList
+  JSON-LD, homepage toolkit card #10, sitemap entry.
+
 ## 2026-09-20 — F9: AI Architecture Prompts (live)
 
 - Live page: https://aashithk.github.io/leadloop/ai-architecture-prompts.html
@@ -180,6 +206,7 @@ Newest first. The feature pipeline (F2–F12) prepends its own entries as each f
   JSON-LD, homepage toolkit card + `#toolkit` nav link, sitemap entry.
 - Homepage regression green (no JS errors, toolkit hub present, exactly one H1,
   valid sitemap).
+
 
 
 

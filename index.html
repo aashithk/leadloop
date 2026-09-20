@@ -8,18 +8,18 @@
 <link rel="canonical" href="https://aashithk.github.io/leadloop/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="LeadLoop — Crack the interview. Grow into the leader.">
-<meta property="og:description" content="Free resume builder + free 3-part 'Interview to Leader' email series. Interview prep and leadership coaching for engineers.">
+<meta property="og:description" content="Free resume builder + free 3-part 'Interview to Leader' email series. 1:1 interview prep & leadership coaching — first-cohort waitlist open.">
 <meta property="og:url" content="https://aashithk.github.io/leadloop/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeadLoop — Crack the interview. Grow into the leader.">
-<meta name="twitter:description" content="Free resume builder + free 3-part 'Interview to Leader' email series for engineers.">
+<meta name="twitter:description" content="Free resume builder + free 3-part 'Interview to Leader' email series. 1:1 coaching waitlist open.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "LeadLoop",
   "url": "https://aashithk.github.io/leadloop/",
-  "description": "Interview prep and leadership coaching for engineers: free resume builder and free 3-part email series.",
+  "description": "Interview prep and leadership coaching for engineers: free resume builder, free 3-part email series, and a 1:1 coaching waitlist.",
   "publisher": {
     "@type": "Person",
     "name": "Aashith Kamath",
@@ -49,7 +49,12 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);ba
 .nav-links{display:flex;gap:18px;font-size:.92rem}
 .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:600}
 .nav-links a:hover{color:var(--accent)}
-@media(max-width:640px){.nav-links{display:none}}
+@media(max-width:640px){
+  .nav{height:auto;min-height:60px;padding:8px 0;flex-wrap:wrap;gap:4px}
+  .nav-links{display:flex;gap:14px;font-size:.82rem;overflow-x:auto;white-space:nowrap;max-width:100%;padding-bottom:2px}
+}
+/* anchor targets clear the sticky header */
+section[id]{scroll-margin-top:72px}
 .hero{background:linear-gradient(180deg,#0e1a2b 0%,#14324a 100%);color:#fff;padding:72px 0 64px}
 .hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.12;letter-spacing:-.03em;margin:0 0 14px}
 .hero h1 .hl{color:#5eead4}
@@ -139,6 +144,40 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
 .level-guide p{margin:8px 0;color:var(--ink-soft)}
 .level-guide p strong{color:var(--ink)}
 .level-guide .lg-ex{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;background:rgba(255,255,255,.7);border:1px solid #f3d9a4;border-radius:8px;padding:8px 10px;margin-top:6px}
+.aside-note{background:#f0f9ff;border:1px solid #bae6fd;border-left:5px solid #0284c7;border-radius:10px;padding:14px 16px;margin:4px 0 20px;font-size:.9rem;color:var(--ink-soft)}
+/* freemium ladder */
+.ladder{display:flex;gap:12px;align-items:stretch;margin:0 0 36px;flex-wrap:wrap}
+.step{flex:1;min-width:220px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.step .num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:800;margin-bottom:10px;font-size:.9rem}
+.step h4{margin:0 0 6px;font-size:1rem}
+.step p{margin:0 0 10px;color:var(--ink-soft);font-size:.9rem}
+.step .go{font-weight:700;font-size:.9rem;text-decoration:none}
+.step-arrow{align-self:center;font-size:1.5rem;color:var(--muted);font-weight:800}
+@media(max-width:760px){.step-arrow{transform:rotate(90deg);margin:0 auto}}
+/* coaching tracks */
+.tracks{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:36px}
+@media(min-width:760px){.tracks{grid-template-columns:1fr 1fr}}
+.tracks .card p{margin:0 0 6px}
+.coach-box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:36px 28px;box-shadow:var(--shadow);max-width:640px;margin:0 auto}
+.coach-form{display:flex;flex-direction:column;gap:10px}
+.coach-form input,.coach-form select,.coach-form textarea{padding:13px 16px;border-radius:12px;border:1.5px solid var(--line);font-size:1rem;font-family:inherit;color:var(--ink);background:#fff;width:100%}
+.coach-form input:focus,.coach-form select:focus,.coach-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.coach-form textarea{min-height:84px;resize:vertical}
+.coach-ok{display:none;background:var(--accent-soft);border:1px solid var(--accent);border-radius:12px;padding:16px;color:var(--ink);margin-top:4px}
+.coach-ok .linklike{color:var(--accent)}
+/* form errors + honest notes */
+.form-err{display:none;font-size:.88rem;font-weight:600;margin:0}
+.signup .form-err{color:#fca5a5}
+.coach-form .form-err{color:#b91c1c}
+.preview-note{font-size:.82rem;color:#94a3b8;max-width:520px;margin:14px auto 0}
+.coach-box .preview-note{color:var(--muted)}
+.linklike{background:none;border:none;font:inherit;font-weight:700;cursor:pointer;text-decoration:underline;padding:0;color:#5eead4}
+/* share nudge */
+.share-nudge{margin-top:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 14px;font-size:.9rem;color:#cbd5e1;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
+.share-nudge code{background:rgba(0,0,0,.3);padding:4px 8px;border-radius:6px;font-size:.78rem;color:#5eead4;word-break:break-all}
+.share-nudge button{background:none;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:8px;padding:6px 12px;font-size:.85rem;font-weight:700;cursor:pointer;font-family:inherit}
+.share-nudge button:hover{border-color:#fff}
+.share-nudge .dismiss{border:none;color:#94a3b8;padding:6px 8px}
 @media print{
   .no-print{display:none!important}
   #print-root{display:block!important}
@@ -157,6 +196,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
     <nav class="nav-links">
       <a href="#series">Email series</a>
       <a href="#builder">Resume builder</a>
+      <a href="#coaching">Coaching</a>
       <a href="#about">About</a>
     </nav>
   </div>
@@ -165,12 +205,13 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
 <section class="hero" id="top">
   <div class="wrap">
     <h1>Crack the interview.<br><span class="hl">Grow into the leader.</span></h1>
-    <p class="lead">LeadLoop is where engineers learn to win technical interviews — and then grow into the leaders teams want to follow. Start free: build a resume that gets callbacks, then get the 3-part <em>Interview to Leader</em> email series.</p>
+    <p class="lead">LeadLoop is where engineers learn to win technical interviews — and then grow into the leaders teams want to follow. Start with two free tools: a resume builder that shows a professional preview as you type, and the 3-part <em>Interview to Leader</em> email series.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#builder">Build my free resume</a>
-      <a class="btn btn-ghost" href="#signup">Get the free 3-part email series</a>
+      <a class="btn btn-ghost" href="#signup">Send me the 3-part series</a>
     </div>
-    <p class="hero-note">Free forever. No account needed. Your data stays in your browser.</p>
+    <p class="hero-note">Free forever. No account needed. Your resume never leaves your browser.</p>
+    <p class="hero-note">Built by a Google engineer — 50+ hiring &amp; promotion committees, incl. senior &amp; senior-staff decisions.</p>
   </div>
 </section>
 
@@ -182,12 +223,12 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
       <div class="card">
         <div class="num">1</div>
         <h3>The resume that gets callbacks</h3>
-        <p>Why most engineering resumes get skimmed for six seconds and skipped — and the exact structure that makes a hiring manager stop and read. Includes how to use the free builder above.</p>
+        <p>Why most engineering resumes get skimmed for six seconds and skipped — and the exact structure that makes a hiring manager stop and read. Includes how to use the free builder below.</p>
       </div>
       <div class="card">
         <div class="num">2</div>
         <h3>The interview loop decoded</h3>
-        <p>What bar-raisers actually score in coding, system design, and behavioral rounds — and the three mistakes that fail otherwise-strong candidates.</p>
+        <p>What hiring committees actually score in coding, system design, and behavioral rounds — and the three mistakes that fail otherwise-strong candidates.</p>
       </div>
       <div class="card">
         <div class="num">3</div>
@@ -206,23 +247,24 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
       <div class="panel">
         <h3>Your details</h3>
         <div class="field">
-          <label for="f-level">Targeting Google? Pick your level</label>
+          <label for="f-level">Targeting Google? Pick the level you're aiming for</label>
           <select id="f-level">
             <option value="">Just building a general resume</option>
             <option value="L3">L3 — Software Engineer II (entry)</option>
             <option value="L4">L4 — Software Engineer III</option>
-            <option value="L5" selected>L5 — Senior Software Engineer</option>
+            <option value="L5">L5 — Senior Software Engineer</option>
             <option value="L6">L6 — Staff Software Engineer</option>
             <option value="L7">L7+ — Senior Staff and above</option>
           </select>
-          <p class="hint">Google job posts list titles, never levels — so your resume has to prove the scope of the band you're targeting, or the hiring committee will place you lower. Written from real experience inside Google's hiring process.</p>
+          <p class="hint">This is the level you want to be hired at — not necessarily the one you're at now. Google job posts generally use titles rather than internal level labels, so your resume has to prove the scope of the band you're targeting, or the hiring committee will place you lower. Not targeting Google? Leave this on “general resume”. Written from real experience inside Google's hiring process.</p>
         </div>
-        <div class="level-guide" id="level-guide" aria-live="polite"></div>
+        <div class="level-guide" id="level-guide"></div>
+        <div class="aside-note"><strong>Returning after a break or switching careers?</strong> Say so in one plain line in your summary (“Career break 2021–2024; previously a backend engineer…”), then lead with what you can do now. Reviewers respect a one-liner far more than a gap they have to guess about — and career changers should frame the old career as domain expertise, not a liability.</div>
         <div class="field"><label for="f-name">Full name</label><input id="f-name" type="text" placeholder="Aarav Sharma" autocomplete="name"></div>
         <div class="field"><label for="f-title">Professional title</label><input id="f-title" type="text" placeholder="Senior Software Engineer"></div>
         <div class="row2">
           <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" placeholder="you@example.com" autocomplete="email"></div>
-          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" placeholder="+1 555 010 2030" autocomplete="tel"></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" placeholder="+91 98200 12345" autocomplete="tel"></div>
         </div>
         <div class="field"><label for="f-location">Location</label><input id="f-location" type="text" placeholder="Bengaluru, India"></div>
         <div class="field"><label for="f-summary">Summary</label><textarea id="f-summary" placeholder="2–3 lines: who you are, what you've built, what you're great at."></textarea></div>
@@ -231,8 +273,12 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
         <div id="exp-list"></div>
         <button class="add-btn" id="exp-add" type="button">+ Add experience</button>
 
+        <h3 style="margin-top:24px">Projects</h3>
+        <div id="proj-list"></div>
+        <button class="add-btn" id="proj-add" type="button">+ Add project</button>
+
         <h3 style="margin-top:24px">Skills</h3>
-        <div class="field"><label for="f-skills">Skills (comma separated)</label><input id="f-skills" type="text" placeholder="Go, distributed systems, system design, mentoring"></div>
+        <div class="field"><label for="f-skills">Skills (comma or semicolon separated)</label><input id="f-skills" type="text" placeholder="Go, distributed systems, system design, mentoring"></div>
 
         <h3 style="margin-top:24px">Education</h3>
         <div id="edu-list"></div>
@@ -240,10 +286,11 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
       </div>
 
       <div class="sheet-wrap">
-        <div class="resume-sheet" id="resume-preview" aria-live="polite"></div>
+        <div class="resume-sheet" id="resume-preview"></div>
         <div class="sheet-actions">
           <button class="btn btn-primary" id="btn-print" type="button">Print / Save as PDF</button>
           <button class="btn" id="btn-sample" type="button" style="background:#fff;border:2px solid var(--line);color:var(--ink)">Load sample data</button>
+          <button class="link-btn" id="btn-clear-saved" type="button">Clear saved resume data</button>
         </div>
       </div>
     </div>
@@ -254,20 +301,88 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
   <div class="wrap">
     <div class="signup">
       <h2>Get the free 3-part <em>Interview to Leader</em> series</h2>
-      <p>Three concise emails: the resume that gets callbacks, the interview loop decoded, and how engineers actually grow into leaders. Free, plain-spoken, and written from real experience building teams.</p>
+      <p>Three concise emails: the resume that gets callbacks, the interview loop decoded, and how engineers actually grow into leaders. Free, plain-spoken, and written from real experience on 50+ hiring &amp; promotion committees.</p>
       <form class="signup-form" id="signup-form" novalidate>
-        <input type="text" id="s-name" placeholder="Your name" autocomplete="name" aria-label="Your name">
-        <input type="email" id="s-email" placeholder="Your email" autocomplete="email" aria-label="Your email" required>
+        <input type="text" id="s-name" placeholder="Your name (optional)" autocomplete="name" aria-label="Your name">
+        <input type="email" id="s-email" placeholder="Your email" autocomplete="email" aria-label="Your email" required aria-describedby="s-err">
+        <div class="form-err" id="s-err" role="alert"></div>
         <button class="btn btn-primary" type="submit">Send me the series</button>
       </form>
-      <div class="signup-ok" id="signup-ok">You're in. Watch your inbox — part 1 arrives soon.</div>
-      <details class="owner">
-        <summary>Site owner tools</summary>
-        <div class="owner-box">
-          <div id="owner-count">0 signups captured on this device.</div>
-          <button class="btn btn-ghost" id="btn-export" type="button" style="margin-top:10px;padding:10px 18px;font-size:.9rem">Export signups as CSV</button>
-        </div>
-      </details>
+      <div class="signup-ok" id="signup-ok" role="status"></div>
+      <p class="preview-note">Heads-up: this page is a pre-launch preview and isn't connected to an email provider yet — your signup is saved in this browser only, and nothing is sent anywhere right now. When the series launches, everyone on the list gets part 1 first.</p>
+    </div>
+  </div>
+</section>
+
+<section id="coaching" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <h2 class="sec-title">From free tools to 1:1 coaching</h2>
+    <p class="sec-sub">LeadLoop is a ladder: start free, go deep when you're ready. Coaching is 1:1 and human — no courses, no video libraries, no cohorts of five hundred.</p>
+    <div class="ladder">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>Free resume builder</h4>
+        <p>Build a resume that gets callbacks, with level-by-level guidance written from real hiring experience.</p>
+        <a class="go" href="#builder">Start building →</a>
+      </div>
+      <div class="step-arrow" aria-hidden="true">→</div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>Free 3-part email series</h4>
+        <p>Resume callbacks, the interview loop decoded, and the engineer-to-leader shift. One clear idea per email.</p>
+        <a class="go" href="#signup">Get the series →</a>
+      </div>
+      <div class="step-arrow" aria-hidden="true">→</div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>1:1 coaching</h4>
+        <p>Interview prep or leadership growth, tailored to where you are. The first cohort is forming now.</p>
+        <a class="go" href="#coach-form-wrap">Join the waitlist →</a>
+      </div>
+    </div>
+    <div class="tracks">
+      <div class="card">
+        <h3>Track 1 — Interview preparation</h3>
+        <p>For engineers preparing for big-tech loops and senior+ interviews.</p>
+        <ul class="tick">
+          <li>Resume reviews targeted at the hiring bar</li>
+          <li>Mock coding interviews with honest feedback</li>
+          <li>Mock system-design interviews</li>
+          <li>Behavioral &amp; leadership-round prep</li>
+          <li>Offer negotiation strategy</li>
+        </ul>
+        <p class="hint">Grounded in 50+ hiring committee decisions — I know what gets weighed after the interviews end.</p>
+      </div>
+      <div class="card">
+        <h3>Track 2 — Career growth &amp; leadership</h3>
+        <p>For engineers and managers growing toward senior, staff, and EM roles.</p>
+        <ul class="tick">
+          <li>Engineer → Senior → Staff progression plans</li>
+          <li>Promotion packet reviews</li>
+          <li>Influence &amp; organizational-design mentorship</li>
+          <li>Engineering-manager coaching: 1:1s, feedback, delegation, managing up</li>
+          <li>The IC ↔ EM decision, worked through honestly</li>
+        </ul>
+        <p class="hint">Grounded in 50+ promotion committee decisions, incl. senior &amp; senior-staff leadership.</p>
+      </div>
+    </div>
+    <div class="coach-box" id="coach-form-wrap">
+      <h3 style="margin:0 0 8px">Join the first-cohort waitlist</h3>
+      <p class="sec-sub" style="margin-bottom:20px">I'm forming the first coaching cohort now. Format and pricing are still being finalized — the waitlist gets first access and a say in what gets built. No payment, no commitment.</p>
+      <form class="coach-form" id="coach-form" novalidate>
+        <input type="text" id="c-name" placeholder="Your name (optional)" autocomplete="name" aria-label="Your name">
+        <input type="email" id="c-email" placeholder="Your email" autocomplete="email" aria-label="Your email" required aria-describedby="c-err">
+        <select id="c-track" aria-label="Coaching track">
+          <option value="not sure">Not sure yet — help me decide</option>
+          <option value="interview">Track 1 — Interview preparation</option>
+          <option value="leadership">Track 2 — Career growth &amp; leadership</option>
+        </select>
+        <textarea id="c-challenge" placeholder="What's your biggest challenge right now? (optional)" aria-label="Your biggest challenge"></textarea>
+        <div class="form-err" id="c-err" role="alert"></div>
+        <button class="btn btn-primary" type="submit">Join the waitlist</button>
+      </form>
+      <div class="coach-ok" id="coach-ok" role="status"></div>
+      <p class="preview-note">Same heads-up as above: this is a pre-launch preview with no email provider connected yet, so the waitlist is saved in this browser only for now.</p>
     </div>
   </div>
 </section>
@@ -277,7 +392,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
     <div><div class="avatar">AK</div></div>
     <div>
       <h3>About Aashith</h3>
-      <p>Aashith Kamath is a software engineer at Google. He has served on 50+ promotion and hiring committees — including senior and senior-staff leadership decisions — so he has seen exactly what gets engineers hired, promoted, or passed over, from the inside of the room where it happens. Over his career he has grown engineers into tech leaders, set up teams and organizations, and led on both the technical and organizational fronts — from architecture decisions to the people systems that make teams work.</p>
+      <p>Aashith Kamath is a software engineer at Google. He has served on 50+ promotion and hiring committees — including senior and senior-staff leadership decisions — so he has seen exactly what gets engineers hired, promoted, or passed over, from new-grad interviews to senior-staff leadership decisions, from the inside of the room where it happens. Over his career he has grown engineers into tech leaders, set up teams and organizations, and led on both the technical and organizational fronts — from architecture decisions to the people systems that make teams work.</p>
       <p>He started LeadLoop because the same engineers who ace hard technical problems often stall on two things nobody teaches: getting past the interview loop, and growing into leadership once they're in. LeadLoop exists to teach both, plainly and from experience.</p>
       <ul class="tick">
         <li>Software engineer at Google</li>
@@ -294,6 +409,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
   <div class="wrap">
     <span>© 2026 LeadLoop. Built by Aashith Kamath.</span>
     <span>Free resume builder · Free email series · Interview &amp; leadership coaching</span>
+    <span>Privacy: your resume never leaves your browser · anonymous visit counts only, no cookies</span>
   </div>
 </footer>
 </div><!-- /#app -->
@@ -308,18 +424,10 @@ function escapeHtml(s){
   });
 }
 function validateEmail(email){
-  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(email||"").trim());
+  return /^(?!.*\.\.)[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(String(email||"").trim());
 }
 function splitLines(t){
   return String(t||"").split("\n").map(function(x){return x.trim();}).filter(Boolean);
-}
-function splitCsvSafe(v){ return String(v==null?"":v).replace(/"/g,'""'); }
-function buildCSV(rows){
-  var head="name,email,signed_up_at";
-  var body=rows.map(function(r){
-    return '"'+splitCsvSafe(r.name)+'","'+splitCsvSafe(r.email)+'","'+splitCsvSafe(r.ts)+'"';
-  });
-  return head+"\n"+body.join("\n");
 }
 function trackEvent(name){
   var slug="event/"+String(name).toLowerCase().replace(/\s+/g,"-");
@@ -348,6 +456,14 @@ function collectResume(){
       year: el.querySelector(".d-year").value
     });
   });
+  var projs=[];
+  document.querySelectorAll("#proj-list .proj-entry").forEach(function(el){
+    projs.push({
+      name: el.querySelector(".p-name").value,
+      tech: el.querySelector(".p-tech").value,
+      bullets: el.querySelector(".p-bullets").value
+    });
+  });
   return {
     name: document.getElementById("f-name").value,
     title: document.getElementById("f-title").value,
@@ -356,12 +472,20 @@ function collectResume(){
     location: document.getElementById("f-location").value,
     summary: document.getElementById("f-summary").value,
     skills: document.getElementById("f-skills").value,
-    exps: exps, edus: edus
+    exps: exps, edus: edus, projs: projs
   };
 }
+function resumeHasContent(d){
+  d=d||{};
+  var exps=d.exps||[], edus=d.edus||[], projs=d.projs||[];
+  return !!(d.name||d.title||d.email||d.phone||d.location||d.summary||d.skills||
+    exps.some(function(e){return e.role||e.company;})||
+    edus.some(function(e){return e.degree||e.school;})||
+    projs.some(function(p){return p.name||p.tech;}));
+}
 function renderResume(d){
-  var hasAny = d.name||d.title||d.summary||d.skills||d.exps.some(function(e){return e.role||e.company;})||d.edus.some(function(e){return e.degree||e.school;});
-  if(!hasAny){
+  d=d||{exps:[],edus:[],projs:[]};
+  if(!resumeHasContent(d)){
     return '<p class="empty-note">Your resume preview will appear here as you type.</p>';
   }
   var h="";
@@ -379,7 +503,14 @@ function renderResume(d){
     return out+"</div>";
   }).join("");
   if(expHtml) h+='<div class="rsec"><h4>Experience</h4>'+expHtml+"</div>";
-  var skills=String(d.skills||"").split(",").map(function(s){return s.trim();}).filter(Boolean);
+  var projHtml=d.projs.filter(function(p){return p.name||p.tech;}).map(function(p){
+    var out='<div class="rjob"><div class="rjob-head"><span>'+escapeHtml(p.name||"")+"</span>"+(p.tech?'<span class="rdates">'+escapeHtml(p.tech)+"</span>":"")+"</div>";
+    var bl=splitLines(p.bullets);
+    if(bl.length) out+="<ul>"+bl.map(function(b){return "<li>"+escapeHtml(b)+"</li>";}).join("")+"</ul>";
+    return out+"</div>";
+  }).join("");
+  if(projHtml) h+='<div class="rsec"><h4>Projects</h4>'+projHtml+"</div>";
+  var skills=String(d.skills||"").split(/[,;\n]+/).map(function(s){return s.trim();}).filter(Boolean);
   if(skills.length) h+='<div class="rsec"><h4>Skills</h4><div class="rskills">'+skills.map(escapeHtml).join(" &nbsp;·&nbsp; ")+"</div></div>";
   var eduHtml=d.edus.filter(function(e){return e.degree||e.school;}).map(function(e){
     return '<div class="redu"><strong>'+escapeHtml(e.degree||"")+"</strong>"+(e.school?", "+escapeHtml(e.school):"")+(e.year?" — "+escapeHtml(e.year):"")+"</div>";
@@ -392,6 +523,9 @@ function refreshPreview(){
 }
 
 /* ---------- Google level guidance (original, from real hiring experience) ---------- */
+/* SEO moat: substantive per-level guides with shareable anchors (see renderLevelGuide).
+   Roadmap (documented, NOT built): Meta (E3–E7) and Amazon (SDE I–III, Principal) mappings.
+   Do not ship invented mappings. */
 var LEVEL_GUIDE={
 "":{
   tag:"General resume",
@@ -429,7 +563,7 @@ var LEVEL_GUIDE={
 "L5":{
   tag:"Google L5",
   title:"Senior Software Engineer — the senior bar",
-  bar:"Can this person lead projects and own system design for a team? L5 is the senior bar at Google, and it's a terminal level — most engineers land here and build entire careers. Targeting it is ambitious and completely fine.",
+  bar:"Can this person lead projects and own system design for a team? L5 is the senior bar at Google — many engineers build entire careers here. Targeting it is ambitious and completely fine.",
   signals:"Project leadership with a team-level denominator: systems you designed, launches you led, juniors you mentored into independence. Every bullet should carry scope (team, service, users) plus a quantified outcome.",
   miss:"A longer L4 resume — more features shipped, but no design ownership and no evidence anyone followed your technical lead. 'Mentored interns' without outcomes doesn't land; say what they went on to achieve.",
   examples:[
@@ -441,11 +575,11 @@ var LEVEL_GUIDE={
   tag:"Google L6",
   title:"Staff Software Engineer — the wall",
   bar:"Can this person set technical direction across teams? L5 to L6 is the hardest jump on the ladder — it's a scope change, not a tenure change. Years alone don't get you there.",
-  signals:"A multi-team denominator on every major bullet: platforms other teams adopted, technical direction you set, design standards you authored, engineers you sponsored toward Staff. Influence beyond your own team is the whole game.",
+  signals:"A multi-team denominator on every major bullet: platforms other teams adopted, technical direction you set, design standards you authored, engineers you grew into larger scope. Influence beyond your own team is the whole game.",
   miss:"Single-team accomplishments, however impressive, read as L5. And Staff is still an individual-contributor role — framing it as people management ('managed a team of 8') actively hurts.",
   examples:[
     "Set org-wide API versioning standard adopted by 14 teams; breaking-change incidents down 70% YoY",
-    "Built feature-flag platform now used by 6 teams; sponsored two engineers through Staff promotion"
+    "Built feature-flag platform now used by 6 teams; sponsored two engineers through promotion to senior"
   ]
 },
 "L7":{
@@ -470,7 +604,7 @@ function renderLevelGuide(){
   h+="<p><strong>What gets you placed lower:</strong> "+escapeHtml(g.miss)+"</p>";
   h+='<p style="margin-bottom:4px"><strong>Example bullets at this level:</strong></p>';
   h+=g.examples.map(function(x){return '<div class="lg-ex">'+escapeHtml(x)+"</div>";}).join("");
-  el.innerHTML=h;
+  el.innerHTML='<div id="level-'+(v||"general")+'">'+h+"</div>";
 }
 
 /* ---------- dynamic entries ---------- */
@@ -492,19 +626,70 @@ function eduEntryHTML(){
     '<div class="field"><label>Year</label><input class="d-year" type="text" placeholder="2016"></div></div>'+
   "</div>";
 }
+function projEntryHTML(){
+  return '<div class="exp-entry proj-entry">'+
+    '<div class="exp-head"><strong>Project</strong><button type="button" class="link-btn proj-remove">Remove</button></div>'+
+    '<div class="row2"><div class="field"><label>Project name</label><input class="p-name" type="text" placeholder="Realtime chat app"></div>'+
+    '<div class="field"><label>Tech / link</label><input class="p-tech" type="text" placeholder="React, WebSockets"></div></div>'+
+    '<div class="field"><label>What you built (one per line)</label><textarea class="p-bullets" placeholder="Built X for Y users\nCut load time by Z%"></textarea></div>'+
+  "</div>";
+}
 function addExp(){ document.getElementById("exp-list").insertAdjacentHTML("beforeend",expEntryHTML()); bindDynamic(); refreshPreview(); }
 function addEdu(){ document.getElementById("edu-list").insertAdjacentHTML("beforeend",eduEntryHTML()); bindDynamic(); refreshPreview(); }
+function addProj(){ document.getElementById("proj-list").insertAdjacentHTML("beforeend",projEntryHTML()); bindDynamic(); refreshPreview(); }
 function bindDynamic(){
   document.querySelectorAll("#exp-list .exp-entry").forEach(function(el){
     if(el.dataset.bound) return; el.dataset.bound="1";
-    el.querySelector(".exp-remove").addEventListener("click",function(){el.remove();refreshPreview();});
-    el.querySelectorAll("input,textarea").forEach(function(i){i.addEventListener("input",refreshPreview);});
+    el.querySelector(".exp-remove").addEventListener("click",function(){el.remove();refreshPreview();queueSave();});
+    el.querySelectorAll("input,textarea").forEach(function(i){i.addEventListener("input",function(){refreshPreview();queueSave();});});
   });
   document.querySelectorAll("#edu-list .edu-entry").forEach(function(el){
     if(el.dataset.bound) return; el.dataset.bound="1";
-    el.querySelector(".edu-remove").addEventListener("click",function(){el.remove();refreshPreview();});
-    el.querySelectorAll("input,textarea").forEach(function(i){i.addEventListener("input",refreshPreview);});
+    el.querySelector(".edu-remove").addEventListener("click",function(){el.remove();refreshPreview();queueSave();});
+    el.querySelectorAll("input,textarea").forEach(function(i){i.addEventListener("input",function(){refreshPreview();queueSave();});});
   });
+  document.querySelectorAll("#proj-list .proj-entry").forEach(function(el){
+    if(el.dataset.bound) return; el.dataset.bound="1";
+    el.querySelector(".proj-remove").addEventListener("click",function(){el.remove();refreshPreview();queueSave();});
+    el.querySelectorAll("input,textarea").forEach(function(i){i.addEventListener("input",function(){refreshPreview();queueSave();});});
+  });
+}
+
+/* ---------- resume autosave (localStorage, this browser only) ---------- */
+var RS_KEY="leadloop_resume_v1";
+var saveT=null;
+function queueSave(){ if(saveT) clearTimeout(saveT); saveT=setTimeout(saveResume,600); }
+function saveResume(){ try{ localStorage.setItem(RS_KEY,JSON.stringify(collectResume())); }catch(e){} }
+function setVal(id,v){ var el=document.getElementById(id); if(el) el.value=v||""; }
+function fillEntries(listId,addFn,fillFn,items){
+  var list=document.getElementById(listId); list.innerHTML="";
+  (items||[]).forEach(function(it){ addFn(); fillFn(list.lastElementChild,it); });
+  if(!(items&&items.length)) addFn();
+}
+function fillExp(el,e){ e=e||{};
+  el.querySelector(".e-role").value=e.role||""; el.querySelector(".e-company").value=e.company||"";
+  el.querySelector(".e-start").value=e.start||""; el.querySelector(".e-end").value=e.end||"";
+  el.querySelector(".e-bullets").value=e.bullets||"";
+}
+function fillEdu(el,e){ e=e||{};
+  el.querySelector(".d-degree").value=e.degree||""; el.querySelector(".d-school").value=e.school||"";
+  el.querySelector(".d-year").value=e.year||"";
+}
+function fillProj(el,p){ p=p||{};
+  el.querySelector(".p-name").value=p.name||""; el.querySelector(".p-tech").value=p.tech||"";
+  el.querySelector(".p-bullets").value=p.bullets||"";
+}
+function restoreResume(){
+  var d=null; try{ d=JSON.parse(localStorage.getItem(RS_KEY)||"null"); }catch(e){}
+  if(!d||typeof d!=="object") return false;
+  d.exps=d.exps||[]; d.edus=d.edus||[]; d.projs=d.projs||[];
+  if(!resumeHasContent(d)) return false;
+  var map={"f-name":"name","f-title":"title","f-email":"email","f-phone":"phone","f-location":"location","f-summary":"summary","f-skills":"skills"};
+  Object.keys(map).forEach(function(id){ setVal(id,d[map[id]]); });
+  fillEntries("exp-list",addExp,fillExp,d.exps);
+  fillEntries("edu-list",addEdu,fillEdu,d.edus);
+  fillEntries("proj-list",addProj,fillProj,d.projs);
+  return true;
 }
 
 /* ---------- signups (localStorage only, never sent anywhere) ---------- */
@@ -514,21 +699,18 @@ function loadSignups(){
   catch(e){ return []; }
 }
 function saveSignups(rows){ try{ localStorage.setItem(LS_KEY,JSON.stringify(rows)); }catch(e){} }
-function updateOwnerCount(){
-  var n=loadSignups().length;
-  var el=document.getElementById("owner-count");
-  if(el) el.textContent=n+" signup"+(n===1?"":"s")+" captured on this device.";
+
+/* ---------- coaching waitlist (localStorage only, never sent anywhere) ---------- */
+var COACH_KEY="leadloop_coaching_v1";
+function loadCoach(){
+  try{ var v=JSON.parse(localStorage.getItem(COACH_KEY)||"[]"); return Array.isArray(v)?v:[]; }
+  catch(e){ return []; }
 }
-function downloadCSV(filename,text){
-  var blob=new Blob([text],{type:"text/csv;charset=utf-8"});
-  var a=document.createElement("a");
-  a.href=URL.createObjectURL(blob); a.download=filename;
-  document.body.appendChild(a); a.click();
-  setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500);
-}
+function saveCoach(rows){ try{ localStorage.setItem(COACH_KEY,JSON.stringify(rows)); }catch(e){} }
 
 /* ---------- sample data ---------- */
 function loadSample(){
+  if(resumeHasContent(collectResume()) && !confirm("This will replace everything you've typed in the builder. Continue?")) return;
   document.getElementById("f-name").value="Aarav Sharma";
   document.getElementById("f-title").value="Senior Software Engineer";
   document.getElementById("f-email").value="aarav.sharma@example.com";
@@ -555,18 +737,42 @@ function loadSample(){
   d.querySelector(".d-degree").value="B.Tech, Computer Science";
   d.querySelector(".d-school").value="IIT Bombay";
   d.querySelector(".d-year").value="2019";
+  document.getElementById("proj-list").innerHTML="";
+  addProj();
+  var p=document.querySelector("#proj-list .proj-entry");
+  p.querySelector(".p-name").value="Personal finance dashboard";
+  p.querySelector(".p-tech").value="React, Firebase";
+  p.querySelector(".p-bullets").value="Built budgeting dashboard used by 500+ beta testers\nSynced bank data nightly with 99.8% reliability";
   refreshPreview();
+  queueSave();
   trackEvent("Resume sample loaded");
+}
+
+/* ---------- form helpers ---------- */
+function formError(inputId,errId,msg){
+  var inp=document.getElementById(inputId), err=document.getElementById(errId);
+  if(!inp||!err) return;
+  if(msg){ err.textContent=msg; err.style.display="block"; inp.style.borderColor="#f87171"; inp.focus(); }
+  else { err.textContent=""; err.style.display="none"; inp.style.borderColor=""; }
 }
 
 /* ---------- wire up ---------- */
 document.addEventListener("DOMContentLoaded",function(){
-  addExp(); addEdu(); refreshPreview();
+  if(!restoreResume()){ addExp(); addEdu(); addProj(); }
+  refreshPreview();
   ["f-name","f-title","f-email","f-phone","f-location","f-summary","f-skills"].forEach(function(id){
-    document.getElementById(id).addEventListener("input",refreshPreview);
+    var el=document.getElementById(id);
+    el.addEventListener("input",refreshPreview);
+    el.addEventListener("input",queueSave);
   });
   document.getElementById("exp-add").addEventListener("click",addExp);
   document.getElementById("edu-add").addEventListener("click",addEdu);
+  document.getElementById("proj-add").addEventListener("click",addProj);
+  document.getElementById("btn-clear-saved").addEventListener("click",function(){
+    if(!confirm("Clear your saved resume data from this browser?")) return;
+    try{ localStorage.removeItem(RS_KEY); }catch(e){}
+    location.reload();
+  });
   var lvlSel=document.getElementById("f-level");
   lvlSel.addEventListener("change",function(){
     renderLevelGuide();
@@ -575,40 +781,81 @@ document.addEventListener("DOMContentLoaded",function(){
   renderLevelGuide();
   document.getElementById("btn-sample").addEventListener("click",loadSample);
   document.getElementById("btn-print").addEventListener("click",function(){
-    document.getElementById("print-root").innerHTML='<div class="resume-sheet">'+renderResume(collectResume())+"</div>";
+    var d=collectResume();
+    if(!resumeHasContent(d)){ alert("There's nothing to print yet — add your details first."); return; }
+    document.getElementById("print-root").innerHTML='<div class="resume-sheet">'+renderResume(d)+"</div>";
     trackEvent("Resume PDF");
     window.print();
   });
-  updateOwnerCount();
+  window.addEventListener("afterprint",function(){
+    document.getElementById("print-root").innerHTML="";
+  });
 
   document.getElementById("signup-form").addEventListener("submit",function(ev){
     ev.preventDefault();
     var name=document.getElementById("s-name").value.trim();
     var email=document.getElementById("s-email").value.trim();
-    if(!validateEmail(email)){
-      document.getElementById("s-email").focus();
-      document.getElementById("s-email").style.borderColor="#f87171";
-      return;
-    }
+    if(!validateEmail(email)){ formError("s-email","s-err","Please enter a valid email address — e.g. you@example.com."); return; }
+    formError("s-email","s-err",null);
     var rows=loadSignups();
-    if(!rows.some(function(r){return r.email.toLowerCase()===email.toLowerCase();})){
-      rows.push({name:name,email:email,ts:new Date().toISOString()});
-      saveSignups(rows);
-    }
+    var already=rows.some(function(r){return r.email.toLowerCase()===email.toLowerCase();});
+    if(!already){ rows.push({name:name,email:email,ts:new Date().toISOString()}); saveSignups(rows); }
     trackEvent("Email signup");
+    var ok=document.getElementById("signup-ok");
+    ok.innerHTML=(already
+      ? "This email is already on the list — you're all set."
+      : "You're on the list — <strong>"+escapeHtml(email)+"</strong>.")+
+      " The 3-part series starts sending at launch; part 1 will land in your inbox first."+
+      ' <button type="button" class="linklike" id="signup-change">Use a different email</button>'+
+      '<div class="share-nudge" id="share-nudge"><span>Know someone job hunting?</span>'+
+      "<code>https://aashithk.github.io/leadloop/</code>"+
+      '<button type="button" id="btn-copy-link">Copy link</button>'+
+      '<button type="button" class="dismiss" id="nudge-dismiss" aria-label="Dismiss">✕</button></div>';
+    ok.style.display="block";
     document.getElementById("signup-form").style.display="none";
-    document.getElementById("signup-ok").style.display="block";
-    updateOwnerCount();
+    document.getElementById("signup-change").addEventListener("click",function(){
+      ok.style.display="none"; ok.innerHTML="";
+      var f=document.getElementById("signup-form"); f.style.display="flex"; f.reset();
+    });
+    document.getElementById("nudge-dismiss").addEventListener("click",function(){
+      document.getElementById("share-nudge").style.display="none";
+    });
+    document.getElementById("btn-copy-link").addEventListener("click",function(){
+      var btn=this, url="https://aashithk.github.io/leadloop/";
+      function done(){ btn.textContent="Copied ✓"; trackEvent("Share link copied"); }
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(done,function(){ btn.textContent=url; });
+      } else { btn.textContent=url; }
+    });
   });
-  document.getElementById("s-email").addEventListener("input",function(){
-    document.getElementById("s-email").style.borderColor="";
+  document.getElementById("s-email").addEventListener("input",function(){ formError("s-email","s-err",null); });
+
+  document.getElementById("coach-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var name=document.getElementById("c-name").value.trim();
+    var email=document.getElementById("c-email").value.trim();
+    var track=document.getElementById("c-track").value;
+    var challenge=document.getElementById("c-challenge").value.trim();
+    if(!validateEmail(email)){ formError("c-email","c-err","Please enter a valid email address — e.g. you@example.com."); return; }
+    formError("c-email","c-err",null);
+    var rows=loadCoach();
+    var already=rows.some(function(r){return r.email.toLowerCase()===email.toLowerCase();});
+    if(!already){ rows.push({name:name,email:email,track:track,challenge:challenge,ts:new Date().toISOString()}); saveCoach(rows); }
+    trackEvent("Coaching waitlist");
+    var ok=document.getElementById("coach-ok");
+    ok.innerHTML=(already
+      ? "This email is already on the waitlist — you're all set."
+      : "You're on the waitlist — <strong>"+escapeHtml(email)+"</strong>.")+
+      " First-cohort details (format + pricing) go to the waitlist first."+
+      ' <button type="button" class="linklike" id="coach-change">Use a different email</button>';
+    ok.style.display="block";
+    document.getElementById("coach-form").style.display="none";
+    document.getElementById("coach-change").addEventListener("click",function(){
+      ok.style.display="none"; ok.innerHTML="";
+      var f=document.getElementById("coach-form"); f.style.display="flex"; f.reset();
+    });
   });
-  document.getElementById("btn-export").addEventListener("click",function(){
-    var rows=loadSignups();
-    if(!rows.length){ alert("No signups captured on this device yet."); return; }
-    downloadCSV("leadloop-signups.csv",buildCSV(rows));
-    trackEvent("Signup export");
-  });
+  document.getElementById("c-email").addEventListener("input",function(){ formError("c-email","c-err",null); });
 });
 </script>
 </body>

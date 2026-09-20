@@ -1,0 +1,6 @@
+# External script/iframe allowlist for scripts/security-scan.sh
+# One hostname per line. Lines starting with # and blank lines are ignored.
+# Currently EMPTY: the LeadLoop site loads no third-party scripts or iframes.
+# To add one (e.g. analytics), append the hostname here AND record the review
+# rationale in docs/SECURITY_STRATEGY.md. Any external host not listed here
+# fails CI.

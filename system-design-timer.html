@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Design Timer: 45-Minute Interview Pacer | LeadLoop</title>
+<meta name="description" content="Practice the 45-minute system design round with a phase-paced timer: clarify, high-level design, deep dive, scale, wrap-up. Start, pause, reset — free.">
+<link rel="canonical" href="https://aashithk.github.io/leadloop/system-design-timer.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="System Design Timer: 45-Minute Interview Pacer | LeadLoop">
+<meta property="og:description" content="A 45-minute pacer for system design practice: phase highlighting, start/pause/reset, and a private session log.">
+<meta property="og:url" content="https://aashithk.github.io/leadloop/system-design-timer.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="System Design Timer: 45-Minute Interview Pacer | LeadLoop">
+<meta name="twitter:description" content="Practice the 45-minute system design round with phase highlighting. Start, pause, reset — free.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "System Design Timer: 45-Minute Interview Pacer",
+  "url": "https://aashithk.github.io/leadloop/system-design-timer.html",
+  "description": "A 45-minute countdown pacer for system design interview practice with phase highlighting and a private session log.",
+  "isPartOf": { "@type": "WebSite", "name": "LeadLoop", "url": "https://aashithk.github.io/leadloop/" },
+  "publisher": { "@type": "Person", "name": "Aashith Kamath" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aashithk.github.io/leadloop/" },
+    { "@type": "ListItem", "position": 2, "name": "Interview prep toolkit", "item": "https://aashithk.github.io/leadloop/#toolkit" },
+    { "@type": "ListItem", "position": 3, "name": "System Design Timer" }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#0e1a2b; --ink-soft:#33415c; --muted:#64748b;
+  --bg:#f7f9fc; --card:#ffffff; --line:#e2e8f0;
+  --accent:#0f766e; --accent-dark:#0b5c56; --accent-soft:#e6f4f2;
+  --gold:#b45309; --gold-soft:#fef6e7;
+  --radius:14px; --shadow:0 10px 30px rgba(14,26,43,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.site{background:#0e1a2b;color:#fff;position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
+.brand span{color:#5eead4}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:#cbd5e1;text-decoration:none;font-size:.92rem}
+.nav-links a:hover{color:#fff}
+.crumbs{font-size:.85rem;color:var(--muted);margin:22px 0 6px}
+.crumbs a{color:var(--accent);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.hero-tool{padding:26px 0 8px}
+.hero-tool h1{font-size:2rem;line-height:1.2;margin:.2em 0;letter-spacing:-.02em}
+.lead{font-size:1.08rem;color:var(--ink-soft);max-width:660px}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;margin-bottom:6px}
+.disclaimer{background:var(--gold-soft);border:1px solid #f3d9a4;border-radius:10px;padding:12px 16px;font-size:.9rem;color:#7c4a03;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;margin:22px 0}
+.card h2{margin-top:0;font-size:1.3rem}
+.card ul{margin:.4em 0;padding-left:1.2em}
+.card li{margin:.35em 0}
+.btn{display:inline-block;border:none;cursor:pointer;font:inherit;font-weight:700;border-radius:10px;padding:12px 22px;text-decoration:none;font-size:1rem}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-secondary{background:#fff;color:var(--accent-dark);border:2px solid var(--accent)}
+.btn-secondary:hover{background:var(--accent-soft)}
+.btn-danger{background:#fff;color:#b91c1c;border:2px solid #b91c1c;padding:6px 14px;font-size:.85rem}
+.btn-danger:hover{background:#fef2f2}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.timer-face{text-align:center;padding:10px 0}
+.time{font-size:4rem;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
+.phase-now{font-size:1.1rem;font-weight:700;color:var(--accent-dark);margin:6px 0}
+.progress{height:14px;background:#e2e8f0;border-radius:999px;overflow:hidden;margin:14px 0}
+.progress>div{height:100%;background:var(--accent);border-radius:999px;transition:width .5s linear}
+.controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.phase-list{list-style:none;padding:0;margin:16px 0}
+.phase-list li{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;display:flex;gap:12px;align-items:baseline}
+.phase-list li .t{font-weight:700;min-width:170px}
+.phase-list li .w{color:var(--muted);font-size:.88rem;margin-left:auto;white-space:nowrap}
+.phase-list li.active{border-color:var(--accent);background:var(--accent-soft)}
+.phase-list li.active .t{color:var(--accent-dark)}
+.phase-list li.done{opacity:.55}
+.phase-list li.done .t::after{content:" ✓";color:var(--accent-dark)}
+.gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.gate-form input{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;min-width:200px;flex:1}
+.err{color:#b91c1c;font-size:.88rem;min-height:1.4em;margin:6px 0 0}
+.fineprint{font-size:.82rem;color:var(--muted);margin-top:10px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0;align-items:center}
+.field{margin:14px 0}
+.field label{display:block;font-weight:700;margin-bottom:6px}
+.field textarea{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;width:100%;min-height:90px;resize:vertical;background:#fff}
+.entry{border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:10px 0}
+.entry .meta{font-size:.82rem;color:var(--muted);margin-bottom:6px}
+.entry p{margin:.4em 0;white-space:pre-wrap}
+.entry .row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.empty{color:var(--muted);font-style:italic}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+footer.site{background:#0e1a2b;color:#94a3b8;padding:28px 0;margin-top:40px;font-size:.88rem}
+footer.site a{color:#cbd5e1}
+@media print{
+  .no-print{display:none!important}
+  body{background:#fff}
+  .wrap{max-width:100%}
+  .card{box-shadow:none;break-inside:avoid}
+}
+@media(max-width:560px){
+  .hero-tool h1{font-size:1.55rem}
+  .time{font-size:3rem}
+  .phase-list li .t{min-width:0}
+  .gate-form input{min-width:100%}
+}
+</style>
+</head>
+<body>
+<header class="site no-print">
+  <div class="wrap nav">
+    <a class="brand" href="https://aashithk.github.io/leadloop/">Lead<span>Loop</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a>
+      <a href="https://aashithk.github.io/leadloop/#builder">Resume builder</a>
+      <a href="https://aashithk.github.io/leadloop/#series">Email series</a>
+      <a href="https://aashithk.github.io/leadloop/#coaching">Coaching</a>
+      <a href="https://aashithk.github.io/leadloop/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumbs no-print" aria-label="Breadcrumb">
+    <a href="https://aashithk.github.io/leadloop/">Home</a> ›
+    <a href="https://aashithk.github.io/leadloop/#toolkit">Interview prep toolkit</a> ›
+    System Design Timer
+  </nav>
+
+  <div class="hero-tool no-print">
+    <span class="badge">45 minutes · 5 phases</span>
+    <h1>System Design Timer</h1>
+    <p class="lead">The 45-minute design round has a rhythm: clarify, sketch, deep-dive, scale, wrap up. This pacer keeps you on it — start it before your next practice round.</p>
+  </div>
+
+  <div class="disclaimer" role="note">
+    <strong>A pacer, not a prescription.</strong> Phase boundaries are a common practice structure, not a rule any interviewer enforces. Adapt the rhythm to the problem in front of you.
+  </div>
+
+  <section class="card" aria-labelledby="timer-h">
+    <h2 id="timer-h">The 45-minute pacer</h2>
+    <div class="timer-face">
+      <div class="time" id="time-display" aria-hidden="true">45:00</div>
+      <p class="sr-only" role="status" id="time-sr">45 minutes remaining. Phase: Clarify.</p>
+      <p class="phase-now" id="phase-now">Phase 1 of 5: Clarify</p>
+      <div class="progress" role="progressbar" aria-label="Time elapsed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress">
+        <div id="progress-bar" style="width:0%"></div>
+      </div>
+      <div class="controls no-print">
+        <button type="button" class="btn btn-primary" id="btn-start">Start</button>
+        <button type="button" class="btn btn-secondary" id="btn-reset">Reset</button>
+      </div>
+      <p class="fineprint no-print" id="timer-note">Tip: keep this tab visible — the tab title counts down with you.</p>
+    </div>
+    <ol class="phase-list" id="phase-list">
+      <li data-phase="0"><span class="t">1. Clarify</span><span>Requirements, scope, constraints, non-goals.</span><span class="w">0:00 – 5:00</span></li>
+      <li data-phase="1"><span class="t">2. High-level design</span><span>Core components, data flow, API sketch.</span><span class="w">5:00 – 15:00</span></li>
+      <li data-phase="2"><span class="t">3. Deep dive</span><span>One or two components in real detail.</span><span class="w">15:00 – 30:00</span></li>
+      <li data-phase="3"><span class="t">4. Scale &amp; trade-offs</span><span>Bottlenecks, failure modes, alternatives.</span><span class="w">30:00 – 40:00</span></li>
+      <li data-phase="4"><span class="t">5. Wrap-up</span><span>Summarize, open questions, next steps.</span><span class="w">40:00 – 45:00</span></li>
+    </ol>
+  </section>
+
+  <section class="card" aria-labelledby="log-h">
+    <h2 id="log-h">Practice session log</h2>
+    <p>After a timed run, jot what went well and what slipped. Entries stay in <strong>your browser only</strong> — nothing is sent anywhere.</p>
+    <form id="log-form" novalidate>
+      <div class="field">
+        <label for="l-notes">Session notes</label>
+        <textarea id="l-notes" placeholder="e.g. Ran long on deep dive — skipped trade-offs. Next time: hard stop at 30:00."></textarea>
+      </div>
+      <p class="err" id="l-err" role="alert"></p>
+      <div class="toolbar no-print">
+        <button type="submit" class="btn btn-primary">Log this session</button>
+      </div>
+    </form>
+    <div id="entries" aria-live="polite"></div>
+  </section>
+
+  <section class="card" aria-labelledby="news-h">
+    <h2 id="news-h">Get future toolkit drops</h2>
+    <p>One email when new interview-prep tools ship. No account, no spam.</p>
+    <form class="gate-form no-print" id="gate-form" novalidate>
+      <input type="text" id="g-name" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name">
+      <input type="email" id="g-email" name="email" placeholder="you@example.com" autocomplete="email" aria-label="Email address" required>
+      <button type="submit" class="btn btn-primary">Notify me</button>
+    </form>
+    <p class="err" id="g-err" role="alert"></p>
+    <p class="fineprint" id="g-ok" hidden>You're on the list — check your inbox for the next drop.</p>
+  </section>
+
+  <section class="card" aria-labelledby="next-h">
+    <h2 id="next-h">Keep going</h2>
+    <ul>
+      <li><a href="system-design-pitch-sheet.html">System Design Pitch Sheet</a> — the structure to practice against the clock.</li>
+      <li><a href="ai-architecture-prompts.html">AI Architecture Prompts</a> — prompts to run the timer on.</li>
+      <li><a href="https://aashithk.github.io/leadloop/#toolkit">Back to the interview prep toolkit</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site no-print">
+  <div class="wrap">
+    <span>© 2026 LeadLoop. Built by Aashith Kamath.</span>
+    <span><a href="https://aashithk.github.io/leadloop/">Home</a> · <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var LS_KEY="leadloop_signups_v1";
+  var LOG_KEY="leadloop_timer_sessions_v1";
+  var TOTAL=45*60;
+  var PHASES=[
+    {name:"Clarify",until:5*60},
+    {name:"High-level design",until:15*60},
+    {name:"Deep dive",until:30*60},
+    {name:"Scale & trade-offs",until:40*60},
+    {name:"Wrap-up",until:45*60}
+  ];
+
+  // Deterministic timer core. advance() is the single source of truth so
+  // tests can drive it without waiting on real seconds.
+  function makeTimer(total, phases, onChange){
+    var elapsed=0, running=false, timerId=null, lastPhase=-1;
+    function phaseAt(e){
+      for(var i=0;i<phases.length;i++){ if(e<phases[i].until) return i; }
+      return phases.length-1;
+    }
+    function emit(type){ if(onChange) onChange({type:type, state:getState()}); }
+    function advance(sec){
+      if(elapsed>=total) return;
+      elapsed=Math.min(total,elapsed+Math.max(0,sec));
+      var p=phaseAt(elapsed);
+      if(p!==lastPhase){ lastPhase=p; emit("phase"); }
+      emit("tick");
+      if(elapsed>=total){ pause(); emit("done"); }
+    }
+    function start(){
+      if(running||elapsed>=total) return;
+      running=true;
+      if(lastPhase===-1){ lastPhase=phaseAt(elapsed); }
+      emit("start");
+      timerId=setInterval(function(){ advance(1); },1000);
+    }
+    function pause(){
+      running=false;
+      if(timerId){ clearInterval(timerId); timerId=null; }
+      emit("pause");
+    }
+    function reset(){
+      pause();
+      elapsed=0; lastPhase=-1;
+      emit("reset");
+    }
+    function getState(){
+      return {elapsed:elapsed,running:running,total:total,
+              remaining:total-elapsed,phase:phaseAt(elapsed)};
+    }
+    return {start:start,pause:pause,reset:reset,advance:advance,getState:getState};
+  }
+  window.LeadLoop={makeTimer:makeTimer,TOTAL:TOTAL,PHASES:PHASES};
+
+  function $(id){ return document.getElementById(id); }
+  function fmt(sec){
+    var m=Math.floor(sec/60), s=sec%60;
+    return (m<10?"0"+m:""+m)+":"+(s<10?"0"+s:""+s);
+  }
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+  var startBtn=$("btn-start"), resetBtn=$("btn-reset");
+  var items=[].slice.call(document.querySelectorAll("#phase-list li"));
+
+  function paint(state){
+    $("time-display").textContent=fmt(state.remaining);
+    $("phase-now").textContent="Phase "+(state.phase+1)+" of "+PHASES.length+": "+PHASES[state.phase].name;
+    var pct=Math.round(state.elapsed/state.total*100);
+    $("progress-bar").style.width=pct+"%";
+    $("progress").setAttribute("aria-valuenow",String(pct));
+    items.forEach(function(li,i){
+      li.classList.toggle("active", i===state.phase && state.remaining>0);
+      li.classList.toggle("done", i<state.phase || state.remaining===0);
+    });
+    document.title=fmt(state.remaining)+" · System Design Timer | LeadLoop";
+    startBtn.textContent=state.running?"Pause":(state.elapsed>0&&state.remaining>0?"Resume":"Start");
+  }
+  function announce(text){ $("time-sr").textContent=text; }
+
+  var timer=makeTimer(TOTAL,PHASES,function(ev){
+    var st=ev.state;
+    paint(st);
+    if(ev.type==="phase"&&st.remaining>0){
+      announce(fmt(st.remaining)+" remaining. Phase "+(st.phase+1)+" of "+PHASES.length+": "+PHASES[st.phase].name+".");
+    } else if(ev.type==="done"){
+      announce("Time. The 45 minutes are up — wrap up your design.");
+      $("phase-now").textContent="Time's up — wrap up";
+    } else if(ev.type==="reset"){
+      announce("Timer reset. 45 minutes remaining. Phase: Clarify.");
+      document.title="System Design Timer: 45-Minute Interview Pacer | LeadLoop";
+    }
+  });
+
+  startBtn.addEventListener("click",function(){
+    var st=timer.getState();
+    if(st.running){ timer.pause(); }
+    else if(st.remaining<=0){ timer.reset(); timer.start(); }
+    else { timer.start(); }
+  });
+  resetBtn.addEventListener("click",function(){ timer.reset(); });
+  paint(timer.getState());
+
+  // --- session log (browser-only) ---
+  function loadLog(){ try{ return JSON.parse(localStorage.getItem(LOG_KEY)||"[]"); }catch(e){ return []; } }
+  function saveLog(rows){ try{ localStorage.setItem(LOG_KEY,JSON.stringify(rows)); }catch(e){} }
+  function renderEntries(){
+    var rows=loadLog();
+    var box=$("entries");
+    if(!rows.length){ box.innerHTML='<p class="empty">No sessions logged yet.</p>'; return; }
+    box.innerHTML=rows.map(function(r,i){
+      var d=""; try{ d=new Date(r.ts).toLocaleDateString(); }catch(e){}
+      return '<div class="entry"><div class="row"><div class="meta">'+esc(d)+
+        (r.practiced? ' · practiced '+esc(r.practiced):'')+'</div>'+
+        '<button type="button" class="btn btn-danger no-print" data-del="'+i+'">Delete</button></div>'+
+        '<p>'+esc(r.notes)+'</p></div>';
+    }).join("");
+  }
+  $("log-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var notes=$("l-notes").value.trim();
+    var err=$("l-err");
+    if(!notes){ err.textContent="Write a line or two first — even a rough note beats a forgotten session."; return; }
+    err.textContent="";
+    var st=timer.getState();
+    var practiced=st.elapsed>0? Math.floor(st.elapsed/60)+" min":"";
+    var rows=loadLog();
+    rows.unshift({notes:notes,ts:new Date().toISOString(),practiced:practiced});
+    saveLog(rows);
+    $("l-notes").value="";
+    renderEntries();
+  });
+  $("l-notes").addEventListener("input",function(){ $("l-err").textContent=""; });
+  $("entries").addEventListener("click",function(ev){
+    var b=ev.target.closest("[data-del]");
+    if(!b) return;
+    var rows=loadLog();
+    rows.splice(parseInt(b.getAttribute("data-del"),10),1);
+    saveLog(rows);
+    renderEntries();
+  });
+  renderEntries();
+
+  // --- optional newsletter signup (does not gate anything) ---
+  function load(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"[]"); }catch(e){ return []; } }
+  function save(rows){ try{ localStorage.setItem(LS_KEY,JSON.stringify(rows)); }catch(e){} }
+  function validEmail(email){ return /^(?!.*\.\.)[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(String(email||"").trim()); }
+  $("gate-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var name=$("g-name").value.trim();
+    var email=$("g-email").value.trim();
+    var err=$("g-err");
+    if(!validEmail(email)){ err.textContent="Please enter a valid email address — e.g. you@example.com."; return; }
+    err.textContent="";
+    var rows=load();
+    if(!rows.some(function(rr){ return rr.email.toLowerCase()===email.toLowerCase(); })){
+      rows.push({name:name,email:email,ts:new Date().toISOString(),source:"system-design-timer"});
+      save(rows);
+    }
+    $("g-ok").hidden=false;
+    $("gate-form").reset();
+  });
+  $("g-email").addEventListener("input",function(){ $("g-err").textContent=""; });
+})();
+</script>
+</body>
+</html>

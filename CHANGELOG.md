@@ -2,6 +2,27 @@
 
 Newest first. The feature pipeline (F2–F12) prepends its own entries as each feature ships.
 
+## 2026-09-20 — F6: Staff Scope Calculator (live)
+
+- Live page: https://aashithk.github.io/leadloop/staff-scope-calculator.html
+- What it is: interactive 10-question self-assessment on scope, influence, and
+  ambiguity (native radios, 1–4 scale). Computes a Senior-vs-Staff readiness
+  score (x/40) with bands (Senior scope / Staff emerging / Staff ready),
+  per-dimension bars, and a personalized gap analysis naming the weakest
+  dimension with actionable advice — the analysis unlocks via email gate
+  (localStorage list `leadloop_signups_v1`,
+  `source:"staff-scope-calculator"`; existing subscribers bypass; duplicates
+  not stored twice). Retake resets. Explicit "honest heuristic" disclaimer —
+  predicts no real outcome.
+- Tests: `tests/e2e/f6.test.js` — **67/67 pass** (score math incl. band
+  boundaries 19/20/29/30, weakest-dimension identification, gated gap
+  analysis, gate invalid/valid/dedupe/returning flows, retake reset,
+  incomplete-form guard, heuristic-disclaimer + banned-claim scan, SEO
+  hygiene, link resolution, accessibility basics).
+- Persona validation: **5/5 reach buy mode** (Priya, Rahul, Mei, Arjun, Sara).
+- SEO: dedicated title/meta/canonical/OG/Twitter, WebPage + BreadcrumbList
+  JSON-LD, homepage toolkit card #6, sitemap entry.
+
 ## 2026-09-20 — F5: STAR-L Story Builder (live)
 
 - Live page: https://aashithk.github.io/leadloop/star-l-story-builder.html
@@ -90,6 +111,7 @@ Newest first. The feature pipeline (F2–F12) prepends its own entries as each f
   JSON-LD, homepage toolkit card + `#toolkit` nav link, sitemap entry.
 - Homepage regression green (no JS errors, toolkit hub present, exactly one H1,
   valid sitemap).
+
 
 
 

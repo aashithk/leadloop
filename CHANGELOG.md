@@ -2,6 +2,30 @@
 
 Newest first. The feature pipeline (F2–F12) prepends its own entries as each feature ships.
 
+## 2026-09-20 — F12: Scale & Optimization Cheat Sheet (live)
+
+- Live page: https://aashithk.github.io/leadloop/scale-optimization-cheat-sheet.html
+- What it is: print-friendly reference tables — latency (14 rows), storage
+  (8 rows), throughput (8 rows) — each with a "why it matters" note.
+  **Every value explicitly approximate**: ≈ prefix + "approx" tag on every
+  value cell, a top banner ("Every number on this page is approximate…
+  verify against your own benchmarks"), and an orders-of-magnitude
+  disclaimer warning against quoting precise figures. Live row filter
+  (case-insensitive, aria-live count, no-results state), scope=col table
+  headers, print CSS (compact tables, no chrome). Markdown download gated
+  via email (localStorage list `leadloop_signups_v1`,
+  `source:"scale-optimization-cheat-sheet"`; existing subscribers bypass;
+  duplicates not stored twice).
+- Tests: `tests/e2e/f12.test.js` — **61/61 pass** (approx banner wording,
+  per-cell ≈ + tag coverage, table structure + headers, filter/count/
+  no-results, gated download incl. markdown coverage/filename/≈ retention,
+  gate invalid/valid/dedupe/returning flows, print button + print CSS,
+  banned precise-figure language scan, SEO hygiene, link resolution,
+  accessibility basics).
+- Persona validation: **5/5 reach buy mode** (Priya, Rahul, Mei, Arjun, Sara).
+- SEO: dedicated title/meta/canonical/OG/Twitter, WebPage + BreadcrumbList
+  JSON-LD, homepage toolkit card #12, sitemap entry.
+
 ## 2026-09-20 — F11: Staff Behavioral Flashcards (live)
 
 - Live page: https://aashithk.github.io/leadloop/staff-behavioral-flashcards.html
@@ -231,6 +255,7 @@ Newest first. The feature pipeline (F2–F12) prepends its own entries as each f
   JSON-LD, homepage toolkit card + `#toolkit` nav link, sitemap entry.
 - Homepage regression green (no JS errors, toolkit hub present, exactly one H1,
   valid sitemap).
+
 
 
 

@@ -2,6 +2,31 @@
 
 Newest first. The feature pipeline (F2–F12) prepends its own entries as each feature ships.
 
+## 2026-09-20 — F11: Staff Behavioral Flashcards (live)
+
+- Live page: https://aashithk.github.io/leadloop/staff-behavioral-flashcards.html
+- What it is: 12-card staff-level behavioral flashcard deck. Front: practice
+  prompt. Back: what the prompt probes + framing tip. Flip (click card,
+  Flip button, Space/Enter), Previous/Next with wraparound, Shuffle
+  (Fisher-Yates, resets to card 1), keyboard shortcuts (arrows/Space/Enter/S
+  — ignored inside inputs), 3D CSS flip with prefers-reduced-motion
+  fallback, aria-live card announcements, focusable role=button card.
+  Markdown download of the full deck gated via email (localStorage list
+  `leadloop_signups_v1`, `source:"staff-behavioral-flashcards"`; existing
+  subscribers bypass; duplicates not stored twice). Print supported.
+- Honesty: explicit practice-only disclaimer — not real questions from any
+  company; no invented claims.
+- Tests: `tests/e2e/f11.test.js` — **74/74 pass** (deck state-machine unit
+  tests: flip toggle, prev/next wrap, shuffle permutation + reset; DOM flip
+  via button + card click, back content, aria-live; prev/next/shuffle
+  buttons; keyboard arrows/Space/Enter/S + input guard; reduced-motion;
+  gated download incl. markdown coverage and filename; gate
+  invalid/valid/dedupe/returning flows; print; disclaimer + banned-claim
+  scan; SEO hygiene; link resolution; accessibility basics).
+- Persona validation: **5/5 reach buy mode** (Priya, Rahul, Mei, Arjun, Sara).
+- SEO: dedicated title/meta/canonical/OG/Twitter, WebPage + BreadcrumbList
+  JSON-LD, homepage toolkit card #11, sitemap entry.
+
 ## 2026-09-20 — F10: System Design Timer (live)
 
 - Live page: https://aashithk.github.io/leadloop/system-design-timer.html
@@ -206,6 +231,7 @@ Newest first. The feature pipeline (F2–F12) prepends its own entries as each f
   JSON-LD, homepage toolkit card + `#toolkit` nav link, sitemap entry.
 - Homepage regression green (no JS errors, toolkit hub present, exactly one H1,
   valid sitemap).
+
 
 
 

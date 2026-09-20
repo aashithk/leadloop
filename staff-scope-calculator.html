@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff Scope Calculator: Senior vs Staff Readiness | LeadLoop</title>
+<meta name="description" content="Are you operating at staff scope? Answer 10 questions on scope, influence, and ambiguity — get your Senior-vs-Staff readiness score and gap analysis.">
+<link rel="canonical" href="https://aashithk.github.io/leadloop/staff-scope-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Staff Scope Calculator: Senior vs Staff Readiness | LeadLoop">
+<meta property="og:description" content="10 questions on scope, influence, and ambiguity. Get your Senior-vs-Staff readiness score and a personalized gap analysis.">
+<meta property="og:url" content="https://aashithk.github.io/leadloop/staff-scope-calculator.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Staff Scope Calculator: Senior vs Staff Readiness | LeadLoop">
+<meta name="twitter:description" content="10 questions, one readiness score, and a gap analysis for your senior-to-staff jump. Free with email for the full analysis.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Staff Scope Calculator: Senior vs Staff Readiness",
+  "url": "https://aashithk.github.io/leadloop/staff-scope-calculator.html",
+  "description": "Self-assessment questionnaire on scope, influence, and ambiguity with a Senior-vs-Staff readiness score and gap analysis.",
+  "isPartOf": { "@type": "WebSite", "name": "LeadLoop", "url": "https://aashithk.github.io/leadloop/" },
+  "publisher": { "@type": "Person", "name": "Aashith Kamath" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aashithk.github.io/leadloop/" },
+    { "@type": "ListItem", "position": 2, "name": "Interview prep toolkit", "item": "https://aashithk.github.io/leadloop/#toolkit" },
+    { "@type": "ListItem", "position": 3, "name": "Staff Scope Calculator" }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#0e1a2b; --ink-soft:#33415c; --muted:#64748b;
+  --bg:#f7f9fc; --card:#ffffff; --line:#e2e8f0;
+  --accent:#0f766e; --accent-dark:#0b5c56; --accent-soft:#e6f4f2;
+  --gold:#b45309; --gold-soft:#fef6e7;
+  --radius:14px; --shadow:0 10px 30px rgba(14,26,43,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.site{background:#0e1a2b;color:#fff;position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
+.brand span{color:#5eead4}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:#cbd5e1;text-decoration:none;font-size:.92rem}
+.nav-links a:hover{color:#fff}
+.crumbs{font-size:.85rem;color:var(--muted);margin:22px 0 6px}
+.crumbs a{color:var(--accent);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.hero-tool{padding:26px 0 8px}
+.hero-tool h1{font-size:2rem;line-height:1.2;margin:.2em 0;letter-spacing:-.02em}
+.lead{font-size:1.08rem;color:var(--ink-soft);max-width:660px}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;margin-bottom:6px}
+.disclaimer{background:var(--gold-soft);border:1px solid #f3d9a4;border-radius:10px;padding:12px 16px;font-size:.9rem;color:#7c4a03;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;margin:22px 0}
+.card h2{margin-top:0;font-size:1.3rem}
+.card h3{font-size:1.05rem;margin:1.4em 0 .4em;color:var(--accent-dark)}
+.card ul{margin:.4em 0;padding-left:1.2em}
+.card li{margin:.35em 0}
+.btn{display:inline-block;border:none;cursor:pointer;font:inherit;font-weight:700;border-radius:10px;padding:12px 22px;text-decoration:none;font-size:1rem}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-secondary{background:#fff;color:var(--accent-dark);border:2px solid var(--accent)}
+.btn-secondary:hover{background:var(--accent-soft)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.gate-form input{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;min-width:200px;flex:1}
+.err{color:#b91c1c;font-size:.88rem;min-height:1.4em;margin:6px 0 0}
+.fineprint{font-size:.82rem;color:var(--muted);margin-top:10px}
+.q{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:12px 0}
+.q legend{font-weight:700;padding:0 6px}
+.q .opts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.q .opts label{border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;font-size:.92rem;flex:1;min-width:120px;text-align:center}
+.q .opts label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);font-weight:700}
+.q .opts input{margin-right:6px;accent-color:var(--accent)}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0;align-items:center}
+.score-big{font-size:3rem;font-weight:800;color:var(--accent-dark);line-height:1}
+.band{font-size:1.2rem;font-weight:700;margin:.4em 0}
+.bar{height:12px;background:#e2e8f0;border-radius:999px;overflow:hidden;margin:6px 0 14px}
+.bar>div{height:100%;background:var(--accent);border-radius:999px}
+.cat-row{display:grid;grid-template-columns:120px 1fr 52px;gap:10px;align-items:center;margin:8px 0;font-size:.95rem}
+.cat-row .pct{text-align:right;font-weight:700}
+.gap{background:var(--accent-soft);border-left:4px solid var(--accent);padding:12px 16px;border-radius:0 10px 10px 0;margin:12px 0}
+.gap strong{color:var(--accent-dark)}
+.lock-note{background:#0e1a2b;color:#fff;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:.95rem}
+.lock-note strong{color:#5eead4}
+footer.site{background:#0e1a2b;color:#94a3b8;padding:28px 0;margin-top:40px;font-size:.88rem}
+footer.site a{color:#cbd5e1}
+@media print{
+  .no-print{display:none!important}
+  body{background:#fff}
+  .wrap{max-width:100%}
+  .card{box-shadow:none;break-inside:avoid}
+}
+@media(max-width:560px){
+  .hero-tool h1{font-size:1.55rem}
+  .gate-form input{min-width:100%}
+  .cat-row{grid-template-columns:96px 1fr 44px;font-size:.85rem}
+}
+</style>
+</head>
+<body>
+<header class="site no-print">
+  <div class="wrap nav">
+    <a class="brand" href="https://aashithk.github.io/leadloop/">Lead<span>Loop</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a>
+      <a href="https://aashithk.github.io/leadloop/#builder">Resume builder</a>
+      <a href="https://aashithk.github.io/leadloop/#series">Email series</a>
+      <a href="https://aashithk.github.io/leadloop/#coaching">Coaching</a>
+      <a href="https://aashithk.github.io/leadloop/#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumbs no-print" aria-label="Breadcrumb">
+    <a href="https://aashithk.github.io/leadloop/">Home</a> ›
+    <a href="https://aashithk.github.io/leadloop/#toolkit">Interview prep toolkit</a> ›
+    Staff Scope Calculator
+  </nav>
+
+  <div class="hero-tool no-print">
+    <span class="badge">Self-assessment · 10 questions · 2 minutes</span>
+    <h1>Staff Scope Calculator</h1>
+    <p class="lead">Are you operating at staff scope? Answer honestly across three dimensions — scope, influence, ambiguity — and get your Senior-vs-Staff readiness score plus a gap analysis.</p>
+  </div>
+
+  <div class="disclaimer" role="note">
+    <strong>Honest heuristic, not a verdict.</strong> This self-assessment reflects patterns commonly associated with staff-level work. It is not a prediction of any real promotion or hiring outcome — companies level differently, and only your own track record decides.
+  </div>
+
+  <section class="card" aria-labelledby="quiz-h">
+    <h2 id="quiz-h">The 10 questions</h2>
+    <p class="fineprint">For each statement, pick how true it is of your last 12 months. Be honest — the gap analysis is only as good as your answers.</p>
+    <form id="quiz-form" novalidate>
+      <fieldset class="q">
+        <legend>1. My work regularly affects teams beyond my own.</legend>
+        <div class="opts">
+          <label><input type="radio" name="q1" value="1">Rarely</label>
+          <label><input type="radio" name="q1" value="2">Sometimes</label>
+          <label><input type="radio" name="q1" value="3">Often</label>
+          <label><input type="radio" name="q1" value="4">Consistently</label>
+        </div>
+      </fieldset>
+      <fieldset class="q">
+        <legend>2. I own services or systems end-to-end — on-call, runbooks, capacity.</legend>
+        <div class="opts">
+          <label><input type="radio" name="q2" value="1">Rarely</label>
+          <label><input type="radio" name="q2" value="2">Sometimes</label>
+          <label><input type="radio" name="q2" value="3">Often</label>
+          <label><input type="radio" name="q2" value="4">Consistently</label>
+        </div>
+      </fieldset>
+      <fieldset class="q">
+        <legend>3. Other teams adopt artifacts I created — libraries, standards, docs, talks.</legend>
+        <div class="opts">
+          <label><input type="radio" name="q3" value="1">Rarely</label>
+          <label><input type="radio" name="q3" value="2">Sometimes</label>
+          <label><input type="radio" name="q3" value="3">Often</label>
+          <label><input type="radio" name="q3" value="4">Consistently</label>
+        </div>
+      </fieldset>
+      <fieldset class="q">
+        <legend>4. I drive decisions in rooms where I have no formal authority.</legend>
+        <div class="opts">
+          <label><input type="radio" name="q4" value="1">Rarely</label>
+          <label><input type="radio" name="q4" value="2">Sometimes</label>
+          <label><input type="radio" name="q4" value="3">Often</label>
+          <label><input type="radio" name="q4" value="4">Consistently</label>
+        </div>
+      </fieldset>
+      <fieldset class="q">
+        <legend>5. My design feedback changes what other teams build.</legend>
+        <div class="opts">
+          <label><input type="radio" name="q5" value="1">Rarely</label>
+          <label><input type="radio" name="q5" value="2">Sometimes</label>
+          <label><input type="radio" name="q5" value="3">Often</label>
+          <label><input type="radio" name="q5" value="4">Consistently</label>
+        </div>
+      </fieldset>
+      <fieldset class="q">
+        <legend>6. I mentor engineers and can point to their concrete outcomes.</legend>
+        <div class="opts">
+          <label><input type="radio" name="q6" value="1">Rarely</label>
+          <label><input type="radio" name="q6" value="2">Sometimes</label>
+          <label><input type="radio" name="q6" value="3">Often</label>
+          <label><input type="radio" name="q6" value="4">Consistently</label>
+        </div>
+      </fieldset>
+      <fieldset class="q">
+        <legend>7. I resolve disagreements between teams without escalating.</legend>
+        <div class="opts">
+          <label><input type="radio" name="q7" value="1">Rarely</label>
+          <label><input type="radio" name="q7" value="2">Sometimes</label>
+          <label><input type="radio" name="q7" value="3">Often</label>
+          <label><input type="radio" name="q7" value="4">Consistently</label>
+        </div>
+      </fieldset>
+      <fieldset class="q">
+        <legend>8. I define the problem, not just execute someone else's spec.</legend>
+        <div class="opts">
+          <label><input type="radio" name="q8" value="1">Rarely</label>
+          <label><input type="radio" name="q8" value="2">Sometimes</label>
+          <label><input type="radio" name="q8" value="3">Often</label>
+          <label><input type="radio" name="q8" value="4">Consistently</label>
+        </div>
+      </fieldset>
+      <fieldset class="q">
+        <legend>9. I've led a project with no clear requirements to a shipped outcome.</legend>
+        <div class="opts">
+          <label><input type="radio" name="q9" value="1">Rarely</label>
+          <label><input type="radio" name="q9" value="2">Sometimes</label>
+          <label><input type="radio" name="q9" value="3">Often</label>
+          <label><input type="radio" name="q9" value="4">Consistently</label>
+        </div>
+      </fieldset>
+      <fieldset class="q">
+        <legend>10. I set technical direction that others follow.</legend>
+        <div class="opts">
+          <label><input type="radio" name="q10" value="1">Rarely</label>
+          <label><input type="radio" name="q10" value="2">Sometimes</label>
+          <label><input type="radio" name="q10" value="3">Often</label>
+          <label><input type="radio" name="q10" value="4">Consistently</label>
+        </div>
+      </fieldset>
+      <p class="err" id="q-err" role="alert"></p>
+      <div class="toolbar no-print">
+        <button type="submit" class="btn btn-primary">Calculate my score</button>
+        <button type="button" class="btn btn-secondary" id="btn-retake" hidden>Retake</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="card" id="results" hidden aria-labelledby="res-h" aria-live="polite">
+    <h2 id="res-h">Your readiness score</h2>
+    <div class="score-big" id="score-num">–</div>
+    <p class="band" id="score-band"></p>
+    <p class="fineprint" id="score-note"></p>
+    <h3>By dimension</h3>
+    <div class="cat-row"><span>Scope</span><div class="bar"><div id="bar-scope" style="width:0%"></div></div><span class="pct" id="pct-scope"></span></div>
+    <div class="cat-row"><span>Influence</span><div class="bar"><div id="bar-influence" style="width:0%"></div></div><span class="pct" id="pct-influence"></span></div>
+    <div class="cat-row"><span>Ambiguity</span><div class="bar"><div id="bar-ambiguity" style="width:0%"></div></div><span class="pct" id="pct-ambiguity"></span></div>
+
+    <div id="gap-locked" class="no-print">
+      <div class="lock-note"><strong>🔒 Your personalized gap analysis is locked.</strong> Enter your email below to unlock exactly where to focus — and what to do about it.</div>
+    </div>
+    <div id="gap-analysis" hidden></div>
+
+    <section class="no-print" id="gate-wrap" aria-labelledby="gate-h">
+      <h2 id="gate-h">Unlock your gap analysis</h2>
+      <p>Enter your email to unlock the full gap analysis and get future toolkit drops. One email — no account, no spam.</p>
+      <form class="gate-form" id="gate-form" novalidate>
+        <input type="text" id="g-name" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name">
+        <input type="email" id="g-email" name="email" placeholder="you@example.com" autocomplete="email" aria-label="Email address" required>
+        <button type="submit" class="btn btn-primary">Unlock gap analysis</button>
+      </form>
+      <p class="err" id="g-err" role="alert"></p>
+      <p class="fineprint">Free forever. Unsubscribe anytime.</p>
+    </section>
+  </section>
+
+  <section class="card" aria-labelledby="next-h">
+    <h2 id="next-h">Keep going</h2>
+    <ul>
+      <li><a href="staff-promo-doc-skeleton.html">Staff Promo Doc Skeleton</a> — turn your strongest dimension into packet evidence.</li>
+      <li><a href="hiring-committee-calibration.html">Hiring Committee Calibration</a> — see how the scope denominator reads at L5/L6/L7.</li>
+      <li><a href="https://aashithk.github.io/leadloop/#toolkit">Back to the interview prep toolkit</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site no-print">
+  <div class="wrap">
+    <span>© 2026 LeadLoop. Built by Aashith Kamath.</span>
+    <span><a href="https://aashithk.github.io/leadloop/">Home</a> · <a href="https://aashithk.github.io/leadloop/#toolkit">Toolkit</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var LS_KEY="leadloop_signups_v1";
+  // question index -> dimension. Q1-3 scope, Q4-7 influence, Q8-10 ambiguity.
+  var DIMS={1:"scope",2:"scope",3:"scope",4:"influence",5:"influence",6:"influence",7:"influence",8:"ambiguity",9:"ambiguity",10:"ambiguity"};
+  var ADVICE={
+    scope:"<strong>Scope is your gap.</strong> Staff scope means a denominator beyond your team. Pick one artifact — a library, a standard, a runbook, a design review habit — and get one other team to adopt it this quarter. Adoption by others is the cheapest scope evidence there is.",
+    influence:"<strong>Influence is your gap.</strong> Authority won't come before the promotion, so practice without it: pre-wire one decision this month (a 1:1 before the meeting where it gets decided), and write one decision down that would otherwise live in someone's head.",
+    ambiguity:"<strong>Ambiguity is your gap.</strong> Volunteer for the ugliest undefined problem near you — the one with no spec and no owner. Write the one-pager that defines it. People who define problems get leveled on the problems they defined."
+  };
+  function $(id){ return document.getElementById(id); }
+  function load(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"[]"); }catch(e){ return []; } }
+  function save(rows){ try{ localStorage.setItem(LS_KEY,JSON.stringify(rows)); }catch(e){} }
+  function validEmail(email){ return /^(?!.*\.\.)[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(String(email||"").trim()); }
+  function isUnlocked(){ return load().length>0; }
+
+  function answers(){
+    var out={}, missing=[];
+    for(var i=1;i<=10;i++){
+      var sel=document.querySelector('input[name="q'+i+'"]:checked');
+      if(!sel){ missing.push(i); } else { out[i]=parseInt(sel.value,10); }
+    }
+    return {vals:out, missing:missing};
+  }
+  function bandFor(total){
+    if(total>=30) return {band:"Staff ready — the scope pattern is there", note:"Your answers describe someone already operating with staff-level scope, influence, and ambiguity tolerance. The next step is making that evidence legible: write it down in promo-packet form before calibration season."};
+    if(total>=20) return {band:"Staff emerging — close the gaps", note:"You're past solid senior and into the staff transition. The gap analysis below names the dimension holding you back — one focused quarter there changes the read."};
+    return {band:"Senior scope — solid foundation", note:"Your answers describe strong senior-level execution. Staff scope is a different shape, not just more output: a wider denominator, influence without authority, and comfort defining problems. Pick one dimension and work it deliberately."};
+  }
+  function compute(){
+    var a=answers();
+    if(a.missing.length){ return {error:"Please answer all 10 questions — question "+a.missing[0]+" is unanswered."}; }
+    var sums={scope:0,influence:0,ambiguity:0}, counts={scope:0,influence:0,ambiguity:0}, total=0;
+    for(var i=1;i<=10;i++){ var d=DIMS[i]; sums[d]+=a.vals[i]; counts[d]++; total+=a.vals[i]; }
+    var pct={};
+    Object.keys(sums).forEach(function(d){ pct[d]=Math.round(sums[d]/(counts[d]*4)*100); });
+    var order=["scope","influence","ambiguity"].sort(function(x,y){ return pct[x]-pct[y]; });
+    return {total:total, pct:pct, weakest:order[0], band:bandFor(total)};
+  }
+  window.LeadLoop={compute:compute, bandFor:bandFor};
+
+  function renderGap(r){
+    var html='<h3>Your gap analysis</h3>';
+    html+='<div class="gap">'+ADVICE[r.weakest]+'</div>';
+    var order=["scope","influence","ambiguity"].sort(function(x,y){ return r.pct[y]-r.pct[x]; });
+    html+= '<p>Your strongest dimension is <strong>'+order[0]+'</strong> ('+r.pct[order[0]]+'%). Lead with it: it is your best promo-packet and interview material.';
+    html+= ' Then attack <strong>'+r.weakest+'</strong> ('+r.pct[r.weakest]+'%) deliberately for one quarter.</p>';
+    $("gap-analysis").innerHTML=html;
+  }
+
+  function showResults(r){
+    $("results").hidden=false;
+    $("score-num").textContent=r.total+" / 40";
+    $("score-band").textContent=r.band.band;
+    $("score-note").textContent=r.band.note;
+    ["scope","influence","ambiguity"].forEach(function(d){
+      $("bar-"+d).style.width=r.pct[d]+"%";
+      $("pct-"+d).textContent=r.pct[d]+"%";
+    });
+    renderGap(r);
+    if(isUnlocked()){ applyUnlock(); }
+    else { $("gap-analysis").hidden=true; $("gap-locked").style.display=""; $("gate-wrap").hidden=false; }
+    $("btn-retake").hidden=false;
+    var res=$("results");
+    if(res.scrollIntoView){ try{ res.scrollIntoView(); }catch(e){} }
+  }
+  function applyUnlock(){
+    $("gap-analysis").hidden=false;
+    $("gap-locked").style.display="none";
+    $("gate-wrap").hidden=true;
+  }
+
+  $("quiz-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var r=compute();
+    if(r.error){ $("q-err").textContent=r.error; return; }
+    $("q-err").textContent="";
+    showResults(r);
+  });
+  $("btn-retake").addEventListener("click",function(){
+    document.querySelectorAll('input[type="radio"]:checked').forEach(function(r){ r.checked=false; });
+    $("results").hidden=true;
+    $("q-err").textContent="";
+    var top=$("quiz-h");
+    if(top.scrollIntoView){ try{ top.scrollIntoView(); }catch(e){} }
+  });
+  $("gate-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var name=$("g-name").value.trim();
+    var email=$("g-email").value.trim();
+    var err=$("g-err");
+    if(!validEmail(email)){ err.textContent="Please enter a valid email address — e.g. you@example.com."; return; }
+    err.textContent="";
+    var rows=load();
+    if(!rows.some(function(rr){ return rr.email.toLowerCase()===email.toLowerCase(); })){
+      rows.push({name:name,email:email,ts:new Date().toISOString(),source:"staff-scope-calculator"});
+      save(rows);
+    }
+    applyUnlock();
+  });
+  $("g-email").addEventListener("input",function(){ $("g-err").textContent=""; });
+})();
+</script>
+</body>
+</html>

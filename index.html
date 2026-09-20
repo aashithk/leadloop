@@ -130,6 +130,15 @@ details.owner summary{cursor:pointer;color:#cbd5e1;font-weight:600}
 footer.site{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}
 footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 #print-root{display:none}
+.field select{width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;font-size:.98rem;font-family:inherit;color:var(--ink);background:#fff}
+.field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.hint{font-size:.85rem;color:var(--muted);margin:6px 0 0}
+.level-guide{background:var(--gold-soft);border:1px solid #f3d9a4;border-left:5px solid var(--gold);border-radius:10px;padding:18px;margin:4px 0 20px;font-size:.92rem}
+.level-guide h4{margin:0 0 4px;font-size:1rem}
+.level-guide .lg-tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.level-guide p{margin:8px 0;color:var(--ink-soft)}
+.level-guide p strong{color:var(--ink)}
+.level-guide .lg-ex{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;background:rgba(255,255,255,.7);border:1px solid #f3d9a4;border-radius:8px;padding:8px 10px;margin-top:6px}
 @media print{
   .no-print{display:none!important}
   #print-root{display:block!important}
@@ -196,6 +205,19 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
     <div class="builder-grid">
       <div class="panel">
         <h3>Your details</h3>
+        <div class="field">
+          <label for="f-level">Targeting Google? Pick your level</label>
+          <select id="f-level">
+            <option value="">Just building a general resume</option>
+            <option value="L3">L3 — Software Engineer II (entry)</option>
+            <option value="L4">L4 — Software Engineer III</option>
+            <option value="L5" selected>L5 — Senior Software Engineer</option>
+            <option value="L6">L6 — Staff Software Engineer</option>
+            <option value="L7">L7+ — Senior Staff and above</option>
+          </select>
+          <p class="hint">Google job posts list titles, never levels — so your resume has to prove the scope of the band you're targeting, or the hiring committee will place you lower. Written from real experience inside Google's hiring process.</p>
+        </div>
+        <div class="level-guide" id="level-guide" aria-live="polite"></div>
         <div class="field"><label for="f-name">Full name</label><input id="f-name" type="text" placeholder="Aarav Sharma" autocomplete="name"></div>
         <div class="field"><label for="f-title">Professional title</label><input id="f-title" type="text" placeholder="Senior Software Engineer"></div>
         <div class="row2">
@@ -368,6 +390,88 @@ function refreshPreview(){
   document.getElementById("resume-preview").innerHTML=renderResume(collectResume());
 }
 
+/* ---------- Google level guidance (original, from real hiring experience) ---------- */
+var LEVEL_GUIDE={
+"":{
+  tag:"General resume",
+  title:"Building a strong resume for any company",
+  bar:"Reviewers everywhere run the same six-second test: can this person do the job? Lead with outcomes, not responsibilities.",
+  signals:"Every bullet should say what you built, what changed because of it, and by how much. Scope plus outcome beats adjectives every time.",
+  miss:"Job-description bullets ('responsible for backend services') tell the reader nothing your title didn't already say.",
+  examples:[
+    "Rebuilt payments pipeline as event-driven; p99 latency down 40%, zero downtime during migration",
+    "Led design reviews for a team of 6; authored checklist adopted as team standard"
+  ]
+},
+"L3":{
+  tag:"Google L3",
+  title:"Software Engineer II — entry level",
+  bar:"Can this person execute well-defined work reliably, write clean code, and learn fast? At L3 nobody expects independence — they expect momentum and good engineering habits.",
+  signals:"Shipped work with numbers attached. Internships, capstone projects, and open-source contributions all count — as long as each bullet says what you built and what changed. Responsiveness in code review and real testing habits are quiet plus-signals.",
+  miss:"A list of technologies with no outcomes ('worked with React, Go, AWS') tells the reviewer nothing. Every line should answer: what did you build, and did it work?",
+  examples:[
+    "Built campus event app used by 2,000+ students; cut load time 55% with response caching",
+    "Intern project: added retry logic to payment worker, dropping failed transactions 18%"
+  ]
+},
+"L4":{
+  tag:"Google L4",
+  title:"Software Engineer III — the independent IC",
+  bar:"Can this person own a meaningful piece end-to-end without a tech lead driving? The L4 question is independence, not just output.",
+  signals:"Name the surface you owned and the metric you moved: design through launch with you as the driver. Being the default reviewer for part of the codebase is a strong, often-overlooked signal.",
+  miss:"Bullets that say 'we' for everything — the reviewer can't tell what you personally did. Assigned-ticket work with no design input or decisions reads as L3.",
+  examples:[
+    "Owned notifications service end-to-end; cut delivery p99 from 40s to 6s, now at 50M msgs/day",
+    "Drove auth migration to OAuth2 across 3 client apps; zero user-facing incidents at launch"
+  ]
+},
+"L5":{
+  tag:"Google L5",
+  title:"Senior Software Engineer — the senior bar",
+  bar:"Can this person lead projects and own system design for a team? L5 is the senior bar at Google, and it's a terminal level — most engineers land here and build entire careers. Targeting it is ambitious and completely fine.",
+  signals:"Project leadership with a team-level denominator: systems you designed, launches you led, juniors you mentored into independence. Every bullet should carry scope (team, service, users) plus a quantified outcome.",
+  miss:"A longer L4 resume — more features shipped, but no design ownership and no evidence anyone followed your technical lead. 'Mentored interns' without outcomes doesn't land; say what they went on to achieve.",
+  examples:[
+    "Led design and launch of realtime bidding service with a team of 5; 2B req/day at 30ms p99",
+    "Mentored 4 junior engineers, two promoted within a year; authored design-review checklist now used org-wide"
+  ]
+},
+"L6":{
+  tag:"Google L6",
+  title:"Staff Software Engineer — the wall",
+  bar:"Can this person set technical direction across teams? L5 to L6 is the hardest jump on the ladder — it's a scope change, not a tenure change. Years alone don't get you there.",
+  signals:"A multi-team denominator on every major bullet: platforms other teams adopted, technical direction you set, design standards you authored, engineers you sponsored toward Staff. Influence beyond your own team is the whole game.",
+  miss:"Single-team accomplishments, however impressive, read as L5. And Staff is still an individual-contributor role — framing it as people management ('managed a team of 8') actively hurts.",
+  examples:[
+    "Set org-wide API versioning standard adopted by 14 teams; breaking-change incidents down 70% YoY",
+    "Built feature-flag platform now used by 6 teams; sponsored two engineers through Staff promotion"
+  ]
+},
+"L7":{
+  tag:"Google L7+",
+  title:"Senior Staff and above — company-scale impact",
+  bar:"Does this person's technical judgment move the company? L7 and above is rare and sponsorship-driven. The resume becomes a short list of large artifacts, not a career history.",
+  signals:"Two or three org-to-company scale artifacts: programs multiple orgs depend on, direction set across an org, engineers grown into Staff. Brevity is itself a signal — if everything is 'key', nothing is.",
+  miss:"Volume. A long list of projects dilutes the few things that prove company-scale impact, and anything that reads as single-org scope gets read a level down.",
+  examples:[
+    "Defined multi-year technical strategy for data platform serving 40+ teams; drove 7-figure infra savings",
+    "Grew three engineers from Senior to Staff; founded engineering-excellence guild adopted across 5 orgs"
+  ]
+}};
+function renderLevelGuide(){
+  var v=document.getElementById("f-level").value;
+  var g=LEVEL_GUIDE.hasOwnProperty(v)?LEVEL_GUIDE[v]:LEVEL_GUIDE[""];
+  var el=document.getElementById("level-guide");
+  var h='<div class="lg-tag">'+escapeHtml(g.tag)+"</div>";
+  h+="<h4>"+escapeHtml(g.title)+"</h4>";
+  h+="<p><strong>What the bar looks for:</strong> "+escapeHtml(g.bar)+"</p>";
+  h+="<p><strong>Resume signals to show:</strong> "+escapeHtml(g.signals)+"</p>";
+  h+="<p><strong>What gets you placed lower:</strong> "+escapeHtml(g.miss)+"</p>";
+  h+='<p style="margin-bottom:4px"><strong>Example bullets at this level:</strong></p>';
+  h+=g.examples.map(function(x){return '<div class="lg-ex">'+escapeHtml(x)+"</div>";}).join("");
+  el.innerHTML=h;
+}
+
 /* ---------- dynamic entries ---------- */
 function expEntryHTML(){
   return '<div class="exp-entry">'+
@@ -462,6 +566,12 @@ document.addEventListener("DOMContentLoaded",function(){
   });
   document.getElementById("exp-add").addEventListener("click",addExp);
   document.getElementById("edu-add").addEventListener("click",addEdu);
+  var lvlSel=document.getElementById("f-level");
+  lvlSel.addEventListener("change",function(){
+    renderLevelGuide();
+    trackEvent("Target level "+(lvlSel.value||"general"));
+  });
+  renderLevelGuide();
   document.getElementById("btn-sample").addEventListener("click",loadSample);
   document.getElementById("btn-print").addEventListener("click",function(){
     document.getElementById("print-root").innerHTML='<div class="resume-sheet">'+renderResume(collectResume())+"</div>";

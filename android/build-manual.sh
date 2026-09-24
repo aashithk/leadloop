@@ -8,7 +8,7 @@
 # so aapt2 + kotlinc + d8 + apksigner + bundletool are sufficient.
 #
 # Requirements (paths overridable via env):
-#   Android SDK with platform android-34 and build-tools 34.0.0
+#   Android SDK with platform android-36 and build-tools 36.0.0
 #   Kotlin compiler (kotlinc), bundletool jar, JDK 17
 #   Upload keystore at android/upload-keystore.jks (gitignored, never committed).
 #   This is a SEPARATE keystore from the Kundli app's - one upload key per app.
@@ -27,12 +27,12 @@ VERSION_CODE="${VERSION_CODE:-1}"
 VERSION_NAME="${VERSION_NAME:-1.0.0}"
 
 SDK="${ANDROID_SDK_ROOT:-$HOME/android-sdk}"
-BT="$SDK/build-tools/34.0.0"
+BT="$SDK/build-tools/36.0.0"
 AAPT2="$BT/aapt2"
 D8="$BT/d8"
 ZIPALIGN="$BT/zipalign"
 APKSIGNER="$BT/apksigner"
-ANDROID_JAR="$SDK/platforms/android-34/android.jar"
+ANDROID_JAR="$SDK/platforms/android-36/android.jar"
 KOTLINC="${KOTLINC:-$HOME/toolchains/kotlin-compiler-1.9/bin/kotlinc}"
 STDLIB="$(dirname "$KOTLINC")/../lib/kotlin-stdlib.jar"
 BUNDLETOOL="${BUNDLETOOL:-$HOME/toolchains/bundletool.jar}"
@@ -54,7 +54,7 @@ sed "s|<manifest |<manifest package=\"$PKG\" |" \
 $AAPT2 link -o "$WORK/base.apk" \
   -I "$ANDROID_JAR" \
   --manifest "$WORK/AndroidManifest.xml" \
-  --min-sdk-version 24 --target-sdk-version 34 \
+  --min-sdk-version 24 --target-sdk-version 36 \
   --version-code "$VERSION_CODE" --version-name "$VERSION_NAME" \
   "$WORK/compiled_res.zip"
 
@@ -85,7 +85,7 @@ echo "==> bundletool (AAB)"
 $AAPT2 link -o "$WORK/base-proto.apk" \
   -I "$ANDROID_JAR" \
   --manifest "$WORK/AndroidManifest.xml" \
-  --min-sdk-version 24 --target-sdk-version 34 \
+  --min-sdk-version 24 --target-sdk-version 36 \
   --version-code "$VERSION_CODE" --version-name "$VERSION_NAME" \
   --proto-format \
   "$WORK/compiled_res.zip"

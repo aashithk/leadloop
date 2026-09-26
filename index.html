@@ -1305,8 +1305,13 @@ function jdKeywords(jdText){
   });
   var freq={};
   function cleanTok(w){
+    w=tokBase(w);
+    if(!w||JD_STOP[w]) return null;
+    return w;
+  }
+  function tokBase(w){
     w=w.replace(/^[.#+]+|[.#+]+$/g,"");
-    if(w.length<2||!/[a-z]/.test(w)||JD_STOP[w]) return null;
+    if(w.length<2||!/[a-z]/.test(w)) return null;
     return w;
   }
   function add(ph,wt){
@@ -1314,17 +1319,23 @@ function jdKeywords(jdText){
     var k=ph.toLowerCase();
     freq[k]=(freq[k]||0)+wt;
   }
-  // n-grams stay inside clauses so phrases never span sentence boundaries
+  // n-grams stay inside clauses AND never jump over stopwords (avoids phantom
+  // phrases like "engineer payments" from "engineer to join our payments")
   jdText.toLowerCase().split("\n").forEach(function(rawLine){
     var line=rawLine.replace(/^[•\-\*▪︎◦‣–>·\s]+/,"");
     line.split(/[;,.!?\n:()—–]+/).forEach(function(clause){
-      var clean=clause.split(/[^a-z0-9+.#-]+/).map(cleanTok).filter(Boolean);
-      clean.forEach(function(w){ add(w,reqBoost[w]?1.5:1); });
-      for(var i=0;i<clean.length-1;i++){
-        var bi=clean[i]+" "+clean[i+1];
-        add(bi,(reqBoost[clean[i]]||reqBoost[clean[i+1]])?2:1.2);
-        if(i<clean.length-2) add(clean[i]+" "+clean[i+1]+" "+clean[i+2],1.5);
+      var toks=clause.split(/[^a-z0-9+.#-]+/).map(tokBase).filter(Boolean);
+      toks.forEach(function(w){ if(!JD_STOP[w]) add(w,reqBoost[w]?3:1); });
+      var run=[];
+      function flush(){
+        for(var i=0;i<run.length-1;i++){
+          add(run[i]+" "+run[i+1],(reqBoost[run[i]]||reqBoost[run[i+1]])?2:1.2);
+          if(i<run.length-2) add(run[i]+" "+run[i+1]+" "+run[i+2],1.5);
+        }
+        run=[];
       }
+      toks.forEach(function(w){ if(JD_STOP[w]) flush(); else run.push(w); });
+      flush();
     });
   });
   jdTechTokens(jdText).forEach(function(t){
@@ -1333,12 +1344,13 @@ function jdKeywords(jdText){
   });
   var scored=Object.keys(freq).map(function(k){
     var wordsN=k.split(" ").length;
-    return {k:k,s:freq[k]*(1+0.4*(wordsN-1))};
+    return {k:k,s:freq[k]*(1+0.4*(wordsN-1)),n:wordsN};
   }).filter(function(o){
     var ws=o.k.split(" ");
-    return o.s>=1.5&&ws.every(function(w){return !JD_STOP[w];});
+    if(ws.some(function(w){return JD_STOP[w];})) return false;
+    return o.n===1?o.s>=1.5:o.s>=2.5; /* phrases need stronger evidence than single terms */
   });
-  scored.sort(function(a,b){return b.s-a.s;});
+  scored.sort(function(a,b){return b.s-a.s||a.n-b.n||(a.k<b.k?-1:1);});
   var kept=[],seen={};
   scored.forEach(function(o){
     var lk=o.k.toLowerCase();

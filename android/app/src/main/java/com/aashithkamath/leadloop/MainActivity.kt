@@ -50,12 +50,23 @@ class MainActivity : Activity() {
 
         val webView = WebView(this)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            webView.setOnApplyWindowInsetsListener { v, insets ->
+        // Pad the WebView by the system-bar insets on every API level, so the site
+        // header never draws under the status bar. Android 15+ enforces
+        // edge-to-edge; older versions get it via FLAG_LAYOUT_NO_LIMITS above.
+        webView.setOnApplyWindowInsetsListener { v, insets ->
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 val bars = insets.getInsets(WindowInsets.Type.systemBars())
                 v.setPadding(bars.left, bars.top, bars.right, bars.bottom)
-                insets
+            } else {
+                @Suppress("DEPRECATION")
+                v.setPadding(
+                    insets.systemWindowInsetLeft,
+                    insets.systemWindowInsetTop,
+                    insets.systemWindowInsetRight,
+                    insets.systemWindowInsetBottom
+                )
             }
+            insets
         }
 
         setContentView(webView)

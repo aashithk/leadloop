@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aashithk.github.io/leadloop/sitemap.xml
+Sitemap: https://getleadloop.netlify.app/sitemap.xml

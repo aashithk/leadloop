@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0e1a2b">
 <title>LeadLoop — Interview prep for the AI era</title>
 <meta name="description" content="Job hunting while AI rewrites the rules? LeadLoop: interview prep and leadership coaching from a Google engineer on 50+ hiring committees. Free resume builder.">
 <link rel="canonical" href="https://aashithk.github.io/leadloop/">
@@ -102,17 +103,60 @@ a{color:var(--accent)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{font-weight:800;font-size:1.25rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.brand{font-weight:800;font-size:1.25rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;min-height:48px}
 .brand span{color:var(--accent)}
 .nav-links{display:flex;gap:18px;font-size:.92rem}
 .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:600}
 .nav-links a:hover{color:var(--accent)}
-@media(max-width:640px){
-  .nav{height:auto;min-height:60px;padding:8px 0;flex-wrap:wrap;gap:4px}
-  .nav-links{display:flex;gap:14px;font-size:.82rem;overflow-x:auto;white-space:nowrap;max-width:100%;padding-bottom:2px}
+/* ---------- Mobile UX: safe-area, drawer nav, touch targets ---------- */
+/* WebView/native shells draw edge-to-edge: keep the sticky header's background
+   under the status bar, but pad its content below the notch. */
+header.site{padding-top:env(safe-area-inset-top)}
+footer.site{padding-bottom:calc(28px + env(safe-area-inset-bottom))}
+/* Hamburger (mobile only) */
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;width:48px;height:48px;position:relative;flex-shrink:0;border-radius:12px}
+.nav-toggle span{position:absolute;left:13px;right:13px;height:2.5px;border-radius:2px;background:var(--ink)}
+.nav-toggle span:nth-child(1){top:16px}
+.nav-toggle span:nth-child(2){top:22.75px}
+.nav-toggle span:nth-child(3){top:29.5px}
+.nav-toggle:active{background:var(--accent-soft)}
+/* Modal navigation drawer (M3 pattern for 5+ destinations on compact screens) */
+.scrim{position:fixed;inset:0;background:rgba(14,26,43,.5);z-index:90;opacity:0;visibility:hidden;transition:opacity .22s ease,visibility 0s .22s}
+.scrim.show{opacity:1;visibility:visible;transition:opacity .22s ease}
+.drawer{position:fixed;top:0;left:0;bottom:0;width:min(320px,84vw);background:#fff;z-index:100;
+  transform:translateX(-105%);visibility:hidden;transition:transform .24s ease,visibility 0s .24s;
+  box-shadow:0 0 40px rgba(14,26,43,.25);display:flex;flex-direction:column;overflow-y:auto;
+  padding:calc(10px + env(safe-area-inset-top)) 10px calc(16px + env(safe-area-inset-bottom))}
+.drawer.open{transform:none;visibility:visible;transition:transform .24s ease}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:2px 6px 10px}
+.drawer-close{background:none;border:0;font-size:1.7rem;line-height:1;width:48px;height:48px;cursor:pointer;color:var(--ink-soft);border-radius:50%;flex-shrink:0}
+.drawer-close:active{background:var(--accent-soft)}
+.drawer a.dlink{display:flex;align-items:center;min-height:54px;padding:10px 16px;border-radius:12px;color:var(--ink);font-weight:700;font-size:1.02rem;text-decoration:none}
+.drawer a.dlink:hover,.drawer a.dlink:active{background:var(--accent-soft);color:var(--accent-dark)}
+.drawer .dfoot{margin-top:auto;padding:14px 16px 4px;color:var(--muted);font-size:.82rem}
+/* Mobile type scale, spacing rhythm, 48dp touch targets */
+@media(max-width:760px){
+  .nav-links{display:none}
+  .nav-toggle{display:block}
+  .hero{padding:52px 0 44px}
+  .hero h1{font-size:clamp(1.9rem,9.5vw,2.5rem)}
+  .hero p.lead{font-size:1.04rem;margin-bottom:24px}
+  .cta-row{flex-direction:column;align-items:stretch}
+  .cta-row .btn{text-align:center}
+  section{padding:48px 0}
+  .resume-sheet{padding:26px 20px}
+  .sheet-wrap{top:76px}
+  .link-btn{min-height:48px;display:inline-flex;align-items:center;padding:8px 4px}
+  .mini-btn{min-height:44px;padding:10px 18px}
+  .file-btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+  .add-btn{min-height:48px}
+  details.owner summary{padding:12px 0;display:inline-block}
+  .share-nudge button{min-height:44px}
+  .coach-box{padding:28px 20px}
+  .signup{padding:36px 20px}
 }
 /* anchor targets clear the sticky header */
-section[id]{scroll-margin-top:72px}
+section[id]{scroll-margin-top:76px}
 .hero{background:linear-gradient(180deg,#0e1a2b 0%,#14324a 100%);color:#fff;padding:72px 0 64px}
 .hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.12;letter-spacing:-.03em;margin:0 0 14px}
 .hero h1 .hl{color:#5eead4}
@@ -144,7 +188,7 @@ a.card-link h3{color:var(--accent-dark)}
 .panel h3{margin:0 0 16px;font-size:1.05rem}
 .field{margin-bottom:14px}
 .field label{display:block;font-size:.82rem;font-weight:700;color:var(--ink-soft);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
-.field input,.field textarea{width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;font-size:.98rem;font-family:inherit;color:var(--ink);background:#fff}
+.field input,.field textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:.98rem;font-family:inherit;color:var(--ink);background:#fff}
 .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .field textarea{min-height:88px;resize:vertical}
 .exp-entry{border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px;background:#fbfdff}
@@ -206,7 +250,7 @@ details.owner summary{cursor:pointer;color:#cbd5e1;font-weight:600}
 footer.site{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}
 footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 #print-root{display:none}
-.field select{width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;font-size:.98rem;font-family:inherit;color:var(--ink);background:#fff}
+.field select{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:.98rem;font-family:inherit;color:var(--ink);background:#fff}
 .field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .hint{font-size:.85rem;color:var(--muted);margin:6px 0 0}
 .level-guide{background:var(--gold-soft);border:1px solid #f3d9a4;border-left:5px solid var(--gold);border-radius:10px;padding:18px;margin:4px 0 20px;font-size:.92rem}
@@ -216,13 +260,35 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
 .level-guide p strong{color:var(--ink)}
 .level-guide .lg-ex{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;background:rgba(255,255,255,.7);border:1px solid #f3d9a4;border-radius:8px;padding:8px 10px;margin-top:6px}
 .aside-note{background:#f0f9ff;border:1px solid #bae6fd;border-left:5px solid #0284c7;border-radius:10px;padding:14px 16px;margin:4px 0 20px;font-size:.9rem;color:var(--ink-soft)}
+/* resume import + JD tailor */
+.import-box{background:var(--accent-soft);border:1.5px dashed var(--accent);border-radius:10px;padding:16px;margin:0 0 20px}
+.import-box h4{margin:0 0 6px;font-size:.95rem}
+.import-box p{margin:0 0 12px;font-size:.85rem;color:var(--ink-soft)}
+.file-btn{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:10px 22px;font-weight:700;font-size:.92rem;cursor:pointer}
+.file-btn:hover{background:var(--accent-dark)}
+.import-status{display:block;margin-top:10px;font-size:.88rem}
+.import-status.ok{color:var(--accent-dark)}
+.import-status.err{color:#b91c1c}
+.kw-chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+.kw{font-size:.82rem;font-weight:600;border-radius:999px;padding:4px 12px;border:1.5px solid var(--line);background:#f8fafc;color:var(--ink-soft)}
+.kw.hit{border-color:var(--accent);background:var(--accent-soft);color:var(--accent-dark)}
+.kw.miss{border-color:#f3d9a4;background:var(--gold-soft);color:var(--gold)}
+.jd-sugg{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 10px;background:#fbfdff;font-size:.9rem}
+.jd-sugg .from{font-size:.8rem;color:var(--muted);margin-bottom:6px}
+.jd-sugg .prop{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.84rem;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:6px 0}
+.jd-sugg .row{display:flex;gap:10px;margin-top:8px}
+.mini-btn{background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:6px 14px;font-weight:700;font-size:.82rem;cursor:pointer;color:var(--ink-soft)}
+.mini-btn.apply{border-color:var(--accent);color:var(--accent-dark)}
+.mini-btn:hover{border-color:var(--accent)}
+.jd-req{font-size:.85rem;color:var(--ink-soft);border-left:3px solid var(--line);padding:4px 0 4px 12px;margin:0 0 8px}
+.sec-sub{color:var(--ink-soft);max-width:680px;margin:-8px 0 24px}
 /* freemium ladder */
 .ladder{display:flex;gap:12px;align-items:stretch;margin:0 0 36px;flex-wrap:wrap}
 .step{flex:1;min-width:220px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
 .step .num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:800;margin-bottom:10px;font-size:.9rem}
 .step h4{margin:0 0 6px;font-size:1rem}
 .step p{margin:0 0 10px;color:var(--ink-soft);font-size:.9rem}
-.step .go{font-weight:700;font-size:.9rem;text-decoration:none}
+.step .go{font-weight:700;font-size:.9rem;text-decoration:none;display:inline-block;padding:12px 0;min-height:44px}
 .step-arrow{align-self:center;font-size:1.5rem;color:var(--muted);font-weight:800}
 @media(max-width:760px){.step-arrow{transform:rotate(90deg);margin:0 auto}}
 /* coaching tracks */
@@ -270,8 +336,23 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
     </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer"><span></span><span></span><span></span></button>
   </div>
 </header>
+<div class="scrim" id="navScrim"></div>
+<nav class="drawer" id="navDrawer" aria-label="Site navigation">
+  <div class="drawer-head">
+    <a class="brand" href="#top">Lead<span>Loop</span></a>
+    <button class="drawer-close" id="navClose" aria-label="Close menu">&times;</button>
+  </div>
+  <a class="dlink" href="#series">Email series</a>
+  <a class="dlink" href="#builder">Resume builder</a>
+  <a class="dlink" href="#coaching">Coaching</a>
+  <a class="dlink" href="#toolkit">Toolkit</a>
+  <a class="dlink" href="#about">About</a>
+  <a class="dlink" href="#faq">FAQ</a>
+  <div class="dfoot">Free forever · No account needed</div>
+</nav>
 
 <section class="hero" id="top">
   <div class="wrap">
@@ -317,6 +398,13 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
     <div class="builder-grid">
       <div class="panel">
         <h3>Your details</h3>
+        <div class="import-box">
+          <h4>Already have a resume?</h4>
+          <p>Upload it (PDF, Word, or plain text) and we'll fill in the builder below for you to review and edit. Parsing happens entirely in your browser — your file is never uploaded anywhere.</p>
+          <label class="file-btn" for="resume-file">Choose a resume file…</label>
+          <input type="file" id="resume-file" accept=".pdf,.docx,.txt" aria-label="Upload your existing resume as a PDF, Word, or text file" hidden>
+          <span class="import-status" id="import-status" role="status" aria-live="polite"></span>
+        </div>
         <div class="field">
           <label for="f-level">Targeting Google? Pick the level you're aiming for</label>
           <select id="f-level">
@@ -364,6 +452,31 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:
           <button class="link-btn" id="btn-clear-saved" type="button">Clear saved resume data</button>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="tailor" style="background:#fff;border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <h2 class="sec-title">Tailor your resume to a job post</h2>
+    <p class="sec-sub">Paste the job description and we'll show which of its keywords your resume already hits, which ones it's missing, and suggest tweaks — all in your browser, nothing uploaded. Pasting the text is the reliable path: most job sites block automatic fetching.</p>
+    <div class="panel" style="max-width:760px">
+      <div class="field">
+        <label for="jd-text">Job description text</label>
+        <textarea id="jd-text" rows="8" placeholder="Paste the full job description here — responsibilities, requirements, all of it."></textarea>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="jd-url">…or a link to the job post</label>
+          <input id="jd-url" type="url" inputmode="url" placeholder="https://example.com/jobs/123">
+        </div>
+        <div class="field" style="align-self:end">
+          <button class="mini-btn" id="jd-fetch" type="button" style="padding:11px 18px">Try fetching from link</button>
+        </div>
+      </div>
+      <p class="hint" id="jd-fetch-note" role="status" aria-live="polite"></p>
+      <button class="btn btn-primary" id="jd-analyze" type="button">Analyze against my resume</button>
+      <div id="jd-results" aria-live="polite" style="margin-top:20px"></div>
     </div>
   </div>
 </section>
@@ -882,6 +995,505 @@ function restoreResume(){
   return true;
 }
 
+/* ---------- resume import (100% client-side; file never leaves the browser) ---------- */
+var PDFJS_CDN="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
+var PDFJS_WORKER="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+var MAMMOTH_CDN="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.9.1/mammoth.browser.min.js";
+var _scriptCache={};
+function loadScriptOnce(src){
+  if(_scriptCache[src]) return _scriptCache[src];
+  _scriptCache[src]=new Promise(function(res,rej){
+    var done=false;
+    var s=document.createElement("script");
+    s.src=src; s.async=true;
+    s.onload=function(){done=true;res();};
+    s.onerror=function(){rej(new Error("load-failed"));};
+    setTimeout(function(){if(!done)rej(new Error("load-timeout"));},25000);
+    document.head.appendChild(s);
+  }).catch(function(e){ delete _scriptCache[src]; throw e; });
+  return _scriptCache[src];
+}
+function pdfToText(buf){
+  return loadScriptOnce(PDFJS_CDN).then(function(){
+    if(window.pdfjsLib&&pdfjsLib.GlobalWorkerOptions) pdfjsLib.GlobalWorkerOptions.workerSrc=PDFJS_WORKER;
+    return pdfjsLib.getDocument({data:buf}).promise;
+  }).then(function(pdf){
+    var jobs=[];
+    for(var i=1;i<=pdf.numPages;i++) jobs.push(i);
+    return Promise.all(jobs.map(function(n){
+      return pdf.getPage(n).then(function(pg){
+        return pg.getTextContent().then(function(tc){
+          var out="",lastY=null;
+          tc.items.forEach(function(it){
+            var y=(it.transform&&typeof it.transform[5]==="number")?it.transform[5]:null;
+            if(lastY!==null&&y!==null&&Math.abs(y-lastY)>2){ out+="\n"; }
+            else if(it.hasEOL){ out+="\n"; }
+            else if(out&&out.charAt(out.length-1)!=="\n"&&out.charAt(out.length-1)!==" "){ out+=" "; }
+            out+=it.str; lastY=y;
+          });
+          return out;
+        });
+      });
+    }));
+  }).then(function(pages){ return pages.join("\n"); });
+}
+function docxToText(buf){
+  return loadScriptOnce(MAMMOTH_CDN).then(function(){
+    return mammoth.extractRawText({arrayBuffer:buf});
+  }).then(function(r){ return (r&&r.value)||""; });
+}
+function setImportStatus(msg,ok){
+  var el=document.getElementById("import-status");
+  el.textContent=msg||"";
+  el.className="import-status "+(msg?(ok?"ok":"err"):"");
+}
+function applyParsedResume(d){
+  var map={"f-name":"name","f-title":"title","f-email":"email","f-phone":"phone","f-location":"location","f-summary":"summary","f-skills":"skills"};
+  Object.keys(map).forEach(function(id){ setVal(id,d[map[id]]); });
+  fillEntries("exp-list",addExp,fillExp,d.exps);
+  fillEntries("edu-list",addEdu,fillEdu,d.edus);
+  fillEntries("proj-list",addProj,fillProj,d.projs);
+  refreshPreview(); queueSave();
+}
+function handleResumeFile(file){
+  if(!file) return;
+  var ext=(file.name.split(".").pop()||"").toLowerCase();
+  if(["pdf","docx","txt"].indexOf(ext)<0){
+    setImportStatus("That file type isn't supported — please use a PDF, Word (.docx), or plain-text (.txt) file.",false);
+    trackEvent("Resume import rejected type"); return;
+  }
+  if(file.size>10*1024*1024){ setImportStatus("That file is over 10 MB — please try a smaller file.",false); return; }
+  trackEvent("Resume import start "+ext);
+  setImportStatus("Reading "+file.name+"…",true);
+  var p=file.arrayBuffer().then(function(buf){
+    if(ext==="txt") return new TextDecoder().decode(buf);
+    if(ext==="docx") return docxToText(buf);
+    return pdfToText(buf);
+  }).catch(function(e){
+    if(e&&e.message==="load-failed") throw new Error("reader-load");
+    if(e&&e.message==="load-timeout") throw new Error("reader-load");
+    throw e;
+  });
+  p.then(function(text){
+    var parsed=parseResumeText(text||"");
+    if(!resumeHasContent(parsed)){
+      var extra=ext==="pdf"?" It may be a scanned PDF with no selectable text — try exporting it as text first.":"";
+      setImportStatus("Couldn't find resume content in that file."+extra+" You can still fill in the builder manually.",false);
+      trackEvent("Resume import no content"); return;
+    }
+    if(resumeHasContent(collectResume())&&!confirm("This will replace everything you've typed in the builder. Continue?")){
+      setImportStatus("",true); return;
+    }
+    applyParsedResume(parsed);
+    var bits=[];
+    if(parsed.name) bits.push("name");
+    bits.push(parsed.exps.length+" experience "+(parsed.exps.length===1?"entry":"entries"));
+    if(parsed.edus.length) bits.push("education");
+    if(parsed.projs.length) bits.push(parsed.projs.length+" project"+(parsed.projs.length===1?"":"s"));
+    if(parsed.skills) bits.push("skills");
+    setImportStatus("Imported from "+file.name+" — filled "+bits.join(", ")+". Review and edit below, then print or save as PDF.",true);
+    trackEvent("Resume import success");
+  }).catch(function(err){
+    var msg;
+    if(err&&err.message==="reader-load"){
+      msg="Couldn't load the "+(ext==="pdf"?"PDF":"Word")+" reader (a one-time network fetch). Check your connection and try again.";
+    }else if(ext==="pdf"){
+      msg="Couldn't read that PDF. If it's a scan (no selectable text), export it as text first — or fill in the builder manually.";
+    }else if(ext==="docx"){
+      msg="Couldn't parse that Word file. It may be corrupt or in the old .doc format — try re-saving it as .docx.";
+    }else{
+      msg="Couldn't read that text file — you can still fill in the builder manually.";
+    }
+    setImportStatus(msg,false);
+    trackEvent("Resume import fail");
+  });
+}
+
+/* Heuristic resume-text → builder-fields parser. Pure function (no DOM). */
+function parseResumeText(raw){
+  var out={name:"",title:"",email:"",phone:"",location:"",summary:"",skills:"",exps:[],edus:[],projs:[]};
+  var lines=String(raw||"").replace(/\r/g,"").split("\n")
+    .map(function(l){return l.replace(/[ \t]+/g," ").trim();})
+    .filter(function(l){return l.length>0&&!/^page\s+\d+(\s+of\s+\d+)?$/i.test(l);});
+  if(!lines.length) return out;
+  var EMAIL=/[\w.+-]+@[\w-]+(\.[\w-]+)+/;
+  var PHONE=/(\+?\d[\d().\-\s]{6,}\d)/;
+  function cleanHeader(l){return l.replace(/:$/,"").trim();}
+  var SECTIONS=[
+    {k:"summary",re:/^(professional\s+summary|summary|career\s+objective|objective|about(\s+me)?|profile)$/i},
+    {k:"experience",re:/^(professional\s+)?experience$|^(employment|work)\s+history$/i},
+    {k:"projects",re:/^(selected\s+|personal\s+|key\s+)?projects?$/i},
+    {k:"skills",re:/^(technical\s+)?skills$|^core\s+competencies$|^technologies$/i},
+    {k:"education",re:/^education(al)?(\s+background)?$|^academic(s)?$/i}
+  ];
+  // segment into header block + named sections
+  var header=[],cur=null,secs={};
+  lines.forEach(function(l){
+    var h=cleanHeader(l),found=null;
+    for(var i=0;i<SECTIONS.length;i++){ if(SECTIONS[i].re.test(h)){found=SECTIONS[i].k;break;} }
+    if(found){ cur=found; secs[cur]=secs[cur]||[]; }
+    else if(cur){ secs[cur].push(l); }
+    else { header.push(l); }
+  });
+  // contact block
+  header.forEach(function(l){
+    var em=l.match(EMAIL); if(em&&!out.email) out.email=em[0];
+    var ph=l.match(PHONE);
+    if(ph&&!out.phone){
+      var digits=ph[1].replace(/\D/g,"");
+      if(digits.length>=7&&digits.length<=15) out.phone=ph[1].trim();
+    }
+    // location can share a line with email/phone ("a@b.com | +91 ... | Bengaluru, India")
+    if(!out.location){
+      var rem=l.replace(EMAIL," ").replace(PHONE," ").replace(/https?:\/\/\S+/gi," ")
+        .replace(/(linkedin|github)\.com\S*/gi," ");
+      var lm=rem.match(/([A-Za-z][A-Za-z .'-]*,\s*[A-Za-z][A-Za-z .'-]*)/);
+      if(lm){
+        var cand=lm[1].replace(/[|•·]+/g," ").replace(/\s+/g," ").trim()
+          .replace(/^[,;:\s]+|[,;:\s]+$/g,"");
+        if(cand.length>3&&cand.split(" ").length<=5) out.location=cand;
+      }
+    }
+  });
+  var isContact=function(l){
+    return EMAIL.test(l)||/https?:\/\//i.test(l)||/(linkedin|github)\.com/i.test(l)||
+      (PHONE.test(l)&&l.replace(/\D/g,"").length>=7);
+  };
+  var nameIdx=-1;
+  for(var ni=0;ni<header.length;ni++){
+    var nl=header[ni];
+    if(isContact(nl)) continue;
+    var words=nl.split(" ").filter(Boolean);
+    if(words.length>=2&&words.length<=4&&/^[A-Za-z][A-Za-z.'-]*$/.test(words[0])&&words.every(function(w){return /^[A-Za-z][A-Za-z.'-]*$/.test(w);})){
+      out.name=nl; nameIdx=ni; break;
+    }
+  }
+  if(!out.name&&header.length&&!isContact(header[0])){ out.name=header[0]; nameIdx=0; }
+  if(nameIdx>=0){
+    for(var ti=nameIdx+1;ti<header.length;ti++){
+      var tl=header[ti];
+      if(isContact(tl)||tl.length>70) continue;
+      if(/[,;]/.test(tl)&&/[A-Za-z]+,\s*[A-Za-z]/.test(tl)&&!out.location){ out.location=tl; continue; }
+      if(!out.title){ out.title=tl; } else if(!out.location&&/[A-Za-z]+,\s*[A-Za-z]/.test(tl)){ out.location=tl; }
+    }
+  }
+  // summary
+  if(secs.summary) out.summary=secs.summary.join(" ");
+  // skills
+  if(secs.skills){
+    var sk=secs.skills.join("\n").split(/[,;•·|\n]/).map(function(s){return s.trim();})
+      .filter(function(s){return s.length>1&&s.length<60;});
+    out.skills=sk.join(", ");
+  }
+  // experience
+  var DATE_RE=/((?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?\s+\d{4}|\d{4})\s*(–|—|-|to)\s*((?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?\s+\d{4}|present|current|\d{4})/i;
+  function splitRoleCompany(s){
+    s=(s||"").trim();
+    var parts=null;
+    var seps=[/\s+@\s+/i,/\s+at\s+/i,/\s*\|\s*/,/^[^-–—]+?\s+[—–-]\s+/,/\s*,\s*/];
+    for(var i=0;i<seps.length;i++){
+      var m=s.split(seps[i]);
+      if(m.length>=2){ parts=[m[0].trim(),m.slice(1).join(" ").trim()]; break; }
+    }
+    if(!parts) parts=[s,""];
+    return {role:parts[0],company:parts[1]};
+  }
+  function stripBullet(l){return l.replace(/^[•\-\*▪︎◦‣–>·]+\s*/,"").trim();}
+  if(secs.experience){
+    var el=secs.experience,starts=[];
+    el.forEach(function(l,idx){ if(DATE_RE.test(l)) starts.push(idx); });
+    if(!starts.length){
+      // fallback: blank-line-free resumes — treat each non-bullet line as a new entry header
+      el.forEach(function(l){ if(!/^[•\-\*]/.test(l)) starts.push(el.indexOf(l)); });
+      starts=starts.filter(function(v,i,a){return a.indexOf(v)===i;}).sort(function(a,b){return a-b;});
+    }
+    starts.forEach(function(si,k){
+      var nsi=(k+1<starts.length)?starts[k+1]:el.length;
+      var dateLine=el[si];
+      var dm=dateLine.match(DATE_RE);
+      var dates=dm?(dm[1].trim()+" – "+dm[3].trim()):"";
+      var headLine=dateLine.replace(DATE_RE,"").replace(/^[,;:\-–—|@\s]+|[,;:\-–—|@\s]+$/g,"").trim();
+      var prevStart=(k>0)?starts[k-1]:-1;
+      var usable=function(idx){
+        var l=el[idx];
+        return l!==undefined&&idx>prevStart&&!/^[•\-\*▪︎◦‣–>·]/.test(l)&&!DATE_RE.test(l);
+      };
+      var rc,bulletEnd=nsi;
+      if(headLine){ rc=splitRoleCompany(headLine); }
+      else if(usable(si-1)){
+        // role line may be split over two lines: role above, company below
+        if(usable(si-2)&&el[si-2].trim()){ rc={role:el[si-2].trim(),company:el[si-1].trim()}; }
+        else { rc=splitRoleCompany(el[si-1]); }
+      }
+      else { rc={role:"",company:""}; }
+      // the next entry's role/company line sits just before its date line — keep it out of our bullets
+      // (only when the next entry keeps role and date on separate lines)
+      if(k+1<starts.length){
+        var nextHead=el[nsi].replace(DATE_RE,"").replace(/^[,;:\-–—|@\s]+|[,;:\-–—|@\s]+$/g,"").trim();
+        if(!nextHead&&usable(nsi-1)&&el[nsi-1]!==dateLine){ bulletEnd=nsi-1; }
+      }
+      var bullets=el.slice(si+1,bulletEnd).map(stripBullet).filter(Boolean);
+      if(!rc.role&&!rc.company&&!bullets.length) return;
+      out.exps.push({role:rc.role,company:rc.company,start:dates.split(" – ")[0]||"",end:dates.split(" – ")[1]||"",bullets:bullets.join("\n")});
+    });
+  }
+  // education
+  if(secs.education){
+    var DEG=/\b(bachelor|master|b\.?\s?tech|m\.?\s?tech|b\.?\s?s\.?c|m\.?\s?s\.?c|mba|ph\.?\s?d|b\.?\s?a\.?|m\.?\s?a\.?|associate|diploma|b\.?\s?e\.?)\b/i;
+    var YR=/\b((?:19|20)\d{2})\b/;
+    var entries=[],curE=null;
+    var splitEdu=function(l){
+      var ym=l.match(YR),year=ym?ym[1]:"";
+      var noYear=l.replace(YR,"").replace(/[,\s\-–—]+$/,"").trim();
+      var parts=noYear.split(/\s*[,;]\s*|\s+[—–-]\s+/).filter(Boolean);
+      return {degree:(parts[0]||"").trim(),school:parts.slice(1).join(", ").trim(),year:year};
+    };
+    secs.education.forEach(function(l){
+      var ym=l.match(YR),year=ym?ym[1]:"";
+      if(DEG.test(l)||(year&&!curE)){
+        if(curE) entries.push(curE);
+        curE=splitEdu(l);
+      }else if(curE){
+        if(!curE.school&&l.length<80) curE.school=l.replace(YR,"").trim();
+        if(year&&!curE.year) curE.year=year;
+      }else{
+        entries.push(splitEdu(l));
+      }
+    });
+    if(curE) entries.push(curE);
+    out.edus=entries.filter(function(e){return e.degree||e.school;});
+  }
+  // projects
+  if(secs.projects){
+    var pl=secs.projects,pstarts=[];
+    pl.forEach(function(l,idx){ if(DATE_RE.test(l)||(!/^[•\-\*]/.test(l)&&idx>0&&/^[•\-\*]/.test(pl[idx-1]))) pstarts.push(idx); });
+    if(!pstarts.length) pl.forEach(function(l,idx){ if(!/^[•\-\*]/.test(l)) pstarts.push(idx); });
+    pstarts=pstarts.filter(function(v,i,a){return a.indexOf(v)===i;}).sort(function(a,b){return a-b;});
+    pstarts.forEach(function(si,k){
+      var end=(k+1<pstarts.length)?pstarts[k+1]:pl.length;
+      var block=pl.slice(si,end);
+      var nm=block[0].replace(DATE_RE,"").trim();
+      var tech="",rest=[];
+      block.slice(1).forEach(function(l){
+        var tm=l.match(/^(tech(nologies)?|stack|built with)\s*[:\-]\s*(.+)$/i);
+        if(tm&&!tech) tech=tm[3].trim(); else rest.push(l);
+      });
+      var pm=nm.match(/^(.*?)\s*\(([^)]{2,60})\)\s*$/);
+      if(pm&&!tech){ nm=pm[1].trim(); tech=pm[2].trim(); }
+      var bullets=rest.map(stripBullet).filter(Boolean);
+      if(nm||tech||bullets.length) out.projs.push({name:nm,tech:tech,bullets:bullets.join("\n")});
+    });
+  }
+  return out;
+}
+
+/* ---------- JD tailoring (100% client-side) ---------- */
+var JD_STOP={};
+("a,an,the,and,or,of,to,in,on,for,with,by,as,at,from,into,that,this,these,those,is,are,was,were,be,been,being,have,has,had,do,does,did,will,would,can,could,should,may,might,must,shall,you,your,youre,we,our,they,their,them,he,she,it,its,his,her,me,my,us,who,which,what,when,where,why,how,not,no,yes,if,then,than,so,such,also,just,about,above,after,again,against,all,any,because,before,between,both,but,down,during,each,few,further,here,more,most,other,own,same,some,under,until,while,per,via,within,including,include,includes,etc,strong,plus,bonus,preferred,ideally,years,year,experience,worked,working,team,teams,candidate,role,job,join,help,build,building,make,ensure,drive,lead,able,day,today,re,ll,ve,don,doesn,didn,isn,aren,wasn,weren,hasn,haven,hadn,wouldn,couldn,shouldn,won,mustn,needn,shan").split(",").forEach(function(w){JD_STOP[w]=1;});
+function jdTechTokens(text){
+  var found={};
+  var re=/[A-Z][A-Za-z0-9]*(?:[.#][A-Za-z0-9]+)+|\b[A-Z]{2,}[A-Z0-9+.#-]*\b|[A-Z][a-z]+(?:[A-Z][a-z0-9]+)+|\b(?:Go|SQL|AWS|GCP|API|APIs|CI|CD|ML|AI|UI|UX)\b/g;
+  var m;
+  while((m=re.exec(text))){ found[m[0]]=1; }
+  return Object.keys(found);
+}
+function jdKeywords(jdText){
+  var reqSents=jdSentences(jdText);
+  var reqBoost={};
+  reqSents.forEach(function(s){
+    s.toLowerCase().split(/[^a-z0-9+.#-]+/).forEach(function(w){ if(w.length>2) reqBoost[w]=1; });
+  });
+  var freq={};
+  function cleanTok(w){
+    w=w.replace(/^[.#+]+|[.#+]+$/g,"");
+    if(w.length<2||!/[a-z]/.test(w)||JD_STOP[w]) return null;
+    return w;
+  }
+  function add(ph,wt){
+    if(ph.length<2||ph.length>60) return;
+    var k=ph.toLowerCase();
+    freq[k]=(freq[k]||0)+wt;
+  }
+  // n-grams stay inside clauses so phrases never span sentence boundaries
+  jdText.toLowerCase().split("\n").forEach(function(rawLine){
+    var line=rawLine.replace(/^[•\-\*▪︎◦‣–>·\s]+/,"");
+    line.split(/[;,.!?\n:()—–]+/).forEach(function(clause){
+      var clean=clause.split(/[^a-z0-9+.#-]+/).map(cleanTok).filter(Boolean);
+      clean.forEach(function(w){ add(w,reqBoost[w]?1.5:1); });
+      for(var i=0;i<clean.length-1;i++){
+        var bi=clean[i]+" "+clean[i+1];
+        add(bi,(reqBoost[clean[i]]||reqBoost[clean[i+1]])?2:1.2);
+        if(i<clean.length-2) add(clean[i]+" "+clean[i+1]+" "+clean[i+2],1.5);
+      }
+    });
+  });
+  jdTechTokens(jdText).forEach(function(t){
+    var k=t.toLowerCase();
+    if(!JD_STOP[k]) add(t,3);
+  });
+  var scored=Object.keys(freq).map(function(k){
+    var wordsN=k.split(" ").length;
+    return {k:k,s:freq[k]*(1+0.4*(wordsN-1))};
+  }).filter(function(o){
+    var ws=o.k.split(" ");
+    return o.s>=1.5&&ws.every(function(w){return !JD_STOP[w];});
+  });
+  scored.sort(function(a,b){return b.s-a.s;});
+  var kept=[],seen={};
+  scored.forEach(function(o){
+    var lk=o.k.toLowerCase();
+    if(!seen[lk]&&kept.length<30){ seen[lk]=1; kept.push(o.k); }
+  });
+  return {keywords:kept,reqSents:reqSents};
+}
+function jdSentences(text){
+  var out=[];
+  text.replace(/\r/g,"").split("\n").forEach(function(line){
+    line.replace(/^[•\-\*▪︎◦‣–>]+\s*/,"").split(/(?<=[.!?;])\s+/).forEach(function(s){
+      s=s.trim();
+      if(s.length>15&&s.length<320&&/(requir|must|should|need|looking for|proficient|familiar|strong|knowledge of|hands-?on|bonus|nice to have|plus:|experience with|background in|\d+\+?\s*years)/i.test(s)) out.push(s);
+    });
+  });
+  var seen={},uniq=[];
+  out.forEach(function(s){ var k=s.toLowerCase(); if(!seen[k]){seen[k]=1;uniq.push(s);} });
+  return uniq.slice(0,12);
+}
+function kwVariants(k){
+  var l=k.toLowerCase(),v=[l];
+  if(l.charAt(l.length-1)==="s") v.push(l.slice(0,-1)); else v.push(l+"s");
+  return v;
+}
+function resumeHaystack(){
+  var d=collectResume();
+  var parts=[d.name,d.title,d.summary,d.skills];
+  d.exps.forEach(function(e){parts.push(e.role,e.company,e.bullets);});
+  d.projs.forEach(function(p){parts.push(p.name,p.tech,p.bullets);});
+  d.edus.forEach(function(e){parts.push(e.degree,e.school);});
+  return parts.join("\n").toLowerCase();
+}
+function analyzeJD(){
+  var jd=document.getElementById("jd-text").value.trim();
+  var box=document.getElementById("jd-results");
+  if(jd.length<50){
+    box.innerHTML='<p class="hint" style="color:#b91c1c">Paste a bit more of the job description first — a sentence or two isn\'t enough to analyze.</p>';
+    return;
+  }
+  if(!resumeHasContent(collectResume())){
+    box.innerHTML='<p class="hint" style="color:#b91c1c">Fill in (or import) your resume in the builder above first — there\'s nothing to compare against yet.</p>';
+    return;
+  }
+  trackEvent("JD analyze");
+  var parsed=jdKeywords(jd);
+  var hay=resumeHaystack();
+  var hit=[],miss=[];
+  parsed.keywords.forEach(function(k){
+    var found=kwVariants(k).some(function(v){return hay.indexOf(v)>=0;});
+    (found?hit:miss).push(k);
+  });
+  var h='<h3 style="margin:0 0 4px">Keyword overlap</h3>'+
+    '<p class="hint">Simple keyword overlap between the job post and your current builder content — <strong>not</strong> an ATS score. Only add what\'s true about you.</p>'+
+    '<p class="hint" style="font-weight:700;color:var(--ink-soft)">Matched ('+hit.length+')</p><div class="kw-chips">'+
+    (hit.length?hit.map(function(k){return '<span class="kw hit">'+escapeHtml(k)+"</span>";}).join(""):'<span class="hint">None yet.</span>')+"</div>"+
+    '<p class="hint" style="font-weight:700;color:var(--ink-soft)">Missing from your resume ('+miss.length+')</p><div class="kw-chips">'+
+    (miss.length?miss.map(function(k){return '<span class="kw miss">'+escapeHtml(k)+"</span>";}).join(""):'<span class="hint">Nothing missing — nice.</span>')+"</div>";
+  if(hit.length&&document.getElementById("f-skills").value.trim()){
+    h+='<button class="mini-btn apply" id="jd-reorder-skills" type="button" style="margin-bottom:16px">Move matched skills to the front</button>';
+  }
+  // bullet tweak suggestions
+  var suggs=buildSuggestions(miss,parsed.reqSents);
+  if(suggs.length){
+    h+='<h3 style="margin:16px 0 4px">Suggested bullet tweaks</h3>'+
+      '<p class="hint">Each suggestion weaves one missing keyword into one of your existing bullets. <strong>Only keep what\'s true</strong> — edit the draft before applying.</p>'+
+      '<div id="jd-suggs">'+suggs.map(function(s,i){
+        return '<div class="jd-sugg" data-sugg="'+i+'">'+
+          '<div class="from">From the JD: “'+escapeHtml(s.jdSentence)+'”</div>'+
+          '<div><strong>Your bullet:</strong> '+escapeHtml(s.original)+'</div>'+
+          '<div class="prop" id="jd-prop-'+i+'">'+escapeHtml(s.proposed)+'</div>'+
+          '<div class="row"><button class="mini-btn apply" type="button" data-apply="'+i+'">Apply this tweak</button>'+
+          '<button class="mini-btn" type="button" data-dismiss="'+i+'">Dismiss</button></div></div>';
+      }).join("")+"</div>";
+  }else if(miss.length){
+    h+='<p class="hint">No specific bullet tweaks to suggest — the missing keywords don\'t map cleanly onto your existing bullets. Consider adding a bullet or skill that covers them, if true.</p>';
+  }
+  if(parsed.reqSents.length){
+    h+='<h3 style="margin:16px 0 4px">Key requirements spotted</h3>'+
+      parsed.reqSents.map(function(s){return '<p class="jd-req">'+escapeHtml(s)+"</p>";}).join("");
+  }
+  box.innerHTML=h;
+  window._jdSuggs=suggs;
+  var rb=document.getElementById("jd-reorder-skills");
+  if(rb) rb.addEventListener("click",reorderSkillsFront.bind(null,hit));
+  box.querySelectorAll("[data-apply]").forEach(function(b){
+    b.addEventListener("click",function(){ applySugg(parseInt(b.getAttribute("data-apply"),10)); });
+  });
+  box.querySelectorAll("[data-dismiss]").forEach(function(b){
+    b.addEventListener("click",function(){
+      var card=b.closest(".jd-sugg"); if(card) card.remove();
+    });
+  });
+}
+function reorderSkillsFront(hit){
+  var cur=document.getElementById("f-skills").value.split(/[,;\n]+/).map(function(s){return s.trim();}).filter(Boolean);
+  var hitL=hit.map(function(k){return k.toLowerCase();});
+  var matched=[],rest=[];
+  cur.forEach(function(s){
+    var l=s.toLowerCase();
+    var isHit=hitL.some(function(k){return l.indexOf(k)>=0||k.indexOf(l)>=0&&l.length>2;});
+    (isHit?matched:rest).push(s);
+  });
+  document.getElementById("f-skills").value=matched.concat(rest).join(", ");
+  refreshPreview(); queueSave();
+  trackEvent("JD skills reorder");
+}
+function buildSuggestions(miss,reqSents){
+  var suggs=[];
+  var entries=Array.prototype.slice.call(document.querySelectorAll("#exp-list .exp-entry"));
+  var missL=miss.map(function(k){return k.toLowerCase();});
+  entries.forEach(function(entry,ei){
+    var lines=entry.querySelector(".e-bullets").value.split("\n");
+    lines.forEach(function(line,bi){
+      if(suggs.length>=8) return;
+      var bl=line.trim();
+      if(!bl) return;
+      var bWords={};
+      bl.toLowerCase().split(/[^a-z0-9+.#-]+/).forEach(function(w){if(w.length>2&&!JD_STOP[w])bWords[w]=1;});
+      // candidate missing keywords: appear in a req sentence sharing a word with this bullet
+      var cands=[];
+      missL.forEach(function(k){
+        var sent=reqSents.find(function(s){
+          var sl=s.toLowerCase();
+          if(sl.indexOf(k)<0) return false;
+          return sl.split(/[^a-z0-9+.#-]+/).some(function(w){return bWords[w];});
+        });
+        if(sent) cands.push({k:k,sent:sent});
+      });
+      cands.slice(0,2).forEach(function(c){
+        var techy=/[A-Z+#.]/.test(c.k)||/^[a-z]+js$/.test(c.k)||/\.(js|py)$/.test(c.k);
+        var proposed=bl.replace(/[.\s]+$/,"")+(techy?" using "+c.k:" with "+c.k);
+        // capitalize first letter of inserted phrase for readability
+        suggs.push({expIdx:ei,bulletIdx:bi,original:bl,keyword:c.k,jdSentence:c.sent,proposed:proposed});
+      });
+    });
+  });
+  return suggs;
+}
+function applySugg(i){
+  var s=(window._jdSuggs||[])[i];
+  if(!s) return;
+  var entries=document.querySelectorAll("#exp-list .exp-entry");
+  var entry=entries[s.expIdx];
+  if(!entry) return;
+  var ta=entry.querySelector(".e-bullets");
+  var lines=ta.value.split("\n");
+  if(lines[s.bulletIdx]===undefined) return;
+  lines[s.bulletIdx]=s.proposed;
+  ta.value=lines.join("\n");
+  refreshPreview(); queueSave();
+  var card=document.querySelector('[data-sugg="'+i+'"]');
+  if(card) card.innerHTML='<p class="hint" style="color:var(--accent-dark);font-weight:700">Applied — review it in your Experience section above.</p>';
+  trackEvent("JD suggestion applied");
+}
+
 /* ---------- signups (localStorage only, never sent anywhere) ---------- */
 var LS_KEY="leadloop_signups_v1";
 function loadSignups(){
@@ -970,6 +1582,32 @@ document.addEventListener("DOMContentLoaded",function(){
   });
   renderLevelGuide();
   document.getElementById("btn-sample").addEventListener("click",loadSample);
+  document.getElementById("resume-file").addEventListener("change",function(){
+    handleResumeFile(this.files&&this.files[0]);
+    this.value=""; /* allow re-selecting the same file */
+  });
+  document.getElementById("jd-analyze").addEventListener("click",analyzeJD);
+  document.getElementById("jd-fetch").addEventListener("click",function(){
+    var url=document.getElementById("jd-url").value.trim();
+    var note=document.getElementById("jd-fetch-note");
+    if(!url){ note.textContent="Paste a job-post link first."; return; }
+    if(!/^https?:\/\//i.test(url)) url="https://"+url;
+    note.textContent="Trying to fetch — most job sites block this, so pasting the text is the reliable path.";
+    fetch(url).then(function(r){ if(!r.ok) throw new Error("bad-status"); return r.text(); })
+      .then(function(html){
+        var doc=new DOMParser().parseFromString(html,"text/html");
+        doc.querySelectorAll("script,style,noscript").forEach(function(e){e.remove();});
+        var text=(doc.body?doc.body.innerText:"").replace(/[ \t]+/g," ").replace(/\n{3,}/g,"\n\n").trim();
+        if(text.length<200) throw new Error("too-short");
+        document.getElementById("jd-text").value=text.slice(0,20000);
+        note.textContent="Fetched the page text ("+text.length+" characters) — skim it for junk, then hit Analyze.";
+        trackEvent("JD fetch success");
+      })
+      .catch(function(){
+        note.textContent="Couldn't fetch that page — most job sites block cross-site fetching. Paste the job description text above instead; that always works.";
+        trackEvent("JD fetch fallback");
+      });
+  });
   document.getElementById("btn-print").addEventListener("click",function(){
     var d=collectResume();
     if(!resumeHasContent(d)){ alert("There's nothing to print yet — add your details first."); return; }
@@ -1046,6 +1684,26 @@ document.addEventListener("DOMContentLoaded",function(){
     });
   });
   document.getElementById("c-email").addEventListener("input",function(){ formError("c-email","c-err",null); });
+
+  /* Mobile navigation drawer */
+  (function(){
+    var toggle=document.getElementById("navToggle"),drawer=document.getElementById("navDrawer"),scrim=document.getElementById("navScrim");
+    if(!toggle||!drawer||!scrim) return;
+    function setNav(open){
+      drawer.classList.toggle("open",open);
+      scrim.classList.toggle("show",open);
+      toggle.setAttribute("aria-expanded",open?"true":"false");
+      toggle.setAttribute("aria-label",open?"Close menu":"Open menu");
+      document.body.style.overflow=open?"hidden":"";
+      if(open){ var c=document.getElementById("navClose"); if(c) c.focus(); }
+      else { toggle.focus(); }
+    }
+    toggle.addEventListener("click",function(){ setNav(!drawer.classList.contains("open")); });
+    document.getElementById("navClose").addEventListener("click",function(){ setNav(false); });
+    scrim.addEventListener("click",function(){ setNav(false); });
+    drawer.addEventListener("click",function(e){ if(e.target.closest("a")) setNav(false); });
+    document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&drawer.classList.contains("open")) setNav(false); });
+  })();
 });
 </script>
 </body>

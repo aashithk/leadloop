@@ -1,0 +1,34 @@
+{
+ "changes": [
+  {
+   "change": "baseline established 2026-09-20: honest zero-state. No analytics installed; no visitor/pageview/conversion numbers exist. Do not cite LeadLoop traffic.",
+   "date": "2026-09-20",
+   "rationale": "records the zero-state honestly so no one invents traffic numbers",
+   "rechecked": "n/a (first snapshot)"
+  },
+  {
+   "change": "2026-09-21: GoatCounter snippet CONFIRMED DEPLOYED on the live site (https://aashithk.github.io/leadloop/ returns HTTP 200; page source contains data-goatcounter=\"https://leadloop.goatcounter.com/count\" + count.js). Whether the 'leadloop' site code is registered and activated on GoatCounter's side is unverified (no credentialed dashboard login — per panel limits). No visitor numbers can be cited until the GoatCounter account is verified to receive counts; per standing limits, agents never log into the dashboard.",
+   "date": "2026-09-21",
+   "rationale": "state change worth recording: from 'no analytics' to 'instrumented, activation unverified'; once Aashith confirms the site code is live in GoatCounter, baselines can begin",
+   "rechecked": "https://aashithk.github.io/leadloop/ (HTTP 200, page source inspected 2026-09-21)"
+  },
+  {
+   "date": "2026-09-28",
+   "change": "honest zero-state refresh 2026-09-28: still NO visitor/pageview/conversion numbers exist for LeadLoop. The GoatCounter 'leadloop' site-code activation remains unverified (no dashboard login per panel limits; Aashith's 2026-09-21 open question #6 unanswered). Snippet presence on the live site was confirmed 2026-09-21; it was not re-fetched 2026-09-28. Do not cite LeadLoop traffic. This dataset will remain zero-state until Aashith confirms the site code is active.",
+   "rationale": "no-churn rule: without a verified activation there is nothing new to measure — the honest state is still zero",
+   "rechecked": "n/a — nothing new measurable (activation status is a dashboard fact agents cannot observe)"
+  },
+  {
+   "date": "2026-10-05",
+   "change": "still honest zero-state: no GoatCounter visitor/pageview/conversion numbers exist. No commits to the repo since 2026-09-28, so nothing about the live build or snippet changed; activation remains unverified. Do not cite traffic for LeadLoop.",
+   "rationale": "keep the honest zero-state explicit; analytics remain founder-blocked (his activation confirmation)",
+   "rechecked": "repo commit log 2026-09-28 -> 2026-10-05 (no commits); no dashboard access per standing limit"
+  }
+ ],
+ "measured_at": "2026-10-05",
+ "measured_by": "pika (Muse agent), live HTTP + page-source check",
+ "note": "Zero-state persists for numbers; the plumbing is now deployed. The missing step is outside agent reach: Aashith must confirm the 'leadloop' site code exists/activated under his GoatCounter account.",
+ "site_visits": "not yet measured",
+ "status": "snippet deployed; activation not verified",
+ "date": "2026-10-05"
+}

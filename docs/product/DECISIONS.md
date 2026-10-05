@@ -2,6 +2,12 @@
 
 > Newest first. Every entry: date, decision, rationale. Undecided items are logged as such — indecision is a decision to revisit.
 
+## 2026-10-05 — Kit free tier is the plan; trial lapsed 2026-10-04 with no paid conversion
+
+Decision: stay on Kit's free tier; do not revisit paid Kit until the list approaches free limits (10k subscribers) or a paid feature becomes the binding constraint. Trial lapsed 2026-10-04; account shows plan_type "creator", `on_trial: false`, `renews_at: null`, `cancels_at: null` → no paid plan active, no silent auto-conversion possible. Sender identity resolved: nahata.n85@gmail.com confirmed + verified (DMARC not configured — noted, not blocking). The single remaining email-infrastructure step is Aashith hitting Publish on the "Newsletter site" form (ID 9940134), still unpublished as of 2026-10-05 (public embed URL + embed JS both 404, third straight week) — the funnel's entire critical path keys off that one click.
+
+Rationale: the 2026-09-28 review flagged the paid tier as a zombie cost with a deadline; the deadline lapsed and the account fell to free cleanly. CEO lens: "Earn the right to monetize" / "Kill fast, scale what works" — buy nothing until the list justifies it.
+
 ## 2026-09-26 — Monetization + distribution engine PROPOSED (awaiting Aashith's decision)
 Aashith asked for a plan covering both products (LeadLoop + Kundli Guru, separate social accounts each): a low-ticket automated product, ad revenue, and a recursive social posting/engagement-study loop, profitable over time not day zero; open to spending money. Proposal presented in chat 2026-09-26: Phase 1 — separate FB Pages + IG professional accounts per product under one Meta Business Portfolio (Aashith creates; identity), weekly draft→approve→schedule→measure→adjust loop via Metricool/Buffer (~$20/mo), every format with metric + threshold + 90-day kill date; Phase 2 — $19 one-time auto-generated LeadLoop Interview Readiness Report via Lemon Squeezy (5% + $0.50, merchant of record), Kundli premium PDFs ₹99–499 selling polish/personalization (competitors give calculations free); Phase 3 — AdSense only when traffic justifies, paid ads only as capped experiments with stop-loss, never buying traffic to monetize via ads. Sequencing rationale: ads need ~20k (LeadLoop @ ~$5 RPM) / ~100k (Kundli India @ ~$1 RPM) monthly pageviews for $100/mo — product revenue arrives much earlier from warm audiences (CEO lens: distribution before product polish; earn the right to monetize). Research: `~/workspace/monetization-research/research-notes-2026-09-26.md`. Founder-time asks batched: (1) create the 4 accounts + portfolio, (2) Kit trial decision by 2026-10-04, (3) approve content voice + first batch, (4) Lemon Squeezy account later (tax identity).
 
@@ -54,3 +60,4 @@ Kamath: SEO effort goes to LeadLoop first — that's where he wants visitors/cus
 - Never invent credentials, testimonials, outcomes, placement statistics, salaries, pricing, scarcity, demand, guarantees, or real committee experiences.
 - Never imply Google/Meta/Netflix endorsement. Never expose confidential employer information.
 - No paid plans, checkout, or financial commitments without explicit approval.
+

@@ -2,6 +2,12 @@
 
 > Newest first. Every entry: date, decision, rationale. Undecided items are logged as such — indecision is a decision to revisit.
 
+## 2026-10-12 — No product work until the funnel is wired and measured
+
+Decision: product work stays PROPOSED-and-paused — including the director-of-UX PRD's 6 open questions and the monetization sequencing — until the capture layer is live and measured (Kit form published + wired + test subscribe + GoatCounter funnel events). The monetization proposal stays PROPOSED (guardrails standing: ~$20/mo tooling, ad experiments only with sign-off + stop-loss). The CI-repairs push is now 16 days staged; the 2026-09-28 single-squashed-green-commit rule remains the standing open build-integrity item.
+
+Rationale: CEO lens "Kill fast, scale what works" — proposing product work against a zero-user baseline implies momentum that doesn't exist; the entire scale enabler is the one Publish click. Kill the implication, keep the funnel.
+
 ## 2026-10-05 — Kit free tier is the plan; trial lapsed 2026-10-04 with no paid conversion
 
 Decision: stay on Kit's free tier; do not revisit paid Kit until the list approaches free limits (10k subscribers) or a paid feature becomes the binding constraint. Trial lapsed 2026-10-04; account shows plan_type "creator", `on_trial: false`, `renews_at: null`, `cancels_at: null` → no paid plan active, no silent auto-conversion possible. Sender identity resolved: nahata.n85@gmail.com confirmed + verified (DMARC not configured — noted, not blocking). The single remaining email-infrastructure step is Aashith hitting Publish on the "Newsletter site" form (ID 9940134), still unpublished as of 2026-10-05 (public embed URL + embed JS both 404, third straight week) — the funnel's entire critical path keys off that one click.

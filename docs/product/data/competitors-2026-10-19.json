@@ -1,0 +1,204 @@
+{
+ "candidates_to_verify": [
+  {
+   "name": "interviewing.io (official pricing page)",
+   "why_unverified": "no public candidate-pricing page found 2026-09-21 (search surfaced only official blog posts and the employer FAQ). Table keeps the secondary-source (Final Round AI review) prices; official tier stays quarantined."
+  },
+  {
+   "name": "Exponent/Aced (official pricing page)",
+   "why_unverified": "https://www.tryexponent.com/upgrade re-opened 2026-09-21 \u2014 still renders only footer text (JS-only page). Prices in the table remain secondary (opened review article + search snippet)."
+  },
+  {
+   "name": "Final Round AI",
+   "why_unverified": "AI interview assistant/copilot; $150/mo monthly / from $25/mo annual per Four-Leaf's own comparison page (secondary). Distinct category from human mocks; candidate only \u2014 no official pricing page opened."
+  },
+  {
+   "name": "Interview Kickstart",
+   "why_unverified": "https://www.interviewkickstart.com/pricing returned HTTP 403 on 2026-10-12 (third straight week access-denied, after 2026-09-28 and 2026-10-05). Secondary datapoint stands: does not list prices on its website; user-reported $5,000\u2013$12,000 depending on program. Official pricing stays \"not yet measured\"; candidate only."
+  },
+  {
+   "name": "Interview Kickstart (official pricing page)",
+   "why_unverified": "https://www.interviewkickstart.com/pricing returned HTTP 403 on 2026-10-12 (third straight week access-denied, after 2026-09-28 and 2026-10-05). Secondary datapoint stands: does not list prices on its website; user-reported $5,000\u2013$12,000 depending on program. Official pricing stays \"not yet measured\"; candidate only."
+  }
+ ],
+ "changes": [
+  {
+   "change": "baseline established 2026-09-20: 5 competitors in verified table (IGotAnOffer, interviewing.io, Exponent/Aced, Design Gurus, Prepfully) with attributable sources; 6 names in candidates_to_verify (not included from memory alone). IGotAnOffer ($100-$250/session) and Design Gurus ($149-$215/session) verified on official pages; interviewing.io and Exponent/Aced prices are secondary-source (review article + search snippet); Prepfully pricing gated behind coach selection.",
+   "date": "2026-09-20",
+   "rationale": "first attributable competitor baseline for interview-prep/coaching; future weeks re-open the source links and record price/feature changes",
+   "rechecked": "n/a (first snapshot)"
+  },
+  {
+   "change": "2026-09-21 re-check (all 5 source links re-opened): all five rows CONFIRMED UNCHANGED on price. New observed details: IGotAnOffer homepage now shows live stats (23,753 clients coached, 4.93 avg rating); Prepfully coaches page now 1,956 coaches / 14,709 candidates coached / 4.85 rating (vs 1,955/14,690/4.85 on 2026-09-20 \u2014 ordinary growth). tryexponent.com/upgrade still JS-gated (official pricing unverifiable); interviewing.io official candidate-pricing page still not found; Prepfully per-session pricing still gated. PROMOTIONS from candidates_to_verify (official pages opened 2026-09-21): Pramp \u2014 'merged into Exponent/Aced' confirmed on pramp.com itself (now branded 'Exponent Practice'; still free peer mocks; no per-session price \u2014 free product); Hello Interview \u2014 official pricing $47/mo (list $59), $79/yr (list $99), $279 lifetime (list $349); courses + AI tutor, no human mocks (caution: July 2026 Medium article reports human mocks wound down end May 2026 \u2014 secondary, unconfirmed by vendor); TechMockInterview \u2014 official per-mentor pricing $70-$143 per 60-min session (sampled 11 mentors; FAANG/big-tech engineers); MeetAPro \u2014 official homepage live ('Mock Interviews with Industry Professionals', verified engineers from Google/Meta/Amazon; endorsements incl. Alex Xu) but no concrete per-session prices on homepage \u2192 'not yet measured'; Four-Leaf \u2014 official pricing $5 for 5 days (one-time, hard-expires) or $20/mo Pro; AI voice mocks, no human coaching. New candidates added: Final Round AI (AI copilot, $150/mo monthly per secondary source), Interview Kickstart (prices not observed).",
+   "date": "2026-09-21",
+   "rationale": "weekly price/feature surveillance + promotion of verifiable candidates; Hello Interview's $47/mo and TechMockInterview's $70-$143 anchor the low end of the 1:1 market for LeadLoop's eventual pricing decision (DECISIONS.md: pricing research still open)",
+   "rechecked": "all 5 baseline source links re-opened 2026-09-21; 5 new official pages opened for promotions (pramp.com, hellointerview.com/pricing, techmockinterview.com mentor page, meetapro.com, four-leaf.ai/pricing)"
+  },
+  {
+   "date": "2026-09-28",
+   "change": "2026-09-28 re-check: 8 of 10 table rows re-opened. (1) IGotAnOffer CONFIRMED UNCHANGED ($50/credit, 2-5 credits/session; 23,821 clients coached, up from 23,753). (2) interviewing.io CONFIRMED UNCHANGED ($179/$225-$300/$339 sessions, $2,000 package \u2014 secondary). (3) Exponent/Aced CONFIRMED UNCHANGED (subscription + $249/hr coaching \u2014 secondary; official page still JS-gated). (4) Design Gurus CONFIRMED UNCHANGED ($149/$215). (5) PREPULLY NEW DATA \u2014 per-coach session prices now rendered directly: $169\u2013$679/session sample (10 coaches; struck-through lists $20-30 higher; 'First Session $20 off' + bulk discounts); page stats 1,965 coaches / 14,690 coached / 4.85. Earlier 'gated' note revised; whether prices ungated since 2026-09-21 or this is fetch-depth difference is unknowable. (6) Hello Interview CONFIRMED UNCHANGED ($47/mo, $79/yr, $279 lifetime; Guided Practice now also lists AI Coding). (7) TechMockInterview CONFIRMED UNCHANGED (same $70\u2013$143 sample, identical). (8) Four-Leaf CONFIRMED UNCHANGED ($5/5-day, $20/mo Pro). MeetAPro + Pramp not re-opened this week \u2014 carried forward. Interview Kickstart (candidate): official pricing page 403'd 2026-09-28; secondary (IGotAnOffer review) reports no public prices, user-reported $5,000\u2013$12,000 \u2014 official pricing stays 'not yet measured'.",
+   "rationale": "weekly price/feature surveillance. Prepfully's now-visible $169\u2013$679 per-session range widens the recorded 1:1 market band (was $70\u2013$339); relevant to the still-open pricing-research decision (DECISIONS.md) and to the 2026-09-26 proposed $19 one-time report / mock-interview offer sequencing",
+   "rechecked": "8 of 10 baseline source links re-opened 2026-09-28 (igotanoffer FAANG coaching; finalroundai interviewing.io review; igotanoffer exponent-alternatives; designgurus 1-on-1-sessions; prepfully.com/coaches; hellointerview.com/pricing; techmockinterview mentor page; four-leaf.ai/pricing). Interview Kickstart official pricing page attempted (HTTP 403)."
+  },
+  {
+   "date": "2026-10-05",
+   "change": "2026-10-05 re-check (all 10 table rows re-opened \u2014 Pramp + MeetAPro re-checked after being skipped 2026-09-28). (1) IGotAnOffer CONFIRMED UNCHANGED ($50/credit, 2-5 credits/session; 23,908 clients coached, up from 23,821). (2) interviewing.io CONFIRMED UNCHANGED ($179/$225-$300/$339, $2,000 package \u2014 secondary). (3) Exponent/Aced CONFIRMED UNCHANGED (review article updated 2026-09-30, numbers identical: Pro $12/mo annual, Expert $20/mo annual, coaching from $249/hr, bundle $1,499; official page still JS-gated). (4) Design Gurus CONFIRMED UNCHANGED ($149/$215). (5) Prepfully CONFIRMED UNCHANGED ($169-$679 band, First Session $20 off, bulk discounts; 1,965 coaches / 14,665 coached, down 25 \u2014 recorded, not interpreted) \u2014 and PROMOTED from candidates_to_verify: per-session prices now render directly on the public coaches page. (6) Pramp CONFIRMED (still \"Aced Practice\" on vendor page; free peer mocks). (7) Hello Interview CONFIRMED UNCHANGED ($47/$79/$279). (8) TechMockInterview CONFIRMED UNCHANGED ($70-$143 sample). (9) MeetAPro CONFIRMED (active, credible; no public per-session pricing). (10) Four-Leaf CONFIRMED UNCHANGED ($5/5-day or $20/mo). Interview Kickstart official pricing: HTTP 403 again (2nd straight week) \u2014 stays quarantined; interviewing.io/Exponent official pages stay quarantined.",
+   "rationale": "weekly competitor surveillance; Prepfully gate-lift makes the $169-$679/session band official-vendor data; 1:1 market remains 1-2 orders of magnitude above the proposed $19-style automation (monetization PROPOSED, unchanged)",
+   "rechecked": "https://igotanoffer.com/en/interview-coaching/type/faang-interview , https://www.finalroundai.com/blog/interviewing-io-review-pros-cons , https://igotanoffer.com/en/advice/tryexponent-alternatives , https://www.designgurus.io/learn/interview-coaching/1-on-1-sessions , https://prepfully.com/coaches , https://www.pramp.com , https://www.hellointerview.com/pricing , https://techmockinterview.com/offering/6fd4eea3-c355-4673-ab5a-3228f9ec935a , https://www.meetapro.com , https://four-leaf.ai/pricing , https://www.interviewkickstart.com/pricing (403 again)"
+  },
+  {
+   "date": "2026-10-12",
+   "change": "2026-10-12 re-check (all 10 table rows re-opened). PRICE MOVES: (1) HELLOINTERVIEW RAISED TWO TIERS \u2014 1 Year $79 (list $99) \u2192 $95 (list $119); Lifetime $279 (list $349) \u2192 $319 (list $399); 1 Month $47 (list $59) UNCHANGED \u2014 ~20% hike on the longer terms in the AI-prep segment. STAT DELTAS: (2) IGotAnOffer 23,908 \u2192 23,972 clients coached (+64/week, steady growth). (3) PREPULLY COUNTS DROPPED \u2014 1,965 \u2192 1,952 coaches, 14,665 \u2192 14,547 coached, 4.85 rating unchanged; price band $169-$679 CONFIRMED UNCHANGED \u2014 counts moving down is atypical; recorded not interpreted (possible delisting/cleanup). CONFIRMED UNCHANGED: interviewing.io ($179/$225-$300/$339, $2,000 pkg \u2014 secondary), Exponent/Aced article (still 'Last updated September 30, 2026'; m2m $79/$99 not visible this pass), Design Gurus ($149/$215), Pramp ('Aced Practice', free), TechMockInterview ($70-$143), MeetAPro (active, pricing behind booking flow), Four-Leaf ($5/5-day or $20/mo). Interview Kickstart official pricing: HTTP 403 THIRD straight week \u2014 stays quarantined ('not yet measured'); interviewing.io/Exponent official pages stay quarantined.",
+   "rationale": "weekly competitor surveillance. HelloInterview's ~20% raise on 1-Year/Lifetime is the first price HIKE observed across either product's table in 3 weeks \u2014 signals pricing power in the AI-prep segment (courses + AI tutor, no human mocks), consistent with the commission's automation-first sequencing. Prepfully's coach-count drop is a flag to watch, not a signal yet.",
+   "rechecked": "all 10 table rows re-opened 2026-10-12 (igotanoffer FAANG coaching; finalroundai interviewing.io review; igotanoffer exponent-alternatives; designgurus 1-on-1-sessions; prepfully.com/coaches; pramp.com; hellointerview.com/pricing; techmockinterview offering page; meetapro.com; four-leaf.ai/pricing); https://www.interviewkickstart.com/pricing attempted (HTTP 403, third week)"
+  },
+  {
+   "date": "2026-10-19",
+   "change": "2026-10-19 re-check (all 10 table rows re-opened). STAT DELTAS: (1) IGotAnOffer 23,972 \u2192 24,088 clients coached (+116/week, steady growth; 125 coaches listed); 4.93 rating UNCHANGED; $50/credit, 2-5 credits/session CONFIRMED UNCHANGED. (2) PREPULLY COUNTS RECOVERED \u2014 1,978 coaches / 14,548 coached / 4.85 (was 1,952 / 14,547 on 2026-10-12 \u2014 the atypical dip bounced back up; recorded not interpreted); price band $169-$679 + 'First Session $20 off' + bulk discounts CONFIRMED UNCHANGED. CONFIRMED UNCHANGED: HelloInterview ($47/mo, $95/yr, $319 lifetime \u2014 the Oct 12 raised tiers hold; courses + AI tutor, AI live-practice interviews 1/2/4 by tier), interviewing.io ($179/$225-$300/$339, $2,000 package, Pay Later \u2014 secondary review), Exponent/Aced (article still 'Last updated September 30, 2026'; Pro $12/mo annual, Expert $20/mo annual, coaching from $249/hr, $199 annual-subscriber session, 'Ace the Interview' $1,499; official page still JS-gated), Design Gurus ($149/$215), Pramp ('Aced Practice' free peer mocks), TechMockInterview (identical mentor sample $70-$143: Rayan $70, Saurabh Gupta $71, Neeru Jaroliya $79, A.P./Haochuan/Nikita $100, Sanchit $119, Sumeet $120, Vijubhai/Sridhar $121, Feng $143), MeetAPro (active, verified-engineer 1:1 mocks; no public per-session pricing), Four-Leaf ($5/5-day or $20/mo Pro, 3-day free trial no card). Interview Kickstart official pricing: HTTP 403 FOURTH straight week \u2014 stays quarantined ('not yet measured'); interviewing.io/Exponent official pages stay quarantined.",
+   "rationale": "weekly competitor surveillance; no price moves this week (the Oct 12 HelloInterview hike holds); IGotAnOffer's steady +64..+116/week client growth vs Prepfully's whipsaw counts keeps the 1:1-market trust-signals contrast on the record; quarantined names remain quarantined for a fourth week",
+   "rechecked": "all 10 table rows re-opened 2026-10-19 (igotanoffer FAANG coaching; finalroundai interviewing.io review; igotanoffer exponent-alternatives; designgurus 1-on-1-sessions; prepfully.com/coaches; pramp.com; hellointerview.com/pricing; techmockinterview offering page; meetapro.com; four-leaf.ai/pricing); https://www.interviewkickstart.com/pricing attempted (HTTP 403, fourth week)"
+  }
+ ],
+ "competitors": [
+  {
+   "coaching_format": "1:1 with ex-FAANG/top-company coaches; 45-min mock interview + 15-min expert feedback; 100% risk-free trial (full refund within 24h)",
+   "free_features": [
+    "Free comprehensive interview prep guides on the website",
+    "Mock interview videos on YouTube"
+   ],
+   "name": "IGotAnOffer",
+   "observed_at": "2026-10-19",
+   "offering": "1:1 interview coaching marketplace: book 1-hour sessions with coaches from FAANG/top companies; 45-min mock interview + 15-min feedback",
+   "pricing": "$50/credit (1 credit ~$50; coaches charge 2-5 credits per 1h session; 24,088 clients coached, 4.93 avg rating \u2014 up 116 from 23,972 on 2026-10-12; 125 coaches listed)",
+   "source": "https://igotanoffer.com/en/interview-coaching/type/faang-interview (re-opened 2026-10-19, confirmed unchanged on price; 24,088 clients coached / 4.93 rating \u2014 up 116 from 2026-10-12; 125 coaches listed)",
+   "source_type": "official",
+   "url": "https://igotanoffer.com/en/interview-coaching/type/faang-interview",
+   "verification_note": "Pricing fully verified on the live official page (credit model stated directly); free features from the brand's own alternatives article on the same domain."
+  },
+  {
+   "coaching_format": "1:1 mock sessions with vetted FAANG-equivalent engineers (20+ real interviews run); anonymous, voice-only, recorded with annotations; coaching packages available",
+   "free_features": [
+    "1 free peer mock session on signup; more free peer sessions unlockable by conducting mocks for others (limited availability)"
+   ],
+   "name": "interviewing.io",
+   "observed_at": "2026-10-19",
+   "offering": "Anonymous mock interviews with vetted senior/staff engineers from Google, Meta, Amazon and other top companies; coding, system design, behavioral",
+   "pricing": "$179 per session (standard); $225-$300 per session with interviewer from specific target company; $339 per FAANG-branded session; $2,000 for 3-session coaching package; Pay Later program defers payment until job landed (reconfirmed 2026-09-28)",
+   "source": "https://www.finalroundai.com/blog/interviewing-io-review-pros-cons (re-opened 2026-10-12, confirmed unchanged: $179 start, $225-$300 target-company, $339 FAANG, $2,000 package, Pay Later; framed as 2026 pricing)",
+   "source_type": "secondary (competitor-published review; official interviewing.io candidate pricing page not found \u2014 see candidates_to_verify)",
+   "url": "https://www.finalroundai.com/blog/interviewing-io-review-pros-cons",
+   "verification_note": "Live in 2026 confirmed by the 2026-dated review page; official interviewing.io pricing page was NOT opened today \u2014 treat as secondary."
+  },
+  {
+   "coaching_format": "1:1 coaching with hand-picked vetted FAANG coaches (resume review, mock interviews, career coaching, salary negotiation); peer mock interviews included in membership",
+   "free_features": [
+    "Basic tier $0: sample lessons, 5 peer mocks per month, sample questions, basic job referrals",
+    "Free interview prep articles, community question database, YouTube mock-interview channel"
+   ],
+   "name": "Exponent / Aced (tryexponent.com)",
+   "observed_at": "2026-10-19",
+   "offering": "Interview-prep membership (courses, question banks, peer mocks, community) plus separate 1:1 coaching platform with vetted FAANG coaches",
+   "pricing": "Subscription: Basic $0/mo; Pro $12/mo billed annually ($79/mo month-to-month); Expert $20/mo billed annually ($99/mo month-to-month). Coaching (separate): starts at $249 per hour; annual subscribers get 1x 60-min coaching for $199; 'Ace the Interview' bundle $1,499 (reconfirmed 2026-09-28)",
+   "source": "https://igotanoffer.com/en/advice/tryexponent-alternatives (re-opened 2026-10-12; article still 'Last updated September 30, 2026' \u2014 numbers unchanged: Pro $12/mo annual, Expert $20/mo annual, coaching from $249/hr, 'Ace the Interview' $1,499, annual-subscriber 60-min session $199; month-to-month $79/$99 figures not visible in this pass \u2014 not verifiable this pass); official https://www.tryexponent.com/upgrade still JS-gated, unverifiable on vendor page",
+   "source_type": "secondary review + search snippet (official page fetch failed to render)",
+   "url": "https://igotanoffer.com/en/advice/tryexponent-alternatives",
+   "verification_note": "Rebranded as 'Aced (formerly Exponent)' per 2026 sources; official pricing page could not be read (JS-only render); prices from opened review article + search snippet only."
+  },
+  {
+   "coaching_format": "1:1 with interviewer from FAANG+ company or specific target company; covers DSA/system design doubts, real interview scenarios, resume polish, job search strategy, offer negotiation",
+   "free_features": [],
+   "name": "Design Gurus",
+   "observed_at": "2026-10-19",
+   "offering": "1:1 interview preparation coaching sessions with an interviewer from a FAANG+ company or your target company",
+   "pricing": "$149 per 1-on-1 session with FAANG+ interviewer (list $186); $215 per target-company session (list $269); 100% satisfaction money-back guarantee (reconfirmed 2026-09-28)",
+   "source": "https://www.designgurus.io/learn/interview-coaching/1-on-1-sessions (re-opened 2026-10-12, confirmed unchanged: $149 (was $186) FAANG+ interviewer, $215 (was $269) target-company, money-back guarantee)",
+   "source_type": "official",
+   "url": "https://www.designgurus.io/learn/interview-coaching/1-on-1-sessions",
+   "verification_note": "Prices verified directly on the live official page (discount strikethrough pricing visible); no free tier shown on the page; session length not stated."
+  },
+  {
+   "coaching_format": "1:1 anonymous 60-min mock interviews with coaches from target companies/roles (page states 1,978 coaches, 14,548 candidates coached, 4.85 avg rating \u2014 re-observed 2026-10-19); expert advice sessions and resume reviews",
+   "free_features": [
+    "Free interview question bank with AI answer-review tool",
+    "Company/role interview guides",
+    "Recorded mock-interview library / YouTube"
+   ],
+   "name": "Prepfully",
+   "observed_at": "2026-10-19",
+   "offering": "60-minute anonymous mock interviews and advice sessions with expert coaches from your target company and role, plus resume reviews",
+   "pricing": "$169-$679/session (price band unchanged; sample cards span $169-$679, struck-through lists $20-$30 higher, 'First Session $20 off' + bulk discounts up to 16-17% off); STAT DELTA: page now reads 1,978 coaches / 14,548 coached / 4.85 (was 1,952 / 14,547 on 2026-10-12 \u2014 the atypical Oct 12 dip bounced back up; recorded not interpreted)",
+   "source": "https://prepfully.com/coaches (re-opened 2026-10-19; price band CONFIRMED UNCHANGED $169-$679; counts now 1,978 coaches / 14,548 coached / 4.85 \u2014 up from 1,952 / 14,547 on 2026-10-12)",
+   "source_type": "official (coaches page)",
+   "url": "https://prepfully.com/coaches",
+   "verification_note": "Promoted from candidates_to_verify 2026-10-05: per-session prices render directly on the public coaches page."
+  },
+  {
+   "coaching_format": "Peer mock interviews (free); video + collaborative coding environment; 30-45 min sessions",
+   "free_features": [
+    "Free peer mock interviews ('Practice Live Job Interviews \u2014 For Free')",
+    "Video + collaborative coding environment"
+   ],
+   "name": "Pramp (merged into Exponent/Aced)",
+   "observed_at": "2026-10-19",
+   "offering": "Free peer mock-interview practice; absorbed into Exponent \u2014 official page now branded 'Exponent Practice'",
+   "pricing": "free product \u2014 no per-session price",
+   "source": "https://www.pramp.com (re-opened 2026-10-12: still branded 'Aced Practice' \u2014 merger into Exponent/Aced confirmed; free peer mock interviews, 30-45 min, video + collaborative coding)",
+   "source_type": "official",
+   "url": "https://www.pramp.com",
+   "verification_note": "Promoted from candidates_to_verify 2026-09-21. No concrete price because the product is free."
+  },
+  {
+   "coaching_format": "Self-serve courses + guided practice + unlimited AI tutor; no human mock interviews on the pricing page",
+   "free_features": [],
+   "name": "Hello Interview",
+   "observed_at": "2026-10-19",
+   "offering": "Interview-prep courses (System Design / Low-Level Design / Concurrency / Behavioral), guided practice, 5,000+ interview-question library, unlimited AI tutor",
+   "pricing": "1 Month $47 (list $59) \u2014 UNCHANGED; 1 Year $95 (list $119) \u2014 RAISED from $79 (list $99) on 2026-10-05; Lifetime $319 (list $399) \u2014 RAISED from $279 (list $349) on 2026-10-05. Guided Practice lists AI Coding alongside System Design/Low-Level Design.",
+   "source": "https://www.hellointerview.com/pricing (re-opened 2026-10-12: 1 Month $47 (was $59) UNCHANGED; 1 Year $95 (was $119) RAISED from $79 (was $99); Lifetime $319 (was $399) RAISED from $279 (was $349); courses + AI tutor only, no human-coaching tier)",
+   "source_type": "official",
+   "url": "https://www.hellointerview.com/pricing",
+   "verification_note": "Promoted from candidates_to_verify 2026-09-21. Caution (secondary): a July 2026 Medium article reports Hello Interview wound down its human mock interviews at end of May 2026 and is now course + AI only \u2014 consistent with the official pricing page, but not vendor-confirmed."
+  },
+  {
+   "coaching_format": "1:1 with FAANG/big-tech engineers (Google, Meta, Amazon, Microsoft, Apple, Stripe, Palantir); coding/system design/behavioral sessions",
+   "free_features": [],
+   "name": "TechMockInterview",
+   "observed_at": "2026-10-19",
+   "offering": "1:1 mock interviews with individual vetted mentors from FAANG/big-tech companies",
+   "pricing": "$70-$143 per 60-min session (re-sampled the same official mentor page 2026-09-28: Rayan $70, Saurabh Gupta $71, Neeru Jaroliya $79, A.P./Haochuan/Nikita $100, Sanchit $119, Sumeet $120, Vijubhai/Sridhar $121, Feng $143 \u2014 all identical to 2026-09-21)",
+   "source": "https://techmockinterview.com/offering/6fd4eea3-c355-4673-ab5a-3228f9ec935a (re-opened 2026-10-12, confirmed unchanged: identical mentor sample, $70-$143/session band)",
+   "source_type": "official",
+   "url": "https://techmockinterview.com/offering/6fd4eea3-c355-4673-ab5a-3228f9ec935a",
+   "verification_note": "Promoted from candidates_to_verify 2026-09-21. Corroborates the earlier secondary 'from $120/hour for recommended US coaches' row \u2014 now official."
+  },
+  {
+   "coaching_format": "1:1 mocks with verified engineers from Google, Meta, Amazon & more; provider verification process live since Aug 2024",
+   "free_features": [],
+   "name": "MeetAPro",
+   "observed_at": "2026-10-19",
+   "offering": "'Mock Interviews with Industry Professionals' \u2014 1-on-1 mocks with verified industry engineers; endorsements incl. Alex Xu (ByteByteGo)",
+   "pricing": "not yet measured \u2014 homepage shows no concrete per-session prices (prices filtered per provider listing); secondary estimates average $100-$150/session, unverified",
+   "source": "https://www.meetapro.com (re-opened 2026-10-12: active, credible \u2014 verified-engineer 1:1 mocks, hire/no-hire verdicts, testimonials; no public per-session pricing \u2014 behind the booking flow)",
+   "source_type": "official (homepage) \u2014 pricing not visible",
+   "url": "https://www.meetapro.com",
+   "verification_note": "Promoted from candidates_to_verify 2026-09-21; pricing remains 'not yet measured' \u2014 never invented."
+  },
+  {
+   "coaching_format": "AI voice mock interviews (no human coaching); behavioral/technical/situational, role-specific questions from real job descriptions; real-time transcription + filler-word/pacing feedback; AI resume builder + cover letters; LinkedIn optimizer; negotiation coach",
+   "free_features": [
+    "3-day free trial, no credit card required"
+   ],
+   "name": "Four-Leaf",
+   "observed_at": "2026-10-19",
+   "offering": "Unlimited AI voice mock interviews + AI resume builder + cover letters + LinkedIn optimizer + negotiation coach",
+   "pricing": "$5 for 5 days (one-time, hard-expires, no auto-renewal) or $20/month Pro \u2014 verified on the official pricing page 2026-09-28; 3-day free trial, no credit card",
+   "source": "https://four-leaf.ai/pricing (re-opened 2026-10-12, confirmed unchanged: $5 for 5 days or $20/mo Pro, 3-day free trial, no card required; 7-day refund on first Pro charge)",
+   "source_type": "official",
+   "url": "https://four-leaf.ai/pricing",
+   "verification_note": "Promoted from candidates_to_verify 2026-09-21. Positioned explicitly vs $179/session human mocks."
+  }
+ ],
+ "measured_at": "2026-10-19",
+ "measured_by": "panel research pass via browser_open (public pages only; no logins) \u2014 re-verified all 10 baseline rows",
+ "note": "Every row carries attributable sources. source_type distinguishes official pages from secondary reviews/search snippets. Unverifiable names live in candidates_to_verify, not the table."
+}

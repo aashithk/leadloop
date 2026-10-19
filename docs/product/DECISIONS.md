@@ -2,6 +2,12 @@
 
 > Newest first. Every entry: date, decision, rationale. Undecided items are logged as such — indecision is a decision to revisit.
 
+## 2026-10-19 — Product work explicitly paused (logged as decision, not just review sentiment); Kit credential death recorded
+
+Decision: (1) Product work stays PROPOSED-and-paused — the director-of-UX PRD's 6 open questions and the monetization sequencing are not live options until the capture layer is wired and measured (Kit form published + test subscribe + GoatCounter funnel events). Logging this in the decision log so the backlog can't be read as momentum. (2) The Kit v4 API rejects the stored `custom.kit` credential (HTTP 401 on /forms and /account, verified 2026-10-19; worked 2026-10-05 and 2026-10-12) — publish state is now verified via the public-URL 404 signal (still unpublished, fifth week); the founder's reconnect of the credential joins the critical path ahead of the Publish click.
+
+Rationale: CEO lens "Kill fast, scale what works" — six reviews of "paused" is a zombie backlog by another name; decisions need the log, not just the reviews. The 401 is a new dependency failure: silent credential death must be recorded, not retried quietly.
+
 ## 2026-10-12 — No product work until the funnel is wired and measured
 
 Decision: product work stays PROPOSED-and-paused — including the director-of-UX PRD's 6 open questions and the monetization sequencing — until the capture layer is live and measured (Kit form published + wired + test subscribe + GoatCounter funnel events). The monetization proposal stays PROPOSED (guardrails standing: ~$20/mo tooling, ad experiments only with sign-off + stop-loss). The CI-repairs push is now 16 days staged; the 2026-09-28 single-squashed-green-commit rule remains the standing open build-integrity item.

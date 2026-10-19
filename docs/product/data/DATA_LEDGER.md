@@ -36,9 +36,9 @@ Rules:
 | Dataset (latest) | What it is | How measured | Measured by | Measured at | Limitations |
 |---|---|---|---|---|---|
 | `benchmarks-2026-09-28.json` | Launch-day quality state: per-feature E2E pass counts (F1–F12), 5-persona buy-mode results, CI page-weight/security/SEO benchmark | Local jsdom e2e suites + live HTTP/content verification | pika (Muse agent) | 2026-09-20 | jsdom, not real-browser; persona validation is agent-simulated, not real users |
-| `traffic-snapshot-2026-10-12.json` | Honest zero-state: GoatCounter snippet deployed, activation unverified | Live HTTP 200 + page-source check (no dashboard login) | pika (Muse agent) | 2026-09-21 | No pageview/visitor/conversion numbers exist; do not cite traffic for LeadLoop |
+| `traffic-snapshot-2026-10-19.json` | Honest zero-state: GoatCounter snippet deployed, activation unverified; Kit API 401 this week | Live HTTP 200 + page-source check (no dashboard login); api.kit.com 401 on /forms + /account 2026-10-19 | pika (Muse agent) | 2026-10-19 | No pageview/visitor/conversion numbers exist; do not cite traffic for LeadLoop; form publish verified via public-URL 404 |
 | `keywords-2026-09-20.json` | Working keyword list actually targeted on-page | Derived from shipped FAQ topics + page titles | pika (Muse agent) | 2026-09-20 | Working list only — **no rank data**; site not indexed as of 2026-09-20 |
-| `competitors-2026-10-12.json` | Competitor table: mock-interview / interview-coaching platforms with pricing + features observed on live pages, attributable source links, `candidates_to_verify` for unverified names | Live page fetches + web search on 2026-09-21 | pika (Muse agent) | 2026-09-21 | Only what was displayed on fetched pages; gated pricing recorded as "not yet measured" |
+| `competitors-2026-10-19.json` | Competitor table: mock-interview / interview-coaching platforms with pricing + features observed on live pages, attributable source links, `candidates_to_verify` for unverified names | Live page fetches; all 10 baseline rows re-opened 2026-10-19 | pika (Muse agent) | 2026-10-19 | Only what was displayed on fetched pages; gated pricing recorded as "not yet measured" |
 
 ## Raw sources (outside the repo)
 

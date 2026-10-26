@@ -1,0 +1,52 @@
+{
+ "changes": [
+  {
+   "change": "baseline established 2026-09-20: honest zero-state. No analytics installed; no visitor/pageview/conversion numbers exist. Do not cite LeadLoop traffic.",
+   "date": "2026-09-20",
+   "rationale": "records the zero-state honestly so no one invents traffic numbers",
+   "rechecked": "n/a (first snapshot)"
+  },
+  {
+   "change": "2026-09-21: GoatCounter snippet CONFIRMED DEPLOYED on the live site (https://aashithk.github.io/leadloop/ returns HTTP 200; page source contains data-goatcounter=\"https://leadloop.goatcounter.com/count\" + count.js). Whether the 'leadloop' site code is registered and activated on GoatCounter's side is unverified (no credentialed dashboard login — per panel limits). No visitor numbers can be cited until the GoatCounter account is verified to receive counts; per standing limits, agents never log into the dashboard.",
+   "date": "2026-09-21",
+   "rationale": "state change worth recording: from 'no analytics' to 'instrumented, activation unverified'; once Aashith confirms the site code is live in GoatCounter, baselines can begin",
+   "rechecked": "https://aashithk.github.io/leadloop/ (HTTP 200, page source inspected 2026-09-21)"
+  },
+  {
+   "date": "2026-09-28",
+   "change": "honest zero-state refresh 2026-09-28: still NO visitor/pageview/conversion numbers exist for LeadLoop. The GoatCounter 'leadloop' site-code activation remains unverified (no dashboard login per panel limits; Aashith's 2026-09-21 open question #6 unanswered). Snippet presence on the live site was confirmed 2026-09-21; it was not re-fetched 2026-09-28. Do not cite LeadLoop traffic. This dataset will remain zero-state until Aashith confirms the site code is active.",
+   "rationale": "no-churn rule: without a verified activation there is nothing new to measure — the honest state is still zero",
+   "rechecked": "n/a — nothing new measurable (activation status is a dashboard fact agents cannot observe)"
+  },
+  {
+   "date": "2026-10-05",
+   "change": "still honest zero-state: no GoatCounter visitor/pageview/conversion numbers exist. No commits to the repo since 2026-09-28, so nothing about the live build or snippet changed; activation remains unverified. Do not cite traffic for LeadLoop.",
+   "rationale": "keep the honest zero-state explicit; analytics remain founder-blocked (his activation confirmation)",
+   "rechecked": "repo commit log 2026-09-28 -> 2026-10-05 (no commits); no dashboard access per standing limit"
+  },
+  {
+   "date": "2026-10-12",
+   "change": "still honest zero-state: no GoatCounter visitor/pageview/conversion numbers exist. No commits to the repo since the 2026-10-05 data-layer pushes, so nothing about the live build or snippet changed; activation remains unverified (no dashboard access per standing limit). Do not cite traffic for LeadLoop.",
+   "rationale": "keep the honest zero-state explicit; analytics remain founder-blocked (his activation confirmation); GoatCounter funnel events are keyed off the same Kit Publish click that unblocks the whole funnel",
+   "rechecked": "repo commit log 2026-10-05 -> 2026-10-12 (no commits); no dashboard access per standing limit"
+  },
+  {
+   "date": "2026-10-19",
+   "change": "still honest zero-state: no GoatCounter visitor/pageview/conversion numbers exist. No commits to the repo since the 2026-10-12 data-layer pushes, so nothing about the live build or snippet changed; activation remains unverified (no dashboard access per standing limit). Kit API state check NEW FAILURE this week: api.kit.com/v4 returns HTTP 401 on /forms and /account despite surrogate-attached credential (retry after 3s also 401) — the stored custom.kit credential is being rejected; whether this is revocation or a provider-side change is not determinable from here. Form publish state still verifiable via the public URL signal: https://leadloop.kit.com/5193f5a524 returns HTTP 404 on 2026-10-19 (draft/unpublished, fifth straight week). Do not cite traffic for LeadLoop.",
+   "rationale": "keep the honest zero-state explicit; the Kit 401 is a new verification gap the panel must record (founder may need to re-connect/re-check the credential); the 404 public-URL signal keeps the publish state verifiable without the API",
+   "rechecked": "repo commit log 2026-10-12 -> 2026-10-19 (no commits); https://leadloop.kit.com/5193f5a524 (HTTP 404, 2026-10-19); api.kit.com/v4/forms + /v4/account (HTTP 401, 2026-10-19, surrogate attached)"
+  },
+  {
+   "date": "2026-10-26",
+   "change": "still honest zero-state: no GoatCounter visitor/pageview/conversion numbers exist. No commits to the repo since the 2026-10-19 data-layer pushes, so nothing about the live build or snippet changed; activation remains unverified (no dashboard access per standing limit). Kit state UNCHANGED for a second week: api.kit.com/v4 returns HTTP 401 on /forms and /account (surrogate-attached credential, re-verified 2026-10-26) — the stored custom.kit credential is still rejected; Aashith has not confirmed the reconnect sent Oct 20. Form publish state still verifiable via the public URL signal: https://leadloop.kit.com/5193f5a524 returns HTTP 404 on 2026-10-26 (draft/unpublished, sixth straight week). Process note: kit-cli.py's embedded helper import path is stale (templates/skill/bin no longer holds dynamic_credentials.py); verification succeeded via PYTHONPATH=/opt/muse/skills/custom-connector-setup/bin workaround — the CLI file itself was not modified. Do not cite traffic for LeadLoop.",
+   "rationale": "keep the honest zero-state explicit; the Kit 401 enters its second week and the form its sixth unpublished week — the funnel's critical path is now two founder-side steps (reconnect, then Publish), both unconfirmed",
+   "rechecked": "repo commit log 2026-10-19 -> 2026-10-26 (no commits); https://leadloop.kit.com/5193f5a524 (HTTP 404, 2026-10-26); api.kit.com/v4/forms + /v4/account (HTTP 401, 2026-10-26, surrogate attached)"
+  }
+ ],
+ "measured_at": "2026-10-26",
+ "measured_by": "pika (Muse agent), repo commit log + public URL checks (Kit API unavailable: 401 on api.kit.com 2026-10-19)",
+ "note": "Zero-state persists for numbers; the plumbing is now deployed. The missing step is outside agent reach: Aashith must confirm the 'leadloop' site code exists/activated under his GoatCounter account. NEW 2026-10-19: Kit API credential rejected (HTTP 401) — publish state verified via public-URL 404 signal instead.",
+ "site_visits": "not yet measured",
+ "status": "snippet deployed; activation not verified",
+ "date": "2026-10-19"
+}

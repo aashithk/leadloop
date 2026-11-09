@@ -36,15 +36,16 @@ Rules:
 | Dataset (latest) | What it is | How measured | Measured by | Measured at | Limitations |
 |---|---|---|---|---|---|
 | `benchmarks-2026-09-28.json` | Launch-day quality state: per-feature E2E pass counts (F1–F12), 5-persona buy-mode results, CI page-weight/security/SEO benchmark | Local jsdom e2e suites + live HTTP/content verification | pika (Muse agent) | 2026-09-20 | jsdom, not real-browser; persona validation is agent-simulated, not real users |
-| `traffic-snapshot-2026-11-02.json` | Honest zero-state: GoatCounter snippet deployed, activation unverified; Kit API 401 carried from 2026-10-26 (not re-retried per agreed action), form 404 seventh week | Live HTTP 200 + page-source check (no dashboard login); public embed URL 404, 2026-11-02 | pika (Muse agent) | 2026-11-02 | No pageview/visitor/conversion numbers exist; do not cite traffic for LeadLoop; form publish verified via public-URL 404 |
+| `traffic-snapshot-2026-11-09.json` | Honest zero-state: GoatCounter snippet deployed, activation unverified; Kit API 401 carried from 2026-10-26 (not re-retried per agreed action), form 404 eighth week | Live HTTP 200 + page-source check (no dashboard login); public embed URL 404, 2026-11-09 | pika (Muse agent) | 2026-11-09 | No pageview/visitor/conversion numbers exist; do not cite traffic for LeadLoop; form publish verified via public-URL 404 |
 | `keywords-2026-09-20.json` | Working keyword list actually targeted on-page | Derived from shipped FAQ topics + page titles | pika (Muse agent) | 2026-09-20 | Working list only — **no rank data**; site not indexed as of 2026-09-20 |
-| `competitors-2026-11-02.json` | Competitor table: mock-interview / interview-coaching platforms with pricing + features observed on live pages, attributable source links, `candidates_to_verify` for unverified names | Live page fetches; all 10 baseline rows re-opened 2026-11-02 (Interview Kickstart text-fetch 403 sixth week, but live-browser load redirects to homepage with no prices) | pika (Muse agent) | 2026-11-02 | Only what was displayed on fetched pages; gated pricing recorded as "not yet measured"; Design Gurus hike (FAANG+ $149→$159) offsets HelloInterview cut holding ($89/$299) |
+| `competitors-2026-11-09.json` | Competitor table: mock-interview / interview-coaching platforms with pricing + features observed on live pages, attributable source links, `candidates_to_verify` for unverified names | Live page fetches; all 10 baseline rows re-opened 2026-11-09 (Interview Kickstart text-fetch 403 seventh week, but live-browser load redirects to homepage with no prices) | pika (Muse agent) | 2026-11-09 | Only what was displayed on fetched pages; gated pricing recorded as "not yet measured"; Design Gurus hike holds ($159) and HelloInterview cut holds ($89/$299) — two-way movement settled into holds; IGotAnOffer 24,327 clients, Prepfully 2,015/15,079 |
 
 ## Raw sources (outside the repo)
 
 - `~/workspace/goals/launch-leadloop-coaching-business/e2e/` — per-feature e2e suites
 - `~/workspace/goals/launch-leadloop-coaching-business/validation/` — persona logs + progress.md
 - `~/workspace/qinfra/benchmarks/history.jsonl` — CI benchmark history
+
 
 
 
